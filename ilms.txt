@@ -1,0 +1,34 @@
+# Image List and Meta Script
+# This file documents all images and metadata for The Scalper's Edge
+
+images:
+  - name: "Feature icon - Daily Trade Log"
+    path: "inline-emoji"
+    alt: "Daily Trade Log notebook icon"
+    format: "emoji"
+  - name: "Feature icon - R-Multiple Calculator"
+    path: "inline-emoji"
+    alt: "R-Multiple Calculator graph icon"
+    format: "emoji"
+  - name: "Feature icon - Psychology Tracker"
+    path: "inline-emoji"
+    alt: "Psychology Tracker brain icon"
+    format: "emoji"
+  - name: "Feature icon - Weekly Review Dashboard"
+    path: "inline-emoji"
+    alt: "Weekly Review Dashboard chart icon"
+    format: "emoji"
+  - name: "Feature icon - Wash Sale Tracker"
+    path: "inline-emoji"
+    alt: "Wash Sale Tracker receipt icon"
+    format: "emoji"
+  - name: "Favicon"
+    path: "data:image/svg+xml"
+    alt: "The Scalper's Edge chart emoji"
+    format: "svg"
+
+metadata:
+  title: "The Scalper's Edge — Trade Smarter. Journal Harder."
+  description: "The Notion trade journal built specifically for scalpers. R-multiples, spread tracking, psychology flags, session heatmaps. Duplicate and start logging in minutes."
+  lang: "en"
+  canonical: "https://thescalpersedge.com"

@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fafafa">
+  <title>The Scalper's Edge — Trade Smarter. Journal Harder.</title>
+  <meta name="description" content="The Notion trade journal built specifically for scalpers. R-multiples, spread tracking, psychology flags, session heatmaps. Duplicate and start logging in minutes.">
+  <meta property="og:title" content="The Scalper's Edge — Trade Smarter. Journal Harder.">
+  <meta property="og:description" content="The Notion trade journal built specifically for scalpers. R-multiples, spread tracking, psychology flags, session heatmaps. Duplicate and start logging in minutes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thescalpersedge.com">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Scalper's Edge — Trade Smarter. Journal Harder.">
+  <meta name="twitter:description" content="The Notion trade journal built specifically for scalpers. R-multiples, spread tracking, psychology flags, session heatmaps. Duplicate and start logging in minutes.">
+  <link rel="canonical" href="https://thescalpersedge.com">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23111111'>📊</text></svg>">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "The Disciplined Trader Journal",
+    "description": "The Notion trade journal built specifically for scalpers. R-multiples, spread tracking, psychology flags, session heatmaps.",
+    "brand": {
+      "@type": "Brand",
+      "name": "The Scalper's Edge"
+    },
+    "url": "https://thescalpersedge.com",
+    "offers": {
+      "@type": "Offer",
+      "price": "49.00",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "The Scalper's Edge",
+    "url": "https://thescalpersedge.com",
+    "logo": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23111111'>📊</text></svg>",
+    "sameAs": [
+      "https://x.com/scalpersedge"
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafafa;
+      --surface: #ffffff;
+      --surface-2: #f5f5f5;
+      --surface-3: #eeeeee;
+      --text: #111111;
+      --text-secondary: #555555;
+      --text-tertiary: #888888;
+      --border: #e5e5e5;
+      --border-strong: #d4d4d4;
+      --accent: #111111;
+      --accent-hover: #333333;
+      --green: #16a34a;
+      --green-bg: #f0fdf4;
+      --green-border: #bbf7d0;
+      --red: #dc2626;
+      --red-bg: #fef2f2;
+      --red-border: #fecaca;
+      --radius: 10px;
+      --radius-lg: 14px;
+      --radius-xl: 20px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ═══════════ NAV ═══════════ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(250, 250, 250, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-brand {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      padding: 0.45rem 1.1rem !important;
+      background: var(--accent) !important;
+      color: #ffffff !important;
+      border-radius: 8px !important;
+      font-weight: 600 !important;
+      font-size: 0.82rem !important;
+      transition: background 0.15s, transform 0.15s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-hover) !important;
+      transform: translateY(-1px) !important;
+      color: #ffffff !important;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+    }
+
+    /* ═══════════ HERO ═══════════ */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 2rem 5rem;
+      position: relative;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6.5vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin-bottom: 1.5rem;
+      max-width: 720px;
+      color: var(--text);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+      animation: fadeUp 0.5s ease both;
+      animation-delay: 0.05s;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .tagline {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+      font-weight: 400;
+      animation: fadeUp 0.5s ease both;
+      animation-delay: 0.12s;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.5s ease both;
+      animation-delay: 0.18s;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: 10px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+      border: none;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+      transition-duration: 0.08s;
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background: var(--surface-2);
+      border-color: var(--border-strong);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary:active {
+      transform: translateY(0);
+      transition-duration: 0.08s;
+    }
+
+    .social-proof-strip {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 0.82rem;
+      color: var(--text-tertiary);
+      animation: fadeUp 0.5s ease both;
+      animation-delay: 0.24s;
+    }
+
+    .social-proof-strip .divider {
+      width: 1px;
+      height: 12px;
+      background: var(--border);
+    }
+
+    .social-proof-strip strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ══════════ STATS STRIP ═══════════ */
+    .stats-strip {
+      padding: 3.5rem 2rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    .stats-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+      max-width: 180px;
+      margin: 0 auto;
+    }
+
+    .stat-divider {
+      width: 1px;
+      background: var(--border);
+      align-self: stretch;
+    }
+
+    /* ═══════════ SECTION COMMONS ═══════════ */
+    .section-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ═══════════ PROBLEM ═══════════ */
+    .problem {
+      padding: 7rem 2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .problem h2 {
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+    }
+
+    .problem p {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.15rem;
+      line-height: 1.75;
+    }
+
+    .highlight-red {
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    .highlight-green {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    /* ═══════════ FEATURES ═══════════ */
+    .features {
+      padding: 3rem 2rem 7rem;
+      max-width: 1060px;
+      margin: 0 auto;
+    }
+
+    .features-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .features-header h2 {
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+      line-height: 1.15;
+      color: var(--text);
+    }
+
+    .features-header p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      max-width: 440px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .features-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .stat-divider { display: none; }
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .feature-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .feature-card.visible:nth-child(1) { transition-delay: 0s; }
+    .feature-card.visible:nth-child(2) { transition-delay: 0.06s; }
+    .feature-card.visible:nth-child(3) { transition-delay: 0.12s; }
+    .feature-card.visible:nth-child(4) { transition-delay: 0.04s; }
+    .feature-card.visible:nth-child(5) { transition-delay: 0.10s; }
+    .feature-card.visible:nth-child(6) { transition-delay: 0.16s; }
+
+    .feature-card:hover {
+      border-color: var(--border-strong);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .feature-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+
+    .feature-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ═══════════ PREVIEW / MOCKUP ═══════════ */
+    .preview {
+      padding: 3rem 2rem 7rem;
+      max-width: 860px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .preview h2 {
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+
+    .preview > p {
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      font-size: 1rem;
+    }
+
+    .mockup {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-align: left;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .mockup-titlebar {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.75rem 1rem;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mockup-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .mockup-dot.red { background: #ff5f57; }
+    .mockup-dot.yellow { background: #febc2e; }
+    .mockup-dot.green { background: #28c840; }
+
+    .mockup-title {
+      margin-left: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      font-weight: 500;
+    }
+
+    .mockup-body {
+      padding: 1.25rem;
+      font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.78rem;
+      overflow-x: auto;
+    }
+
+    .trade-row {
+      display: grid;
+      grid-template-columns: 70px 56px 72px 72px 64px 56px 72px;
+      gap: 0.6rem;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: center;
+    }
+
+    .trade-row.header {
+      color: var(--text-tertiary);
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding-bottom: 0.6rem;
+    }
+
+    .trade-row:last-child { border-bottom: none; }
+
+    .r-positive { color: var(--green); font-weight: 600; }
+    .r-negative { color: var(--red); font-weight: 600; }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.58rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    .tag-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+    .tag-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+
+    .day-total {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 0.75rem;
+      margin-top: 0.15rem;
+      border-top: 1px solid var(--border-strong) !important;
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+    }
+
+    .day-total strong { color: var(--green); }
+
+    /* ═══════════ PRICING ═══════════ */
+    .pricing {
+      padding: 3rem 2rem 7rem;
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .pricing h2 {
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+
+    .pricing > .sub {
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2rem 2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .pricing-card:hover {
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .pricing-badge {
+      display: inline-block;
+      background: var(--green-bg);
+      color: var(--green);
+      border: 1px solid var(--green-border);
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .pricing-product-name {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.6rem;
+      font-weight: 500;
+    }
+
+    .price-amount {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    .price-note {
+      font-size: 0.82rem;
+      color: var(--text-tertiary);
+      margin-top: 0.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin: 0 auto 2rem;
+      max-width: 360px;
+      text-align: left;
+    }
+
+    .pricing-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.55rem 0;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+      line-height: 1.5;
+    }
+
+    .pricing-features li:last-child { border-bottom: none; }
+
+    .check {
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    .guarantee {
+      margin-top: 0.4rem;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      line-height: 1.55;
+    }
+
+    /* ═══════════ EMAIL CAPTURE ═══════════ */
+    .email-capture {
+      padding: 5rem 2rem;
+      background: var(--surface-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .email-inner {
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .email-inner h2 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+      color: var(--text);
+    }
+
+    .email-inner p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      margin-bottom: 2rem;
+      line-height: 1.65;
+    }
+
+    .email-form {
+      display: flex;
+      gap: 0.5rem;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    .email-input {
+      flex: 1;
+      padding: 0.8rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      min-width: 0;
+      font-family: inherit;
+    }
+
+    .email-input::placeholder { color: var(--text-tertiary); }
+
+    .email-input:focus {
+      border-color: var(--text);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+    }
+
+    .email-submit {
+      padding: 0.8rem 1.5rem;
+      background: var(--accent);
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.15s, transform 0.15s;
+      position: relative;
+      min-width: 120px;
+      font-family: inherit;
+    }
+
+    .email-submit:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .email-submit.loading {
+      pointer-events: none;
+    }
+
+    .email-submit .btn-text { transition: opacity 0.15s; }
+    .email-submit.loading .btn-text { opacity: 0; }
+
+    .email-submit .spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255,255,255,0.25);
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .email-submit.loading .spinner { opacity: 1; }
+
+    @keyframes spin {
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    .email-success {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.75rem;
+    }
+
+    .email-privacy {
+      margin-top: 0.85rem;
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+    }
+
+    /* ═══════════ FAQ ═══════════ */
+    .faq {
+      padding: 7rem 2rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .faq-header h2 {
+      font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      text-align: left;
+      padding: 1.1rem 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+      transition: color 0.15s;
+    }
+
+    .faq-question:hover { color: var(--accent-hover); }
+
+    .faq-chevron {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      transition: transform 0.2s ease;
+      color: var(--text-tertiary);
+    }
+
+    .faq-item.open .faq-chevron {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 250px;
+    }
+
+    .faq-answer p {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      padding-bottom: 1.1rem;
+      padding-right: 1.5rem;
+      line-height: 1.7;
+    }
+
+    /* ═══════════ FOOTER ══════════ */
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.75rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    /* ═══════════ ANIMATIONS ═══════════ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero > * {
+      position: relative;
+    }
+
+    .hero .eyebrow { animation: fadeUp 0.5s ease 0.05s both; }
+    .hero h1 { animation: fadeUp 0.5s ease 0.12s both; }
+    .hero .tagline { animation: fadeUp 0.5s ease 0.18s both; }
+    .hero .cta-group { animation: fadeUp 0.5s ease 0.24s both; }
+    .hero .social-proof-strip { animation: fadeUp 0.5s ease 0.30s both; }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ═══════════ RESPONSIVE ═══════════ */
+    @media (max-width: 600px) {
+      .hero { padding: 6rem 1.25rem 3rem; }
+      .problem { padding: 5rem 1.25rem; }
+      .features { padding: 2rem 1.25rem 5rem; }
+      .preview { padding: 2rem 1.25rem 5rem; }
+      .pricing { padding: 3rem 1.25rem 5rem; }
+      .faq { padding: 5rem 1.25rem; }
+      .email-capture { padding: 4rem 1.25rem; }
+      .cta-group { flex-direction: column; width: 100%; }
+      .btn { width: 100%; }
+      .email-form { flex-direction: column; }
+      .email-submit { width: 100%; }
+      .price-amount { font-size: 3rem; }
+      .mockup-body { padding: 0.85rem; }
+    }
+
+    @media (min-width: 601px) {
+      .mockup-mobile-note { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav id="navbar">
+    <a href="#" class="nav-brand">The Scalper's Edge</a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#pricing" class="nav-cta">Get Template</a></li>
+    </ul>
+  </nav>
+
+  <!-- Breadcrumbs (for SEO) -->
+  <nav aria-label="breadcrumb" style="padding: 0.5rem 2rem; font-size: 0.75rem; color: var(--text-tertiary); display: none;">
+    <ol style="display: flex; gap: 0.5rem; list-style: none;">
+      <li><a href="/" style="color: inherit; text-decoration: none;">Home</a></li>
+      <li>/</li>
+      <li>Trade Journal Template</li>
+    </ol>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="eyebrow">
+      <span class="eyebrow-dot"></span>
+      Notion Template for Scalpers
+    </div>
+    <h1>Stop guessing. Start journaling.</h1>
+    <p class="tagline">The Notion trade journal built for scalpers who are serious about consistency — not another generic tracker built for someone who holds AAPL for 3 months.</p>
+    <div class="cta-group">
+      <a href="#pricing" class="btn btn-primary">Get the Template — $49</a>
+      <a href="#features" class="btn btn-secondary">See What's Inside</a>
+    </div>
+    <div class="social-proof-strip">
+      <span><strong>50+</strong> traders journaling</span>
+      <span class="divider"></span>
+      <span>One-time payment</span>
+      <span class="divider"></span>
+      <span>14-day guarantee</span>
+    </div>
+  </section>
+
+  <!-- Stats Strip -->
+  <div class="stats-strip reveal">
+    <div class="stats-inner">
+      <div>
+        <div class="stat-number" data-target="2520" data-prefix="$">$0</div>
+        <div class="stat-label">In preventable losses from untracked revenge trades</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div>
+        <div class="stat-number" data-target="29" data-suffix="%">0%</div>
+        <div class="stat-label">Of gross profit lost to hidden spread costs</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div>
+        <div class="stat-number" data-target="80" data-suffix="%">0%</div>
+        <div class="stat-label">Of profits from just 2 setups</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div>
+        <div class="stat-number" data-target="30" data-suffix=" days">0</div>
+        <div class="stat-label">Until data changes how you trade</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Problem -->
+  <section class="problem reveal">
+    <div class="section-label" style="text-align:center;">The problem</div>
+    <h2>You know journaling works. So why don't you do it?</h2>
+    <p>Not because you're lazy. Because every tool you've tried was <span class="highlight-red">built for swing traders</span> — clunky spreadsheets, overpriced platforms at $100/month, or generic Notion templates with "fundamental analysis" fields.</p>
+    <p>You need something that tracks <span class="highlight-green">spread costs</span>, <span class="highlight-green">session performance</span>, <span class="highlight-green">R-multiples</span>, and <span class="highlight-green">your psychology</span> — in one clean dashboard you'll actually open every day.</p>
+  </section>
+
+  <!-- Features -->
+  <section class="features reveal" id="features">
+    <div class="features-header">
+      <div class="section-label" style="text-align:center;">What's inside</div>
+      <h2>7 pages. Zero setup.</h2>
+      <p>Duplicate to your Notion workspace and start logging trades in under 2 minutes.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon" aria-label="Daily Trade Log notebook icon">📋</div>
+        <h3>Daily Trade Log</h3>
+        <p>Pre-trade checklist, entry/exit price, position size, P&L, setup type, chart screenshot area, post-trade notes — all in one place with built-in formulas.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-label="R-Multiple Calculator graph icon">📐</div>
+        <h3>R-Multiple Calculator</h3>
+        <p>Built-in Notion formulas so you see risk/reward at a glance. Track your average R — the only metric that actually predicts long-term profitability.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-label="Psychology Tracker brain icon">🧠</div>
+        <h3>Psychology Tracker</h3>
+        <p>FOMO flags, revenge trading indicators, overconfidence checkboxes, mood sliders. Log your emotional state and start seeing the patterns that cost you money.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-label="Weekly Review Dashboard chart icon">📊</div>
+        <h3>Weekly Review Dashboard</h3>
+        <p>Auto-aggregated stats: win rate, average R, best/worst setups, time-of-day performance, consecutive win/loss streaks. No manual math.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-label="Wash Sale Tracker receipt icon">🧾</div>
+        <h3>Wash Sale Tracker</h3>
+        <p>Calendar-based tracker for tax loss harvesting concerns. Never accidentally trigger a wash sale again — especially painful after a rough week.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon" aria-label="Scalp-Specific Metrics performance icon">⚡</div>
+        <h3>Scalp-Specific Metrics</h3>
+        <p>Average hold time, spread cost tracking, win rate by session (first 30 min, 10-11AM, lunch, power hour). Built for how scalpers actually trade.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preview Mockup -->
+  <section class="preview reveal" id="preview">
+    <div class="section-label" style="text-align:center;">Sample data</div>
+    <h2>What your daily log looks like</h2>
+    <p>Real data. Your setup types, your R-multiples, your psychology flags — all in one view.</p>
+    <div class="mockup">
+      <div class="mockup-titlebar">
+        <span class="mockup-dot red"></span>
+        <span class="mockup-dot yellow"></span>
+        <span class="mockup-dot green"></span>
+        <span class="mockup-title">Daily Trade Log — Sept 5, 2026</span>
+      </div>
+      <div class="mockup-body">
+        <span class="mockup-mobile-note">
+          📋 Daily Trade Log — Sept 5, 2026<br><br>
+          AAPL &nbsp;&nbsp;LONG &nbsp;&nbsp;+3.0R &nbsp;&nbsp;$120 ✅<br>
+          TSLA &nbsp;&nbsp;SHORT &nbsp;−1.0R &nbsp;−$40 ❌<br>
+          NVDA &nbsp;&nbsp;LONG &nbsp;&nbsp;+2.0R &nbsp;&nbsp;$80 ✅<br>
+          MSFT &nbsp;&nbsp;LONG &nbsp;&nbsp;+0.8R &nbsp;&nbsp;$32 ✅<br><br>
+          Day total: +4.8R &nbsp; $192 net &nbsp; Win rate: 75%
+        </span>
+        <div class="trade-row header">
+          <span>Ticker</span>
+          <span>Dir.</span>
+          <span>Setup</span>
+          <span>Entry</span>
+          <span>Exit</span>
+          <span>R</span>
+          <span>P&L</span>
+        </div>
+        <div class="trade-row">
+          <span>AAPL</span>
+          <span><span class="tag tag-green">LONG</span></span>
+          <span style="color:var(--text-tertiary)">ORB</span>
+          <span style="color:var(--text-secondary)">$224.50</span>
+          <span style="color:var(--text-secondary)">$225.10</span>
+          <span class="r-positive">+3.0R</span>
+          <span class="r-positive">+$120</span>
+        </div>
+        <div class="trade-row">
+          <span>TSLA</span>
+          <span><span class="tag tag-red">SHORT</span></span>
+          <span style="color:var(--text-tertiary)">VWAP</span>
+          <span style="color:var(--text-secondary)">$248.20</span>
+          <span style="color:var(--text-secondary)">$248.40</span>
+          <span class="r-negative">−1.0R</span>
+          <span class="r-negative">−$40</span>
+        </div>
+        <div class="trade-row">
+          <span>NVDA</span>
+          <span><span class="tag tag-green">LONG</span></span>
+          <span style="color:var(--text-tertiary)">Pullback</span>
+          <span style="color:var(--text-secondary)">$131.80</span>
+          <span style="color:var(--text-secondary)">$132.60</span>
+          <span class="r-positive">+2.0R</span>
+          <span class="r-positive">+$80</span>
+        </div>
+        <div class="trade-row">
+          <span>MSFT</span>
+          <span><span class="tag tag-green">LONG</span></span>
+          <span style="color:var(--text-tertiary)">ORB</span>
+          <span style="color:var(--text-secondary)">$462.10</span>
+          <span style="color:var(--text-secondary)">$462.50</span>
+          <span class="r-positive">+0.8R</span>
+          <span class="r-positive">+$32</span>
+        </div>
+        <div class="trade-row day-total">
+          <span style="grid-column:1/-1;">
+            Day total: <strong>+4.8R</strong> · $192 net · Win rate: 75% · Spread cost: $18
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing reveal" id="pricing">
+    <div class="section-label" style="text-align:center;">Simple pricing</div>
+    <h2>One template. Your edge.</h2>
+    <p class="sub">No subscription. No monthly fees. Pay once, use forever.</p>
+    <div class="pricing-card">
+      <div class="pricing-badge">Most Popular</div>
+      <p class="pricing-product-name">The Disciplined Trader Journal</p>
+      <div class="price-amount">$49</div>
+      <p class="price-note">one-time · lifetime access · free updates</p>
+      <a href="#" class="btn btn-primary" style="width:100%; margin-bottom:1.75rem;" id="purchaseBtn"
+         onclick="handlePurchase(event)">Get Instant Access</a>
+      <ul class="pricing-features">
+        <li><span class="check">✓</span> 7 journal pages (daily log, R-calc, psychology, weekly dashboard, wash sales, scalp metrics)</li>
+        <li><span class="check">✓</span> Pre-built Notion formulas — zero setup required</li>
+        <li><span class="check">✓</span> Duplicate-and-edit link — yours in 2 clicks</li>
+        <li><span class="check">✓</span> 12-point pre-trade checklist for scalpers</li>
+        <li><span class="check">✓</span> Free updates for life</li>
+        <li><span class="check">✓</span> Free lite version available (below)</li>
+      </ul>
+      <p class="guarantee">14-day money-back guarantee. If it's not for you, reply to your receipt email for an instant refund. No questions asked.</p>
+    </div>
+  </section>
+
+  <!-- Email Capture -->
+  <section class="email-capture reveal" id="free">
+    <div class="email-inner">
+      <div class="section-label" style="text-align:center;">Free version</div>
+      <h2>Not ready to buy? Grab the free lite.</h2>
+      <p>The Disciplined Trader Journal — Lite. Daily trade log + R-multiple calculator. No credit card, no catch. Enter your email and I'll send the Notion link instantly.</p>
+      <div id="emailFormWrap">
+        <div class="email-form">
+          <input type="email" class="email-input" id="emailInput" placeholder="your@email.com" autocomplete="email">
+          <button class="email-submit" id="emailSubmit" type="button" onclick="handleEmailSubmit()">
+            <span class="btn-text">Send it free</span>
+            <span class="spinner"></span>
+          </button>
+        </div>
+        <p class="email-privacy">No spam. Occasional journal updates and trading tips. Unsubscribe any time.</p>
+      </div>
+      <div class="email-success" id="emailSuccess">
+        <span style="font-size:1.1rem;">✓</span> <span>Check your inbox — template link is on its way.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq reveal" id="faq">
+    <div class="faq-header">
+      <div class="section-label" style="text-align:center;">FAQ</div>
+      <h2>Questions?</h2>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Do I need Notion experience?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Nope. The template is ready to go. Click the link, hit "Duplicate" in the top right, and start logging trades. All formulas are pre-built — you don't need to touch anything technical.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Is this only for day traders?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <p>It's optimized for scalpers (5–20 trades/day) and day traders, but swing traders can still use the daily trade log and R-multiple calculator — those pages work for any style.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Can I customize it?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <p>100%. Once you duplicate it to your Notion workspace, it's yours. Add pages, change formulas, rename properties — whatever fits how you trade. It's a starting point, not a locked system.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What if it's not for me?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <p>Email me within 14 days and I'll refund you — no questions asked. Reply to your purchase receipt and I'll sort it out same day. My credibility is worth more than $49.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        What's the difference between lite and premium?
+        <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="faq-answer">
+        <p>The free lite version includes the daily trade log and basic R-multiple calculator — enough to start tracking. The $49 premium adds the psychology tracker, weekly review dashboard, wash sale tracker, session performance heatmap, and the 12-point pre-trade checklist.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#free">Free Lite Version</a>
+      <a href="https://x.com/scalpersedge">Twitter / X</a>
+    </div>
+    <p>Built by a scalper, for scalpers. <a href="https://x.com/scalpersedge">@scalpersedge</a></p>
+    <p style="margin-top: 0.4rem; font-size: 0.72rem; color: var(--text-tertiary);">© 2026 The Scalper's Edge. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ─── Nav scroll state ───
+    const navbar = document.getElementById('navbar');
+    if (navbar) {
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 20);
+      }, { passive: true });
+    }
+
+    // ─── Scroll-reveal ───
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ─── Feature card stagger reveal ───
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+    document.querySelectorAll('.feature-card').forEach(card => cardObserver.observe(card));
+
+    // ─── Animated stat counters ───
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target, 10);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const startTime = performance.now();
+
+      function update(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        el.textContent = prefix + current.toLocaleString() + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('[data-target]').forEach(animateCounter);
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const statsStrip = document.querySelector('.stats-strip');
+    if (statsStrip) statsObserver.observe(statsStrip);
+
+    // ─── FAQ accordion ───
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      if (!item) return;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    // ─── Email capture ───
+    function handleEmailSubmit() {
+      const input = document.getElementById('emailInput');
+      const btn = document.getElementById('emailSubmit');
+      const formWrap = document.getElementById('emailFormWrap');
+      const success = document.getElementById('emailSuccess');
+
+      if (!input || !btn || !formWrap || !success) return;
+
+      const email = input.value.trim();
+      if (!email || !email.includes('@')) {
+        input.focus();
+        input.style.borderColor = 'var(--red)';
+        input.style.boxShadow = '0 0 0 3px rgba(220,38,38,0.1)';
+        setTimeout(() => {
+          input.style.borderColor = '';
+          input.style.boxShadow = '';
+        }, 1800);
+        return;
+      }
+
+      btn.classList.add('loading');
+      setTimeout(() => {
+        formWrap.style.display = 'none';
+        success.style.display = 'flex';
+      }, 1000);
+    }
+
+    const emailInput = document.getElementById('emailInput');
+    if (emailInput) {
+      emailInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') handleEmailSubmit();
+      });
+    }
+
+    // ─── Purchase button ───
+    function handlePurchase(e) {
+      e.preventDefault();
+      const btn = document.getElementById('purchaseBtn');
+      if (!btn) return;
+
+      const original = btn.textContent;
+
+      btn.textContent = 'Loading checkout...';
+      btn.style.opacity = '0.8';
+      btn.style.pointerEvents = 'none';
+
+      setTimeout(() => {
+        btn.textContent = 'Gumroad launching Sept 7';
+        btn.style.opacity = '1';
+        btn.style.pointerEvents = 'auto';
+        setTimeout(() => { btn.textContent = original; }, 3000);
+      }, 700);
+    }
+  </script>
+</body>
+</html>

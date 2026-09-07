@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Disciplined Trader Journal — Notion Template Preview</title>
+<style>
+:root {
+  --bg: #1a1a1a;
+  --surface: #222222;
+  --surface-2: #2a2a2a;
+  --surface-3: #333333;
+  --text: #e0e0e0;
+  --text-secondary: #999999;
+  --text-tertiary: #666666;
+  --border: #333333;
+  --border-strong: #444444;
+  --accent: #7c6aef;
+  --accent-hover: #917fff;
+  --green: #4ade80;
+  --green-bg: rgba(74, 222, 128, 0.1);
+  --green-border: rgba(74, 222, 128, 0.2);
+  --red: #f87171;
+  --red-bg: rgba(248, 113, 113, 0.1);
+  --red-border: rgba(248, 113, 113, 0.2);
+  --yellow: #fbbf24;
+  --blue: #60a5fa;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', Consolas, monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; }
+
+/* Sidebar */
+.sidebar {
+  position: fixed; top: 0; left: 0; bottom: 0; width: 240px;
+  background: var(--surface); border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; z-index: 100;
+}
+.sidebar-header {
+  padding: 16px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
+}
+.sidebar-icon { font-size: 1.3rem; }
+.sidebar-title { font-size: 0.85rem; font-weight: 700; color: var(--text); }
+.sidebar-nav { flex: 1; padding: 12px 8px; overflow-y: auto; }
+.sidebar-section { font-size: 0.65rem; font-weight: 600; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; padding: 8px 12px 4px; }
+.sidebar-link {
+  display: flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 6px;
+  font-size: 0.82rem; color: var(--text-secondary); cursor: pointer; transition: all 0.1s;
+  text-decoration: none;
+}
+.sidebar-link:hover { background: var(--surface-2); color: var(--text); }
+.sidebar-link.active { background: var(--surface-3); color: var(--text); font-weight: 600; }
+.sidebar-link .icon { font-size: 0.9rem; width: 20px; text-align: center; }
+
+/* Main */
+.main { margin-left: 240px; min-height: 100vh; }
+.page { display: none; padding: 48px; max-width: 1100px; }
+.page.active { display: block; }
+.page-header { margin-bottom: 32px; }
+.page-icon { font-size: 2rem; margin-bottom: 8px; }
+.page-title { font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 4px; }
+.page-desc { color: var(--text-secondary); font-size: 0.9rem; }
+
+/* Cover page */
+.cover { padding: 80px 48px; text-align: center; border-bottom: 1px solid var(--border); }
+.cover-icon { font-size: 4rem; margin-bottom: 16px; }
+.cover-title { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 8px; }
+.cover-subtitle { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 32px; }
+.cover-links { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.cover-link {
+  padding: 8px 16px; background: var(--surface-2); border: 1px solid var(--border);
+  border-radius: 6px; font-size: 0.82rem; color: var(--text-secondary); cursor: pointer;
+  text-decoration: none; transition: all 0.15s;
+}
+.cover-link:hover { background: var(--surface-3); color: var(--text); }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+th {
+  text-align: left; padding: 8px 12px; font-weight: 600; font-size: 0.72rem;
+  color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--border); background: var(--surface);
+  position: sticky; top: 0;
+}
+td { padding: 7px 12px; border-bottom: 1px solid var(--border); color: var(--text-secondary); vertical-align: middle; }
+tr:hover td { background: var(--surface-2); }
+input[type="text"], input[type="number"], select {
+  background: transparent; border: none; color: var(--text); font-family: var(--font);
+  font-size: 0.82rem; width: 100%; padding: 2px 0; outline: none;
+}
+input[type="number"] { font-family: var(--font-mono); font-size: 0.78rem; text-align: right; }
+input:focus { border-bottom: 1px solid var(--accent); }
+select { cursor: pointer; }
+select option { background: var(--surface); color: var(--text); }
+
+/* Tags */
+.tag {
+  display: inline-block; padding: 2px 8px; border-radius: 4px;
+  font-size: 0.72rem; font-weight: 600;
+}
+.tag-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+.tag-red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+.tag-blue { background: rgba(96, 165, 250, 0.1); color: var(--blue); border: 1px solid rgba(96, 165, 250, 0.2); }
+.tag-yellow { background: rgba(251, 191, 36, 0.1); color: var(--yellow); border: 1px solid rgba(251, 191, 36, 0.2); }
+
+/* Formula display */
+.formula {
+  font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent);
+  background: var(--surface-2); padding: 6px 12px; border-radius: 6px;
+  border: 1px solid var(--border); display: inline-block; margin-top: 4px;
+}
+.formula-label { font-size: 0.68rem; color: var(--text-tertiary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+
+/* Callout */
+.callout {
+  display: flex; gap: 12px; padding: 16px; border-radius: var(--radius);
+  border: 1px solid var(--border); background: var(--surface-2); margin: 16px 0;
+}
+.callout-icon { font-size: 1.2rem; flex-shrink: 0; }
+.callout-text { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; }
+.callout-text strong { color: var(--text); }
+
+/* Stats grid */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 16px 0; }
+.stat-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 16px; text-align: center;
+}
+.stat-value { font-size: 1.5rem; font-weight: 800; color: var(--text); }
+.stat-label { font-size: 0.72rem; color: var(--text-tertiary); margin-top: 4px; }
+
+/* Heatmap */
+.heatmap { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.heatmap th, .heatmap td { padding: 8px 12px; text-align: center; border: 1px solid var(--border); }
+.heatmap th { font-size: 0.7rem; color: var(--text-tertiary); background: var(--surface); font-weight: 600; }
+.heatmap td:first-child { text-align: left; font-weight: 600; color: var(--text-secondary); }
+.heat-green { background: rgba(74, 222, 128, 0.15); color: var(--green); }
+.heat-yellow { background: rgba(251, 191, 36, 0.15); color: var(--yellow); }
+.heat-red { background: rgba(248, 113, 113, 0.15); color: var(--red); }
+
+/* Checklist */
+.checklist { list-style: none; }
+.checklist li { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; font-size: 0.85rem; color: var(--text-secondary); }
+.checkbox {
+  width: 16px; height: 16px; border: 1.5px solid var(--text-tertiary); border-radius: 4px;
+  flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  margin-top: 1px; font-size: 0.7rem; color: transparent; transition: all 0.1s;
+}
+.checkbox.checked { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* Section label */
+.section-label {
+  font-size: 0.65rem; font-weight: 700; color: var(--accent); text-transform: uppercase;
+  letter-spacing: 0.1em; margin-bottom: 12px;
+}
+
+/* Computed cell */
+.computed { color: var(--accent); font-weight: 600; }
+.computed-green { color: var(--green); font-weight: 600; }
+.computed-red { color: var(--red); font-weight: 600; }
+
+/* TOC */
+.toc { display: flex; flex-direction: column; gap: 8px; margin: 16px 0; }
+.toc-item { display: flex; align-items: center; gap: 10px; padding: 8px 12px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; text-decoration: none; color: var(--text-secondary); font-size: 0.85rem; transition: all 0.15s; }
+.toc-item:hover { background: var(--surface-3); color: var(--text); }
+.toc-item .toc-icon { font-size: 1rem; }
+
+/* Responsive */
+@media (max-width: 800px) {
+  .sidebar { width: 200px; }
+  .main { margin-left: 200px; }
+  .page { padding: 24px; }
+}
+@media (max-width: 600px) {
+  .sidebar { display: none; }
+  .main { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<nav class="sidebar">
+  <div class="sidebar-header">
+    <span class="sidebar-icon">📊</span>
+    <span class="sidebar-title">Disciplined Trader Journal</span>
+  </div>
+  <div class="sidebar-nav">
+    <div class="sidebar-section">Template</div>
+    <a class="sidebar-link active" onclick="showPage('cover')"><span class="icon">🏠</span>Cover</a>
+    <div class="sidebar-section">Pages</div>
+    <a class="sidebar-link" onclick="showPage('checklist')"><span class="icon">📋</span>Pre-Trade Checklist</a>
+    <a class="sidebar-link" onclick="showPage('tradelog')"><span class="icon">📝</span>Trade Log</a>
+    <a class="sidebar-link" onclick="showPage('rcalc')"><span class="icon">📐</span>R-Multiple Calculator</a>
+    <a class="sidebar-link" onclick="showPage('psychology')"><span class="icon">🧠</span>Psychology Tracker</a>
+    <a class="sidebar-link" onclick="showPage('weekly')"><span class="icon">📊</span>Weekly Review</a>
+    <a class="sidebar-link" onclick="showPage('washsale')"><span class="icon">🧾</span>Wash Sale Tracker</a>
+    <a class="sidebar-link" onclick="showPage('session')"><span class="icon">⚡</span>Session Performance</a>
+    <div class="sidebar-section">Legend</div>
+    <a class="sidebar-link" style="cursor:default; color: var(--text-tertiary); font-size:0.75rem;">
+      <span class="icon">🔵</span> Input field
+    </a>
+    <a class="sidebar-link" style="cursor:default; color: var(--text-tertiary); font-size:0.75rem;">
+      <span class="icon">🟣</span> Auto-calculated
+    </a>
+    <a class="sidebar-link" style="cursor:default; color: var(--text-tertiary); font-size:0.75rem;">
+      <span class="icon">✅</span> Checkbox
+    </a>
+  </div>
+</nav>
+
+<!-- Main Content -->
+<div class="main">
+
+  <!-- COVER PAGE -->
+  <div class="page active" id="page-cover">
+    <div class="cover">
+      <div class="cover-icon">📊</div>
+      <div class="cover-title">The Disciplined Trader Journal</div>
+      <div class="cover-subtitle">A Notion trade journal built specifically for scalpers. 7 pages. Zero setup. Duplicate and start logging.</div>
+      <div class="cover-links">
+        <a class="cover-link" onclick="showPage('checklist')">📋 Pre-Trade Checklist</a>
+        <a class="cover-link" onclick="showPage('tradelog')">📝 Trade Log</a>
+        <a class="cover-link" onclick="showPage('rcalc')">📐 R-Multiple Calculator</a>
+        <a class="cover-link" onclick="showPage('psychology')">🧠 Psychology Tracker</a>
+        <a class="cover-link" onclick="showPage('weekly')">📊 Weekly Review</a>
+        <a class="cover-link" onclick="showPage('washsale')">🧾 Wash Sale Tracker</a>
+        <a class="cover-link" onclick="showPage('session')">⚡ Session Performance</a>
+      </div>
+    </div>
+    <div style="padding: 48px;">
+      <div class="section-label">About This Template</div>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8; max-width: 600px; margin-bottom: 24px;">
+        This template was built by a scalper, for scalpers. After losing $2,000+ to preventable mistakes in my first 4 months of trading, I built the journal I wish I had from day one. Every page, every formula, every property is designed around how scalpers actually trade — not how swing traders trade.
+      </p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value">7</div>
+          <div class="stat-label">Journal pages</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">12</div>
+          <div class="stat-label">Pre-trade checks</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">14</div>
+          <div class="stat-label">Built-in formulas</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value">0</div>
+          <div class="stat-label">Setup required</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top: 24px;">
+        <span class="callout-icon">💡</span>
+        <div class="callout-text">
+          <strong>How to use:</strong> Click any page in the sidebar to preview it. All input fields are editable — try entering trade data to see the formulas calculate. In Notion, every formula shown here works exactly the same way.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRE-TRADE CHECKLIST -->
+  <div class="page" id="page-checklist">
+    <div class="page-header">
+      <div class="page-icon">📋</div>
+      <div class="page-title">Pre-Trade Checklist</div>
+      <div class="page-desc">Run through these 12 checks before every single trade. Takes 90 seconds. Saves hours of losses.</div>
+    </div>
+    <div class="callout">
+      <span class="callout-icon">⏱️</span>
+      <div class="callout-text"><strong>The Rule:</strong> Don't enter a single trade until every box below is checked. No exceptions. No "just this once." Every. Single. Trade.</div>
+    </div>
+    <div style="margin-top: 24px;">
+      <div class="section-label">Market Context</div>
+      <ul class="checklist">
+        <li><span class="checkbox" onclick="toggleCheck(this)">✓</span><span><strong>Session check:</strong> What session is it? First 30 min (size -30%), mid-session (normal), lunch (selective), power hour (size -20%)</span></li>
+        <li><span class="checkbox" onclick="toggleCheck(this)">✓</span><span><strong>News events:</strong> Checked economic calendar. No high-impact events (Fed, CPI, earnings) in the next 30 minutes?</span></li>
+        <li><span class="checkbox" onclick="toggleCheck(this)">✓</span><span><strong>Market bias:</strong> SPY/QQQ above VWAP → favor long. Below VWAP → favor short. Chop → don't trade.</span></li>
+        <li><span class="checkbox" onclick="toggleCheck(this)">✓</span><span><strong>Watchlist clean:</strong> Max 5 tickers. Set up charts night before. No adding tickers at 9:35AM.</span></li>
+      </ul>
+    </div>
+    <div style="margin-top: 32px;">
+      <div class="section-label">Trade Setup</div>
+      <ul class="checklist">
+        <li><span class="checkbox" onclick="toggleCheck(this)">✓</span><span><strong>Named setup:</strong> Can I name the setup in one sentence? (ORB breakout, VWAP pullback, momentum continuation, support/resistance test)</span></li>
+        <li><span class="checkbox" onclick="toggleCheck(this)">✓</span><span><strong>Risk/reward:</strong> Is the target at least 1.5× my risk? Minimum 1:1.5 R:R ratio.</span></li>
+        <li><span class="checkbox" onclick="toggleCheck(this)">✓</span><span><strong>Stop loss defined:</strong> I know my exit price BEFORE I enter. Not decided during the trade.</span></li>
+        <li><span class="checkbox" onclick="toggleCheck(this)">✓</span><span><strong>Position sized:</strong> Calculated 1% account risk. (Account size × 0.01) ÷ (Entry - Stop) = share count.</span></li>
+        <li><span class="checkbox" onclick="toggleCheck(this)">✓</span><span><strong>Exit plan:</strong> Target (1.5-2R), stop (-1R), and trail stop rule (move to breakeven at +1R) — all written before entry.</span></li>
+      </ul>
+    </div>
+    <div style="margin-top: 32px;">
+      <div class="section-label">Self-Check</div>
+      <ul class="checklist">
+        <li><span class="checkbox" onclick="toggleCheck(this)">✓</span><span><strong>Headspace:</strong> Rated my mental state 7+/10. Tired, hungry, angry, or distracted → half size or sit out.</span></li>
+        <li><span class="checkbox" onclick="toggleCheck(this)">✓</span><span><strong>Loss streak check:</strong> 1 loss = normal. 2 losses = half size. 3 losses = day over. No exceptions.</span></li>
+        <li><span class="checkbox" onclick="toggleCheck(this)">✓</span><span><strong>One-sentence reason:</strong> "I'm taking this trade because [specific setup/setup name at specific level]." If I can't fill this in, I don't take it.</span></li>
+      </ul>
+    </div>
+    <div class="callout" style="margin-top: 32px;">
+      <span class="callout-icon">📐</span>
+      <div class="callout-text">
+        <strong>Position Size Formula:</strong> <code style="font-family:var(--font-mono); color:var(--accent);">(Account × 0.01) ÷ (Entry - Stop) = Shares</code><br>
+        Example: $5,000 account, $0.20 risk/share → (5000 × 0.01) ÷ 0.20 = <strong style="color:var(--green);">250 shares</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRADE LOG -->
+  <div class="page" id="page-tradelog">
+    <div class="page-header">
+      <div class="page-icon">📝</div>
+      <div class="page-title">Daily Trade Log</div>
+      <div class="page-desc">Log every trade. Every single one. Wins, losses, and the ugly ones in between. The data doesn't lie.</div>
+    </div>
+    <div class="section-label">Trade Database (table view)</div>
+    <div style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface);">
+      <div style="overflow-x: auto;">
+        <table id="tradeLogTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Session</th>
+              <th>Setup</th>
+              <th>Dir</th>
+              <th>Ticker</th>
+              <th>Entry</th>
+              <th>Exit</th>
+              <th>Stop</th>
+              <th>Size</th>
+              <th>P&L</th>
+              <th>R</th>
+              <th>W/L</th>
+              <th>Emotion</th>
+            </tr>
+          </thead>
+          <tbody id="tradeLogBody">
+            <!-- filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top: 16px; display: flex; gap: 24px; flex-wrap: wrap;">
+      <div>
+        <div class="formula-label">P&L Formula</div>
+        <div class="formula">prop("Exit") × prop("Size") - prop("Entry") × prop("Size") - prop("Commission")</div>
+      </div>
+      <div>
+        <div class="formula-label">R-Multiple Formula</div>
+        <div class="formula">(prop("Exit") - prop("Entry")) / (prop("Entry") - prop("Stop"))</div>
+      </div>
+      <div>
+        <div class="formula-label">Win/Loss Formula</div>
+        <div class="formula">if(prop("P&L") > 0, "✅ Win", if(prop("P&L") < 0, "❌ Loss", "➖ BE"))</div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top: 24px;">
+      <span class="callout-icon">💡</span>
+      <div class="callout-text"><strong>Pro tip:</strong> Fill in Entry, Exit, Stop, and Size for each trade. P&L, R-multiple, and Win/Loss all calculate automatically. No math required during the trading day.</div>
+    </div>
+  </div>
+
+  <!-- R-MULTIPLE CALCULATOR -->
+  <div class="page" id="page-rcalc">
+    <div class="page-header">
+      <div class="page-icon">📐</div>
+      <div class="page-title">R-Multiple Calculator</div>
+      <div class="page-desc">Track R-multiples to know if your strategy is actually profitable. Win rate is a distraction. R is the truth.</div>
+    </div>
+    <div class="callout">
+      <span class="callout-icon">📐</span>
+      <div class="callout-text">
+        <strong>The Formula:</strong> <code style="font-family:var(--font-mono); color:var(--accent);">R = (Exit - Entry) / (Entry - Stop)</code><br>
+        Example: Entry $100, Stop $98, Exit $104 → R = ($104 - $100) / ($100 - $98) = <strong style="color:var(--green);">2R</strong><br>
+        <strong>Benchmark:</strong> Average R above 1.0 = strategy is profitable. Below 0.8 = exits need work.
+      </div>
+    </div>
+    <div class="section-label">R-Multiple Tracker</div>
+    <div style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface);">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Account</th>
+            <th>Risk ($)</th>
+            <th>Risk (%)</th>
+            <th>Entry</th>
+            <th>Stop</th>
+            <th>Target</th>
+            <th>Actual Exit</th>
+            <th>R at Target</th>
+            <th>R at Actual</th>
+            <th>W/L</th>
+          </tr>
+        </thead>
+        <tbody id="rcalcBody">
+          <!-- filled by JS -->
+        </tbody>
+      </table>
+    </div>
+    <div class="stats-grid" style="margin-top: 24px;">
+      <div class="stat-card">
+        <div class="stat-value computed-green" id="avgR">+1.27R</div>
+        <div class="stat-label">Average R</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="totalTradesR">6</div>
+        <div class="stat-label">Trades Tracked</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value computed-green" id="totalR">+7.60R</div>
+        <div class="stat-label">Total R This Month</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value computed-green" id="winRateR">67%</div>
+        <div class="stat-label">Win Rate</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PSYCHOLOGY TRACKER -->
+  <div class="page" id="page-psychology">
+    <div class="page-header">
+      <div class="page-icon">🧠</div>
+      <div class="page-title">Psychology Tracker</div>
+      <div class="page-desc">Log your emotional state before and after every trade. Patterns don't lie — and neither does your P&L.</div>
+    </div>
+    <div class="callout">
+      <span class="callout-icon">🚩</span>
+      <div class="callout-text">
+        <strong>Red Flag Rules:</strong><br>
+        3+ revenge trades in a week → mandatory day off<br>
+        FOMO entries consistently losing → wait for pullbacks<br>
+        Overconfidence after wins → stick to position sizing<br>
+        Fear exits → set wider stops
+      </div>
+    </div>
+    <div class="section-label">Daily Psychology Log</div>
+    <div style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface);">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Pre-Trade Mood</th>
+            <th>Energy (1-10)</th>
+            <th>Post-Trade Mood</th>
+            <th>FOMO</th>
+            <th>Revenge</th>
+            <th>Overconfidence</th>
+            <th>Fear</th>
+            <th>Rule Violation</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody id="psychBody">
+          <!-- filled by JS -->
+        </tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top: 24px;">
+      <span class="callout-icon">💡</span>
+      <div class="callout-text">Your goal isn't to eliminate emotions — it's to prevent them from turning into trades. <strong>Rules > Willpower.</strong> Willpower runs out. Rules don't.</div>
+    </div>
+  </div>
+
+  <!-- WEEKLY REVIEW -->
+  <div class="page" id="page-weekly">
+    <div class="page-header">
+      <div class="page-icon">📊</div>
+      <div class="page-title">Weekly Review Dashboard</div>
+      <div class="page-desc">Aggregated stats from your Trade Log. Review every Friday. No manual math required.</div>
+    </div>
+    <div class="section-label">This Week's Stats</div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">15</div>
+        <div class="stat-label">Total Trades</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">11 / 4</div>
+        <div class="stat-label">Wins / Losses</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value computed-green">73%</div>
+        <div class="stat-label">Win Rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value computed-green">+$654</div>
+        <div class="stat-label">Net P&L</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value computed-green">+1.47R</div>
+        <div class="stat-label">Avg R-Multiple</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color: var(--yellow);">$18.00</div>
+        <div class="stat-label">Total Spread Cost</div>
+      </div>
+    </div>
+    <div style="margin-top: 32px;">
+      <div class="section-label">Performance by Setup</div>
+      <div style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface);">
+        <table>
+          <thead><tr><th>Setup</th><th>Trades</th><th>Win Rate</th><th>Avg R</th><th>Net P&L</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag tag-green">ORB Breakout</span></td><td>3</td><td class="computed-green">83%</td><td class="computed-green">+2.3R</td><td class="computed-green">+$276</td></tr>
+            <tr><td><span class="tag tag-blue">VWAP Pullback</span></td><td>2</td><td class="computed-green">50%</td><td class="computed-green">+0.5R</td><td class="computed-green">+$40</td></tr>
+            <tr><td><span class="tag tag-yellow">Momentum</span></td><td>3</td><td>67%</td><td class="computed-green">+1.1R</td><td class="computed-green">+$132</td></tr>
+            <tr><td><span class="tag tag-red">Chased</span></td><td>1</td><td class="computed-red">0%</td><td class="computed-red">-1.6R</td><td class="computed-red">-$80</td></tr>
+            <tr><td><span class="tag tag-blue">Scalp</span></td><td>2</td><td class="computed-green">100%</td><td class="computed-green">+1.0R</td><td class="computed-green">+$89</td></tr>
+            <tr><td><span class="tag tag-blue">Reversal</span></td><td>2</td><td class="computed-green">100%</td><td class="computed-green">+2.5R</td><td class="computed-green">+$215</td></tr>
+            <tr><td><span class="tag tag-yellow">News Play</span></td><td>2</td><td>50%</td><td class="computed-red">-0.6R</td><td class="computed-red">-$38</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top: 32px;">
+      <div class="section-label">Performance by Session</div>
+      <div style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface);">
+        <table>
+          <thead><tr><th>Session</th><th>Trades</th><th>Win Rate</th><th>Avg R</th><th>Net P&L</th></tr></thead>
+          <tbody>
+            <tr><td>First 30 Min</td><td>3</td><td class="computed-green">67%</td><td class="computed-green">+1.4R</td><td class="computed-green">+$224</td></tr>
+            <tr><td>10AM-11AM</td><td>4</td><td class="computed-red">25%</td><td class="computed-red">-0.5R</td><td class="computed-red">-$40</td></tr>
+            <tr><td>Lunch</td><td>1</td><td class="computed-red">0%</td><td class="computed-red">-1.2R</td><td class="computed-red">-$38</td></tr>
+            <tr><td>Mid-Afternoon</td><td>3</td><td class="computed-green">67%</td><td class="computed-green">+1.5R</td><td class="computed-green">+$180</td></tr>
+            <tr><td>Power Hour</td><td>2</td><td class="computed-green">100%</td><td class="computed-green">+0.8R</td><td class="computed-green">+$64</td></tr>
+            <tr><td>Last 30 Min</td><td>2</td><td class="computed-green">100%</td><td class="computed-green">+1.8R</td><td class="computed-green">+$264</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top: 32px;">
+      <div class="section-label">Weekly Reflection</div>
+      <div style="background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px;">
+        <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.8; margin-bottom: 12px;">
+          <strong style="color: var(--text);">What worked:</strong><br>
+          • ORB breakouts continue to be my best setup (83% WR, +2.3R avg). Trade more of these.<br>
+          • Reversal trades on META are working (2 for 2 this week). Keep watching.<br>
+          • Last 30 min session surprisingly strong — maybe the gap plays are worth exploring.
+        </p>
+        <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.8; margin-bottom: 12px;">
+          <strong style="color: var(--text);">What didn't:</strong><br>
+          • Chased that TSLA entry — revenge trade after AAPL win. Rule violation.<br>
+          • News play on NVDA was a wash — earnings gap faded fast. Skip news plays unless pre-planned.<br>
+          • 10AM-11AM window remains my worst. 25% WR this week.
+        </p>
+        <p style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.8;">
+          <strong style="color: var(--text);">Action items:</strong><br>
+          □ Eliminate "Chased" setup entirely<br>
+          □ Only take ORB + Reversal + VWAP Pullback<br>
+          □ Half size during 10AM-11AM<br>
+          □ Pre-plan news plays night before or skip them
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WASH SALE TRACKER -->
+  <div class="page" id="page-washsale">
+    <div class="page-header">
+      <div class="page-icon">🧾</div>
+      <div class="page-title">Wash Sale Tracker</div>
+      <div class="page-desc">Track wash sale windows so you don't accidentally lose tax deductions. The IRS doesn't send reminders.</div>
+    </div>
+    <div class="callout">
+      <span class="callout-icon">📋</span>
+      <div class="callout-text">
+        <strong>Wash Sale Rule:</strong> Can't claim a loss if you buy "substantially identical" security within 30 days before/after the sale. The disallowed loss gets added to your cost basis.
+      </div>
+    </div>
+    <div class="section-label">Wash Sale Log</div>
+    <div style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface);">
+      <table>
+        <thead>
+          <tr><th>Ticker</th><th>Buy Date</th><th>Buy Price</th><th>Sell Date</th><th>Sell Price</th><th>Shares</th><th>Loss</th><th>Replacement Buy</th><th>Days Gap</th><th>Status</th></tr>
+        </thead>
+        <tbody id="washBody">
+          <!-- filled by JS -->
+        </tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top: 24px;">
+      <span class="callout-icon">💡</span>
+      <div class="callout-text">
+        <strong>Strategy for day traders:</strong> Since we trade the same names daily, wash sales are inevitable. Track them here so you know your true cost basis at year-end. The losses aren't gone — they're deferred.
+      </div>
+    </div>
+  </div>
+
+  <!-- SESSION PERFORMANCE -->
+  <div class="page" id="page-session">
+    <div class="page-header">
+      <div class="page-icon">⚡</div>
+      <div class="page-title">Session Performance & Spread Tracker</div>
+      <div class="page-desc">Find your best (and worst) trading windows. Track spread costs — the invisible profit killer.</div>
+    </div>
+    <div class="section-label">Session Performance Heatmap — Win Rate by Day & Time</div>
+    <div style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); margin-bottom: 32px;">
+      <table class="heatmap">
+        <thead>
+          <tr><th>Session</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Avg</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>First 30 Min</td><td class="heat-green">67%</td><td class="heat-green">71%</td><td class="heat-green">65%</td><td class="heat-green">73%</td><td class="heat-green">68%</td><td class="heat-green" style="font-weight:700;">69%</td></tr>
+          <tr><td>10AM–11AM</td><td class="heat-yellow">45%</td><td class="heat-yellow">52%</td><td class="heat-red">41%</td><td class="heat-yellow">48%</td><td class="heat-yellow">55%</td><td class="heat-yellow" style="font-weight:700;">48%</td></tr>
+          <tr><td>Lunch</td><td class="heat-yellow">58%</td><td class="heat-red">50%</td><td class="heat-green">62%</td><td class="heat-yellow">55%</td><td class="heat-green">60%</td><td class="heat-yellow" style="font-weight:700;">57%</td></tr>
+          <tr><td>Mid-Afternoon</td><td class="heat-green">63%</td><td class="heat-green">60%</td><td class="heat-green">67%</td><td class="heat-green">64%</td><td class="heat-green">71%</td><td class="heat-green" style="font-weight:700;">65%</td></tr>
+          <tr><td>Power Hour</td><td class="heat-yellow">55%</td><td class="heat-red">48%</td><td class="heat-yellow">58%</td><td class="heat-yellow">52%</td><td class="heat-yellow">60%</td><td class="heat-yellow" style="font-weight:700;">55%</td></tr>
+          <tr><td>Last 30 Min</td><td class="heat-red">42%</td><td class="heat-red">38%</td><td class="heat-red">45%</td><td class="heat-red">40%</td><td class="heat-yellow">48%</td><td class="heat-red" style="font-weight:700;">43%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="section-label">Spread Cost Tracker</div>
+    <div style="border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); margin-bottom: 16px;">
+      <table>
+        <thead><tr><th>Week</th><th>Trades</th><th>Avg Spread/Trade</th><th>Total Spread</th><th>Gross Profit</th><th>Spread %</th></tr></thead>
+        <tbody id="spreadBody">
+          <!-- filled by JS -->
+        </tbody>
+      </table>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" style="color: var(--yellow);">9%</div>
+        <div class="stat-label">Current Spread % (this week)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" style="color: var(--red);">29%</div>
+        <div class="stat-label">Starting Spread % (week 1)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value computed-green">$247</div>
+        <div class="stat-label">Saved this month by switching stocks</div>
+      </div>
+    </div>
+    <div class="callout" style="margin-top: 24px;">
+      <span class="callout-icon">💰</span>
+      <div class="callout-text">
+        <strong>Spread Formula:</strong> <code style="font-family:var(--font-mono); color:var(--accent);">(Ask - Bid at entry + Ask - Bid at exit) × Position Size</code><br>
+        Goal: Keep spread costs below 15% of gross profit. Trade high-liquidity names. Use limit orders. Trade mid-session (10:30AM–2:30PM).
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// Page navigation
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+  const target = document.getElementById('page-' + id);
+  if (target) target.classList.add('active');
+  // highlight sidebar link
+  const links = document.querySelectorAll('.sidebar-link');
+  links.forEach(l => { if (l.getAttribute('onclick') === `showPage('${id}')`) l.classList.add('active'); });
+  window.scrollTo(0, 0);
+}
+
+// Checklist toggle
+function toggleCheck(el) {
+  el.classList.toggle('checked');
+}
+
+// Sample trade data
+const trades = [
+  { date: 'Sep 5', session: 'Open', setup: 'ORB Breakout', dir: 'Long', ticker: 'AAPL', entry: 224.50, exit: 225.10, stop: 223.80, size: 200, emotion: 'Confident' },
+  { date: 'Sep 5', session: 'Open', setup: 'VWAP Pullback', dir: 'Short', ticker: 'TSLA', entry: 248.20, exit: 248.40, stop: 248.80, size: 200, emotion: 'FOMO' },
+  { date: 'Sep 5', session: 'Mid-Day', setup: 'Momentum', dir: 'Long', ticker: 'NVDA', entry: 131.80, exit: 132.60, stop: 131.20, size: 200, emotion: 'Confident' },
+  { date: 'Sep 5', session: 'Power Hour', setup: 'ORB Breakout', dir: 'Long', ticker: 'MSFT', entry: 462.10, exit: 462.50, stop: 461.40, size: 200, emotion: 'Neutral' },
+  { date: 'Sep 4', session: 'Open', setup: 'Scalp', dir: 'Long', ticker: 'AMD', entry: 118.30, exit: 118.60, stop: 117.90, size: 300, emotion: 'Confident' },
+  { date: 'Sep 4', session: 'Mid-Day', setup: 'Reversal', dir: 'Short', ticker: 'META', entry: 585.40, exit: 583.10, stop: 587.00, size: 100, emotion: 'Neutral' },
+];
+
+function calcR(t) { return ((t.exit - t.entry) / (t.entry - t.stop)); }
+function calcPL(t) { return ((t.exit - t.entry) * t.size); }
+
+function renderTradeLog() {
+  const tbody = document.getElementById('tradeLogBody');
+  tbody.innerHTML = trades.map(t => {
+    const pl = calcPL(t);
+    const r = calcR(t);
+    const wl = pl > 0 ? '<span class="computed-green">✅</span>' : '<span class="computed-red">❌</span>';
+    const plClass = pl > 0 ? 'computed-green' : (pl < 0 ? 'computed-red' : 'computed');
+    const rClass = r > 0 ? 'computed-green' : (r < 0 ? 'computed-red' : 'computed');
+    const dirTag = t.dir === 'Long' ? 'tag-green' : 'tag-red';
+    return `<tr>
+      <td>${t.date}</td>
+      <td>${t.session}</td>
+      <td>${t.setup}</td>
+      <td><span class="tag ${dirTag}">${t.dir}</span></td>
+      <td><strong>${t.ticker}</strong></td>
+      <td>$${t.entry.toFixed(2)}</td>
+      <td>$${t.exit.toFixed(2)}</td>
+      <td>$${t.stop.toFixed(2)}</td>
+      <td>${t.size}</td>
+      <td class="${plClass}">$${pl >= 0 ? '+' : ''}${pl.toFixed(2)}</td>
+      <td class="${rClass}">${r >= 0 ? '+' : ''}${r.toFixed(1)}R</td>
+      <td>${wl}</td>
+      <td>${t.emotion}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderRCalc() {
+  const rcalcData = [
+    { date: 'Sep 5', acct: 5000, riskD: 50, riskP: 1.0, entry: 224.50, stop: 223.80, target: 226.00, exit: 225.10 },
+    { date: 'Sep 5', acct: 5000, riskD: 50, riskP: 1.0, entry: 248.20, stop: 248.80, target: 249.60, exit: 248.40 },
+    { date: 'Sep 5', acct: 5000, riskD: 50, riskP: 1.0, entry: 131.80, stop: 131.20, target: 133.40, exit: 132.60 },
+    { date: 'Sep 5', acct: 5000, riskD: 50, riskP: 1.0, entry: 462.10, stop: 461.40, target: 464.80, exit: 462.50 },
+    { date: 'Sep 4', acct: 5000, riskD: 50, riskP: 1.0, entry: 118.30, stop: 117.90, target: 119.50, exit: 118.60 },
+    { date: 'Sep 4', acct: 5000, riskD: 50, riskP: 1.0, entry: 585.40, stop: 587.00, target: 581.80, exit: 583.10 },
+  ];
+  const tbody = document.getElementById('rcalcBody');
+  tbody.innerHTML = rcalcData.map(d => {
+    const rTarget = ((d.target - d.entry) / (d.entry - d.stop));
+    const rActual = ((d.exit - d.entry) / (d.entry - d.stop));
+    const wl = rActual > 0 ? '<span class="computed-green">✅</span>' : '<span class="computed-red">❌</span>';
+    return `<tr>
+      <td>${d.date}</td><td>$${d.acct.toLocaleString()}</td><td>$${d.riskD}</td><td>${d.riskP}%</td>
+      <td>$${d.entry.toFixed(2)}</td><td>$${d.stop.toFixed(2)}</td><td>$${d.target.toFixed(2)}</td><td>$${d.exit.toFixed(2)}</td>
+      <td class="${rTarget >= 0 ? 'computed-green' : 'computed-red'}">${rTarget >= 0 ? '+' : ''}${rTarget.toFixed(1)}R</td>
+      <td class="${rActual >= 0 ? 'computed-green' : 'computed-red'}">${rActual >= 0 ? '+' : ''}${rActual.toFixed(1)}R</td>
+      <td>${wl}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderPsych() {
+  const data = [
+    { date: 'Sep 5', pre: 'Confident', energy: 8, post: 'Confident', fomo: '✗', revenge: '✗', over: '✗', fear: '✗', violation: '✗', notes: 'Strong morning' },
+    { date: 'Sep 5', pre: 'Excited', energy: 6, post: 'Frustrated', fomo: '✓', revenge: '✗', over: '✗', fear: '✗', violation: '✗', notes: 'Chased TSLA after AAPL win' },
+    { date: 'Sep 4', pre: 'Calm', energy: 7, post: 'Calm', fomo: '✗', revenge: '✗', over: '✗', fear: '✗', violation: '✗', notes: 'Good session' },
+    { date: 'Sep 4', pre: 'Bored', energy: 4, post: 'Disappointed', fomo: '✗', revenge: '✗', over: '✗', fear: '✗', violation: '✗', notes: 'Took NVDA out of boredom' },
+    { date: 'Sep 3', pre: 'Confident', energy: 9, post: 'Excited', fomo: '✗', revenge: '✗', over: '✓', fear: '✗', violation: '✗', notes: 'Got cocky after 2 wins' },
+    { date: 'Sep 2', pre: 'Neutral', energy: 6, post: 'Angry', fomo: '✗', revenge: '✓', over: '✗', fear: '✗', violation: '✓', notes: 'Revenge trade on TSLA' },
+  ];
+  const tbody = document.getElementById('psychBody');
+  tbody.innerHTML = data.map(d => `<tr>
+    <td>${d.date}</td><td>${d.pre}</td><td>${d.energy}</td><td>${d.post}</td>
+    <td>${d.fomo}</td><td>${d.revenge}</td><td>${d.over}</td><td>${d.fear}</td>
+    <td>${d.violation}</td><td style="color:var(--text-tertiary); font-size:0.78rem;">${d.notes}</td>
+  </tr>`).join('');
+}
+
+function renderWashSale() {
+  const data = [
+    { ticker: 'TSLA', buyD: 'Aug 28', buyP: 250.00, sellD: 'Sep 2', sellP: 248.10, shares: 200, loss: 380.00, repD: 'Sep 3', repP: 247.50, days: 1, flag: '⚠️ WASH SALE' },
+    { ticker: 'NVDA', buyD: 'Aug 30', buyP: 133.00, sellD: 'Sep 4', sellP: 131.90, shares: 200, loss: 220.00, repD: '—', repP: '—', days: '—', flag: '✅ OK' },
+    { ticker: 'AAPL', buyD: 'Sep 1', buyP: 223.50, sellD: 'Sep 3', sellP: 225.30, shares: 200, loss: -360.00, repD: '—', repP: '—', days: '—', flag: 'N/A (gain)' },
+    { ticker: 'AMD', buyD: 'Aug 25', buyP: 119.50, sellD: 'Sep 2', sellP: 118.70, shares: 300, loss: 240.00, repD: 'Sep 5', repP: 118.30, days: 3, flag: '⚠️ WASH SALE' },
+  ];
+  const tbody = document.getElementById('washBody');
+  tbody.innerHTML = data.map(d => {
+    const flagClass = d.flag.startsWith('⚠️') ? 'computed-red' : (d.flag.startsWith('✅') ? 'computed-green' : '');
+    return `<tr>
+      <td><strong>${d.ticker}</strong></td><td>${d.buyD}</td><td>$${d.buyP.toFixed(2)}</td>
+      <td>${d.sellD}</td><td>$${d.sellP.toFixed(2)}</td><td>${d.shares}</td>
+      <td class="${d.loss > 0 ? 'computed-red' : 'computed-green'}">$${d.loss.toFixed(2)}</td>
+      <td>${d.repD !== '—' ? d.repD + ' @ $' + d.repP.toFixed(2) : '—'}</td>
+      <td>${d.days}</td>
+      <td class="${flagClass}">${d.flag}</td>
+    </tr>`;
+  }).join('');
+}
+
+function renderSpread() {
+  const data = [
+    { week: 'Week 1', trades: 15, avg: 28.50, total: 427.50, gross: 1470, pct: '29%' },
+    { week: 'Week 2', trades: 15, avg: 8.90, total: 133.50, gross: 1485, pct: '9%' },
+    { week: 'Week 3', trades: 15, avg: 31.20, total: 468.00, gross: 1680, pct: '28%' },
+    { week: 'Week 4', trades: 15, avg: 15.60, total: 234.00, gross: 1060, pct: '22%' },
+  ];
+  const tbody = document.getElementById('spreadBody');
+  tbody.innerHTML = data.map(d => {
+    const pctClass = parseFloat(d.pct) > 20 ? 'computed-red' : (parseFloat(d.pct) > 15 ? '' : 'computed-green');
+    return `<tr>
+      <td><strong>${d.week}</strong></td><td>${d.trades}</td>
+      <td>$${d.avg.toFixed(2)}</td><td>$${d.total.toFixed(2)}</td>
+      <td>$${d.gross.toLocaleString()}</td>
+      <td class="${pctClass}">${d.pct}</td>
+    </tr>`;
+  }).join('');
+}
+
+// Initialize
+renderTradeLog();
+renderRCalc();
+renderPsych();
+renderWashSale();
+renderSpread();
+</script>
+</body>
+</html>
