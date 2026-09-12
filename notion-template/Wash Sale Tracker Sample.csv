@@ -1,0 +1,6 @@
+Ticker,Wash Sale Date,Sale Price,Buyback Price,Days Held,Wash Sale Amount,Tax Impact,Notes
+NVDA,2026-08-15,142.75,140.50,5,225,Loss disallowed,Bought back too soon after loss
+AAPL,2026-08-22,232.10,230.25,3,185,Loss disallowed,Violation - wash sale rule
+TSLA,2026-08-29,248.50,245.00,7,175,Loss disallowed,Pattern repeats
+SPY,2026-09-01,563.25,565.50,2,225,Loss disallowed,Quick buyback on dip
+MSTR,2026-09-03,189.25,185.75,4,175,Loss disallowed,Should have waited 31 days

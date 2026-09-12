@@ -1,0 +1,16 @@
+Date,Session,Emotion,Mental Clarity (1-10),Confidence (1-10),Sleep Quality,Setup Followed,Tilted,Screen Time,Notes
+2026-09-05,Pre-Market,Confident,9,8,Good,TRUE,FALSE,4.5,Sharp focus before open
+2026-09-05,Open,Confident,8,7,Good,TRUE,FALSE,5.2,Stuck to plan
+2026-09-05,Mid-Day,Confident,7,7,Good,TRUE,FALSE,3.8,Patient execution
+2026-09-05,Lunch,Neutral,6,6,Good,TRUE,FALSE,2.5,Calm during lunch
+2026-09-05,Power Hour,FOMO,5,6,Good,FALSE,TRUE,3.2,Took early exit due to FOMO
+2026-09-05,Close,Neutral,7,7,Good,TRUE,FALSE,2.0,Clean close
+2026-09-06,Pre-Market,Confident,9,8,Great,TRUE,FALSE,4.0,Woke up early and focused
+2026-09-06,Open,Confident,8,8,Great,TRUE,FALSE,4.8,Sharp execution
+2026-09-06,Mid-Day,Neutral,7,7,Good,TRUE,FALSE,3.5,Steady mid-day
+2026-09-06,Lunch,Confident,7,7,Good,TRUE,FALSE,2.2,Disciplined lunch
+2026-09-06,Power Hour,Neutral,8,8,Good,TRUE,FALSE,3.0,Power hour was clean
+2026-09-06,Close,Neutral,6,6,Good,TRUE,FALSE,1.8,Quick close
+2026-09-07,Pre-Market,Confident,9,9,Great,TRUE,FALSE,4.2,Locked in for ORB
+2026-09-07,Open,Confident,8,8,Great,TRUE,FALSE,5.0,Great opening trades
+2026-09-07,Mid-Day,Confident,8,8,Great,TRUE,FALSE,3.7,Strong mid-day momentum

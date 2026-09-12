@@ -1,0 +1,16 @@
+Date,Session,Setup,Direction,Ticker,Entry Price,Exit Price,Stop Loss,Position Size,Commission,Spread Cost,Entry Time,Exit Time,Emotion,Rules Followed,Chart Screenshot,Notes
+2026-09-05,Pre-Market,ORB Breakout,Long,NVDA,140.50,142.75,139.25,100,5.00,0.50,2026-09-05 09:30,2026-09-05 09:45,Confident,TRUE,,Clean ORB above 9:30 open
+2026-09-05,Open,VWAP Pullback,Long,AAPL,230.25,232.10,228.75,50,2.50,0.25,2026-09-05 09:35,2026-09-05 10:15,Confident,TRUE,,Pulled back to VWAP support
+2026-09-05,Mid-Day,Momentum,Long,TSLA,245.00,248.50,242.00,75,3.75,0.40,2026-09-05 11:00,2026-09-05 11:30,Confident,TRUE,,Strong momentum continuation
+2026-09-05,Lunch,Reversal,Short,SPY,565.50,563.25,567.00,100,5.00,0.50,2026-09-05 12:00,2026-09-05 12:45,Neutral,TRUE,,Resistance rejection
+2026-09-05,Power Hour,News Play,Long,MSTR,185.75,189.25,183.50,60,3.00,0.35,2026-09-05 15:00,2026-09-05 15:20,FOMO,FALSE,,News catalyst but took early
+2026-09-05,Close,Scalp,Long,QQQ,395.00,395.75,394.50,200,10.00,0.75,2026-09-05 15:45,2026-09-05 15:55,Neutral,TRUE,,Quick scalp at close
+2026-09-06,Pre-Market,ORB Breakout,Short,AMD,155.00,152.75,157.25,80,4.00,0.40,2026-09-06 09:30,2026-09-06 10:00,Confident,TRUE,,ORB short breakout
+2026-09-06,Open,VWAP Pullback,Long,META,520.50,523.75,518.00,40,2.00,0.20,2026-09-06 09:40,2026-09-06 10:30,Confident,TRUE,,Solid pullback setup
+2026-09-06,Mid-Day,Momentum,Short,GOOGL,175.25,172.50,177.00,70,3.50,0.35,2026-09-06 11:15,2026-09-06 11:45,Neutral,TRUE,,Momentum to downside
+2026-09-06,Lunch,Other,Long,COIN,165.00,166.50,163.75,50,2.50,0.25,2026-09-06 12:30,2026-09-06 13:00,Confident,TRUE,,Breakout above resistance
+2026-09-06,Power Hour,Scalp,Long,IWM,235.75,236.50,235.00,150,7.50,0.60,2026-09-06 15:00,2026-09-06 15:10,Neutral,TRUE,,Quick scalp in power hour
+2026-09-06,Close,Reversal,Short,XLF,42.50,41.75,43.00,200,10.00,0.80,2026-09-06 15:50,2026-09-06 16:00,Neutral,TRUE,,Reversal at daily resistance
+2026-09-07,Pre-Market,ORB Breakout,Long,SOFI,28.75,29.50,28.00,300,15.00,1.20,2026-09-07 09:30,2026-09-07 09:50,Confident,TRUE,,Strong ORB momentum
+2026-09-07,Open,VWAP Pullback,Long,SQ,170.50,172.75,168.50,60,3.00,0.30,2026-09-07 09:45,2026-09-07 10:20,Confident,TRUE,,Great pullback entry
+2026-09-07,Mid-Day,Momentum,Long,PLTR,32.50,33.75,31.75,200,10.00,0.75,2026-09-07 11:00,2026-09-07 11:25,Confident,TRUE,,Momentum running

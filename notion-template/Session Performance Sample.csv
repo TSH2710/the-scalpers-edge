@@ -1,0 +1,16 @@
+Date,Session,Trades,Winners,Losers,Win Rate %,Avg Spread,Best Trade P&L,Worst Trade P&L,Total P&L,Notes
+2026-09-05,Pre-Market,2,2,0,100,0.50,240,120,360,ORB setups clean
+2026-09-05,Open,2,2,0,100,0.40,132,98,230,VWAP pullbacks solid
+2026-09-05,Mid-Day,2,2,0,100,0.45,210,85,295,Momentum steady
+2026-09-05,Lunch,1,1,0,100,0.55,85,0,85,Reversal clean
+2026-09-05,Power Hour,1,1,0,100,0.60,75,0,75,Quick scalp
+2026-09-05,Close,1,1,0,100,0.35,65,0,65,Quick close
+2026-09-06,Pre-Market,1,1,0,100,0.50,185,0,185,ORB short profitable
+2026-09-06,Open,2,2,0,100,0.42,145,95,240,Open momentum good
+2026-09-06,Mid-Day,2,2,0,100,0.48,175,120,295,Mid-day steady
+2026-09-06,Lunch,1,1,0,100,0.50,95,0,95,Lunch breakout
+2026-09-06,Power Hour,1,1,0,100,0.55,65,0,65,Power hour clean
+2026-09-06,Close,1,1,0,100,0.40,55,0,55,Close reversal
+2026-09-07,Pre-Market,1,1,0,100,0.48,225,0,225,ORB strong
+2026-09-07,Open,1,1,0,100,0.45,155,0,155,VWAP clean
+2026-09-07,Mid-Day,1,1,0,100,0.50,140,0,140,Momentum solid
