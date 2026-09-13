@@ -1810,13 +1810,18 @@
       <h2>Not ready to buy? Grab the free lite.</h2>
       <p>The Disciplined Trader Journal — Lite. Daily trade log + R-multiple calculator. No credit card, no catch. Enter your email and I'll send the Notion link instantly.</p>
       <div id="emailFormWrap">
+        <form class="email-form" name="free-lite" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+          <input type="hidden" name="form-name" value="free-lite">
+          <p hidden><label>Don't fill this out: <input name="bot-field"></label></p>
+        </form>
         <div class="email-form">
-          <input type="email" class="email-input" id="emailInput" placeholder="your@email.com" autocomplete="email">
+          <input type="email" class="email-input" id="emailInput" name="email" placeholder="your@email.com" autocomplete="email">
           <button class="email-submit" id="emailSubmit" type="button" onclick="handleEmailSubmit()">
             <span class="btn-text">Send it free</span>
             <span class="spinner"></span>
           </button>
         </div>
+        <p class="email-error" id="emailError" style="display:none;color:var(--red);font-size:0.8rem;margin-top:0.75rem;">Something went wrong — try again, or DM <a href="https://x.com/scalpersedge" style="color:inherit;">@scalpersedge</a>.</p>
         <p class="email-privacy">No spam. Occasional journal updates and trading tips. Unsubscribe any time.</p>
       </div>
       <div class="email-success" id="emailSuccess">
@@ -1941,17 +1946,20 @@
       if (!isOpen) item.classList.add('open');
     }
 
-    // ─── Email capture ───
-    function handleEmailSubmit() {
-      const input   = document.getElementById('emailInput');
-      const btn     = document.getElementById('emailSubmit');
-      const formWrap= document.getElementById('emailFormWrap');
-      const success = document.getElementById('emailSuccess');
+    // ─── Email capture (Netlify Forms) ───
+    let emailSubmitting = false;
 
-      if (!input || !btn || !formWrap || !success) return;
+    async function handleEmailSubmit() {
+      const input    = document.getElementById('emailInput');
+      const btn      = document.getElementById('emailSubmit');
+      const formWrap = document.getElementById('emailFormWrap');
+      const success  = document.getElementById('emailSuccess');
+      const errorEl  = document.getElementById('emailError');
+
+      if (!input || !btn || !formWrap || !success || emailSubmitting) return;
 
       const email = input.value.trim();
-      if (!email || !email.includes('@')) {
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         input.focus();
         input.style.borderColor = 'var(--red)';
         input.style.boxShadow = '0 0 0 3px rgba(220,38,38,0.1)';
@@ -1959,11 +1967,25 @@
         return;
       }
 
+      emailSubmitting = true;
       btn.classList.add('loading');
-      setTimeout(() => {
+      if (errorEl) errorEl.style.display = 'none';
+
+      try {
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ 'form-name': 'free-lite', email }).toString()
+        });
+        if (!res.ok) throw new Error('Submission failed');
         formWrap.style.display = 'none';
         success.style.display = 'flex';
-      }, 1000);
+      } catch (err) {
+        if (errorEl) errorEl.style.display = 'block';
+      } finally {
+        emailSubmitting = false;
+        btn.classList.remove('loading');
+      }
     }
 
     const emailInput = document.getElementById('emailInput');

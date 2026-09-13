@@ -48,6 +48,7 @@ scalpers-edge/
 ### Phase 1: Product (Complete)
 
 - [x] Landing page at `scalpers-edge/index.html` — fully designed, SEO-ready, responsive
+- [x] Email capture wired to Netlify Forms (`free-lite` form) — real submissions with error/honeypot handling (was fake-success before)
 - [x] Notion template blueprint in `notion-template-guide.md` — 7 pages, all formulas, all properties
 - [x] Sample data in `notion-template/sample-data.md` — ready for screenshots
 - [x] Interactive HTML preview at `notion-template/template-preview.html` — full 7-page Notion template preview
@@ -64,7 +65,7 @@ scalpers-edge/
 - [ ] Build the actual Notion template (follow `notion-template-guide.md` step by step, use `template-preview.html` as reference)
 - [ ] Create Gumroad account and publish the listing
 - [ ] Deploy the landing page to Vercel / Netlify
-- [ ] Set up the email sequence for free lite version signups
+- [ ] Deliver the lite template to Netlify form submissions (email notification / Zapier / auto-responder)
 - [ ] Generate video content via Higgsfield for TikTok/short-form
 - [ ] Set up Twitter/X @scalpersedge account
 - [ ] Start posting to Reddit (r/Daytrading, r/RealDayTrading)
