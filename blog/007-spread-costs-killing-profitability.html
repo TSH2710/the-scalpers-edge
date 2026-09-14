@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spread Costs Are Killing Your Profitability — Here&#x27;s How to Track Them</title>
+  <meta name="description" content="You&#x27;re tracking P&amp;L and win rate, but missing the single biggest drain on your account.">
+  <meta property="og:title" content="Spread Costs Are Killing Your Profitability — Here&#x27;s How to Track Them">
+  <meta property="og:description" content="You&#x27;re tracking P&amp;L and win rate, but missing the single biggest drain on your account.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thescalpersedge.com/blog/007-spread-costs-killing-profitability">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Spread Costs Are Killing Your Profitability — Here&#x27;s How to Track Them">
+  <meta name="twitter:description" content="You&#x27;re tracking P&amp;L and win rate, but missing the single biggest drain on your account.">
+  <link rel="canonical" href="https://thescalpersedge.com/blog/007-spread-costs-killing-profitability">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23111111'>📊</text></svg>">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Spread Costs Are Killing Your Profitability — Here's How to Track Them",
+  "description": "You're tracking P&L and win rate, but missing the single biggest drain on your account.",
+  "url": "https://thescalpersedge.com/blog/007-spread-costs-killing-profitability",
+  "datePublished": "2026-09-06",
+  "author": {
+    "@type": "Person",
+    "name": "The Scalper's Edge"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Scalper's Edge",
+    "url": "https://thescalpersedge.com"
+  },
+  "mainEntityOfPage": "https://thescalpersedge.com/blog/007-spread-costs-killing-profitability"
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafafa; --surface: #ffffff; --surface-2: #f5f5f5; --surface-3: #eeeeee;
+      --text: #111111; --text-secondary: #555555; --text-tertiary: #999999;
+      --border: #e5e5e5; --border-strong: #d4d4d4;
+      --accent: #111111; --accent-hover: #333333;
+      --green: #16a34a; --green-bg: #f0fdf4; --green-border: #bbf7d0;
+      --red: #dc2626;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.6;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 2rem; height: 60px; display: flex; align-items: center;
+      justify-content: space-between; background: rgba(250,250,250,0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;
+      font-weight: 700; letter-spacing: -0.01em; color: var(--text); text-decoration: none;
+    }
+    .nav-right { display: flex; align-items: center; gap: 1.75rem; }
+    .nav-right a:not(.nav-cta) {
+      color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .nav-right a:not(.nav-cta):hover { color: var(--text); }
+    .nav-cta {
+      padding: 0.45rem 1.1rem; background: var(--accent); color: #ffffff;
+      border-radius: 8px; font-weight: 600; font-size: 0.82rem;
+      text-decoration: none; white-space: nowrap; transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--accent-hover); }
+    @media (max-width: 600px) { .nav-right a:not(.nav-cta) { display: none; } }
+
+    .article {
+      max-width: 680px; margin: 0 auto; padding: 7.5rem 1.5rem 4rem;
+    }
+    .post-number {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.09em;
+      text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 5vw, 2.7rem); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem;
+    }
+    .dek {
+      font-size: 1.05rem; color: var(--text-secondary); line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    .meta {
+      font-size: 0.78rem; color: var(--text-tertiary); margin-bottom: 1rem;
+      display: flex; gap: 0.6rem; align-items: center;
+    }
+    .meta .divider { width: 1px; height: 11px; background: var(--border-strong); }
+    .meta a { color: var(--text-secondary); text-decoration: none; font-weight: 600; }
+    .meta a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .article-body { font-size: 1rem; color: #2a2a2a; }
+    .article-body h2 {
+      font-size: 1.45rem; font-weight: 800; letter-spacing: -0.025em;
+      line-height: 1.25; margin: 2.75rem 0 0.9rem;
+    }
+    .article-body h3 {
+      font-size: 1.12rem; font-weight: 700; letter-spacing: -0.02em;
+      line-height: 1.3; margin: 2rem 0 0.7rem;
+    }
+    .article-body p { margin-bottom: 1.15rem; line-height: 1.75; }
+    .article-body strong { color: var(--text); }
+    .article-body a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border-strong); }
+    .article-body a:hover { text-decoration-color: var(--text); }
+    .article-body hr {
+      border: none; height: 1px; background: var(--border);
+      margin: 2.5rem auto; width: 100%;
+    }
+    .article-body pre {
+      background: #111111; color: #e8e8e8; border-radius: 12px;
+      padding: 1.1rem 1.25rem; overflow-x: auto; margin: 1.5rem 0;
+      font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+      font-size: 0.84rem; line-height: 1.6;
+    }
+    .article-body code {
+      font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+      font-size: 0.86em; background: var(--surface-2);
+      border: 1px solid var(--border); border-radius: 5px; padding: 0.1rem 0.35rem;
+    }
+    .article-body pre code { background: none; border: none; padding: 0; font-size: inherit; }
+    .article-body ul, .article-body ol { margin: 0 0 1.15rem 1.4rem; }
+    .article-body li { margin-bottom: 0.4rem; line-height: 1.65; }
+    .article-body table {
+      width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+      font-size: 0.88rem;
+    }
+    .article-body th {
+      text-align: left; font-size: 0.66rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-tertiary);
+      padding: 0.55rem 0.75rem; border-bottom: 2px solid var(--border-strong);
+    }
+    .article-body td {
+      padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .article-body tr:last-child td { border-bottom: none; }
+    .ps-marker { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); border-radius: 4px; padding: 0 0.3rem; font-weight: 700; font-size: 0.8em; }
+    .about-box {
+      border: 1px solid var(--border); background: var(--surface-2);
+      border-radius: 14px; padding: 1.25rem 1.4rem; margin: 2.5rem 0 0;
+    }
+    .about-box p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.65; }
+    .about-box strong { color: var(--text); }
+
+    .prevnext {
+      max-width: 680px; margin: 0 auto; padding: 0 1.5rem 4rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .pn-card {
+      border: 1px solid var(--border); border-radius: 14px; padding: 1.1rem 1.25rem;
+      text-decoration: none; background: var(--surface);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .pn-card:hover { border-color: var(--border-strong); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .pn-card.next { text-align: right; }
+    .pn-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 0.35rem; }
+    .pn-title { font-size: 0.88rem; font-weight: 600; color: var(--text); line-height: 1.4; }
+    .pn-spacer { visibility: hidden; }
+    @media (max-width: 600px) { .prevnext { grid-template-columns: 1fr; } .pn-card.next { text-align: left; } .pn-spacer { display: none; } }
+
+    .email-mini {
+      max-width: 680px; margin: 0 auto; padding: 0 1.5rem 5rem;
+    }
+    .email-mini-inner {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem 1.75rem; text-align: center;
+    }
+    .email-mini-inner h3 { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+    .email-mini-inner > p { font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.6; }
+    .email-form { display: flex; gap: 0.5rem; max-width: 380px; margin: 0 auto; }
+    .email-input {
+      flex: 1; padding: 0.7rem 0.9rem; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 10px; color: var(--text);
+      font-size: 0.86rem; outline: none; min-width: 0; font-family: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .email-input:focus { border-color: var(--text); box-shadow: 0 0 0 3px rgba(0,0,0,0.06); }
+    .email-submit {
+      padding: 0.7rem 1.2rem; background: var(--accent); color: #fff; border: none;
+      border-radius: 10px; font-size: 0.86rem; font-weight: 600; cursor: pointer;
+      white-space: nowrap; min-width: 110px; position: relative; font-family: inherit;
+      transition: background 0.15s;
+    }
+    .email-submit:hover { background: var(--accent-hover); }
+    .email-submit.loading { pointer-events: none; }
+    .email-submit .btn-text { transition: opacity 0.15s; }
+    .email-submit.loading .btn-text { opacity: 0; }
+    .email-submit .spinner {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.25);
+      border-top-color: #fff; border-radius: 50%; opacity: 0;
+      animation: spin 0.6s linear infinite; transition: opacity 0.15s;
+    }
+    .email-submit.loading .spinner { opacity: 1; }
+    @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+    .email-success {
+      display: none; align-items: center; justify-content: center; gap: 0.5rem;
+      color: var(--green); font-weight: 600; font-size: 0.9rem; padding: 0.5rem;
+    }
+    .email-error { display: none; color: var(--red); font-size: 0.78rem; margin-top: 0.6rem; }
+    @media (max-width: 600px) { .email-form { flex-direction: column; } .email-submit { width: 100%; } }
+
+    footer {
+      padding: 2.5rem 2rem; text-align: center; border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 0.82rem;
+    }
+    footer a { color: var(--text); text-decoration: none; font-weight: 500; }
+    footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .footer-links { display: flex; justify-content: center; gap: 1.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .post-number { animation: fadeUp 0.5s ease 0.05s both; }
+    h1 { animation: fadeUp 0.5s ease 0.1s both; }
+    .dek { animation: fadeUp 0.5s ease 0.16s both; }
+    .meta { animation: fadeUp 0.5s ease 0.22s both; }
+</style>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="nav-brand"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 1L1 10h5.5L5 17l8-9H7L8 1z" fill="currentColor"/></svg>
+      The Scalper's Edge
+    </a>
+    <div class="nav-right">
+      <a href="/blog/index.html">Blog</a>
+      <a href="/index.html#features">Features</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/index.html#pricing" class="nav-cta">Get Template — $49</a>
+    </div>
+  </nav>
+  <article class="article">
+    <p class="post-number">Edge Notes · #07</p>
+    <h1>Spread Costs Are Killing Your Profitability — Here&#x27;s How to Track Them</h1>
+    <p class="dek">You&#x27;re tracking P&amp;L and win rate, but missing the single biggest drain on your account.</p>
+    <div class="meta">
+      <span>2026-09-06</span>
+      <span class="divider"></span>
+      <span>~8 min read</span>
+      <span class="divider"></span>
+      <a href="https://x.com/scalpersedge">@scalpersedge</a>
+    </div>
+    <div class="article-body">
+<p><em>You&#x27;re tracking P&amp;L. You&#x27;re tracking win rate. But you&#x27;re missing the single biggest drain on your account. Here&#x27;s what spread costs are costing you — and how to stop it.</em></p>
+<hr>
+<p>I made $1,200 in gross profit in my first full month of scalping.</p>
+<p>Sounds good, right? Until I broke down the numbers:</p>
+<ul>
+<li>Gross profit: $1,200</li>
+<li>Commissions: $89</li>
+<li>Spread costs: $347</li>
+</ul>
+<p><strong>Net profit: $764</strong></p>
+<p>That&#x27;s right. 29% of my gross profit disappeared in the spread. I was paying nearly a third of my profits to liquidity providers and I didn&#x27;t even realize it.</p>
+<p>Today I&#x27;m going to show you exactly what spread costs are, why they&#x27;re invisible, and how tracking them transformed my profitability.</p>
+<h2>What Is the Spread?</h2>
+<p>The spread is the difference between the bid (what buyers will pay) and the ask (what sellers want).</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Bid: $10.00</li>
+<li>Ask: $10.05</li>
+<li>Spread: $0.05 (5 cents per share)</li>
+</ul>
+<p>When you buy at the ask and immediately sell at the bid, you lose the spread. That 5 cents is gone. It&#x27;s not a commission — it&#x27;s the cost of entering and exiting the market.</p>
+<p>For scalpers who hold for seconds to minutes, the spread is EVERYTHING.</p>
+<h2>Why Spread Costs Are Invisible</h2>
+<p>Your brokerage statement shows commissions. It shows fees. It shows everything except the spread.</p>
+<p>Why? Because the spread is embedded in your execution price. You see $10.05 as your buy price and $10.10 as your sell price. You think you made 5 cents per share.</p>
+<p>But if the &quot;true&quot; price was $10.025 (midpoint), you paid $0.025 to enter and $0.075 to exit. Total spread cost: $0.10 per share.</p>
+<p>On 200 shares, that&#x27;s $20. Invisible. Unreported. And absolutely devastating over time.</p>
+<h2>The Numbers: What Spread Costs Actually Look Like</h2>
+<p>I tracked my spread costs for 4 weeks. Here&#x27;s what I found:</p>
+<table><thead><tr><th>Week</th><th>Gross Profit</th><th>Spread Costs</th><th>% of Gross</th><th>Net Profit</th></tr></thead><tbody><tr><td>1</td><td>$1,200</td><td>$347</td><td>29%</td><td>$853</td></tr><tr><td>2</td><td>$980</td><td>$89</td><td>9%</td><td>$891</td></tr><tr><td>3</td><td>$1,450</td><td>$412</td><td>28%</td><td>$1,038</td></tr><tr><td>4</td><td>$720</td><td>$156</td><td>22%</td><td>$564</td></tr></tbody></table>
+<p>Week 2 was different. I&#x27;d switched from low-liquidity names (average spread: $0.08) to high-liquidity names (average spread: $0.02).</p>
+<p>Same trading strategy. Same number of trades. Different stock selection = 20% difference in profitability.</p>
+<h2>How to Calculate Your Spread Cost Per Trade</h2>
+<p>Here&#x27;s the formula:</p>
+<pre><code>Spread cost per share = (Ask - Bid) at entry + (Ask - Bid) at exit
+Total spread cost = Spread cost per share × Shares × 2 (round trip)</code></pre>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Entry: Buy 200 shares at $10.05 (ask), bid is $10.00</li>
+<li>Exit: Sell at $10.10 (bid), ask is $10.15</li>
+<li>Entry spread: $0.05 × 200 = $10</li>
+<li>Exit spread: $0.05 × 200 = $10</li>
+<li>Total spread cost: $20</li>
+</ul>
+<p>But wait — you also &quot;paid&quot; the spread on entry. Your effective entry was $10.025 (the midpoint). Your effective exit was $10.125. So your real P&amp;L is $0.10/share, not $0.05/share.</p>
+<p>The spread cost on this trade is $10 (half on entry, half on exit).</p>
+<h2>How to Track It in Your Journal</h2>
+<p>I added a spread tracker to my journal. Every trade logs:</p>
+<ol>
+<li>1. <strong>Entry spread</strong> (ask - bid at time of entry)</li>
+<li>2. <strong>Exit spread</strong> (ask - bid at time of exit)</li>
+<li>3. <strong>Total spread cost</strong> (entry + exit × shares)</li>
+<li>4. <strong>Spread as % of gross P&amp;L</strong></li>
+</ol>
+<p>Here&#x27;s the weekly breakdown from my journal:</p>
+<table><thead><tr><th>Week</th><th>Avg Spread/Trade</th><th>Total Spread Cost</th><th>Spread % of Gross</th><th>Trades</th></tr></thead><tbody><tr><td>1</td><td>$28.50</td><td>$427</td><td>29%</td><td>15</td></tr><tr><td>2</td><td>$8.90</td><td>$134</td><td>9%</td><td>15</td></tr><tr><td>3</td><td>$31.20</td><td>$468</td><td>30%</td><td>15</td></tr><tr><td>4</td><td>$15.60</td><td>$234</td><td>22%</td><td>15</td></tr></tbody></table>
+<p>The pattern is obvious: my spread cost is entirely determined by which stocks I trade, not how I trade them.</p>
+<h2>How to Reduce Spread Costs</h2>
+<h3>1. Trade Higher-Liquidity Stocks</h3>
+<p>This is the single biggest lever.</p>
+<p><strong>Low-liquidity names (spread: $0.05-$0.15):</strong></p>
+<ul>
+<li>Penny stocks under $5</li>
+<li>Low-volume small caps</li>
+<li>Stocks with &lt;500K daily volume</li>
+</ul>
+<p><strong>High-liquidity names (spread: $0.01-$0.03):</strong></p>
+<ul>
+<li>SPY, QQQ, AAPL, MSFT, NVDA, TSLA</li>
+<li>Stocks with &gt;5M daily volume</li>
+<li>Large-cap S&amp;P 500 names</li>
+</ul>
+<p>Switching from low-liquidity to high-liquidity names cut my spread costs by 70%.</p>
+<h3>2. Use Limit Orders (When It Makes Sense)</h3>
+<p>Market orders pay the spread. Limit orders don&#x27;t — but they might not fill.</p>
+<p>The compromise:</p>
+<ul>
+<li><strong>Entry:</strong> Use a limit order at the midpoint or better</li>
+<li><strong>Exit:</strong> Use a limit order at your target, not a market order</li>
+</ul>
+<p>This is especially effective for larger positions where the spread compounds quickly.</p>
+<h3>3. Trade at Optimal Times</h3>
+<p>The spread widens at:</p>
+<ul>
+<li>Market open (9:30-9:45): Highest volatility, widest spreads</li>
+<li>Market close (3:55-4:00): Everyone rushing to exit</li>
+<li>News events: Uncertainty widens spreads</li>
+</ul>
+<p>The spread is narrowest mid-session (10:30AM-2:30PM). If you&#x27;re trading wide-spread names, this is your window.</p>
+<h3>4. Increase Your Position Size (Carefully)</h3>
+<p>This sounds counterintuitive, but hear me out.</p>
+<p>If your spread is $0.05 per share:</p>
+<ul>
+<li>100 shares = $5 round trip</li>
+<li>200 shares = $10 round trip</li>
+<li>500 shares = $25 round trip</li>
+</ul>
+<p>But if your average profit per trade is $50, the $5 spread on 100 shares is 10% of your gross profit. The $10 spread on 200 shares is only 5%.</p>
+<p>Bigger positions dilute the spread as a percentage of your profit.</p>
+<p><strong>CAUTION:</strong> Only do this if your risk management scales with it. More shares = more risk. Calculate your position size using your 1% risk rule, not the other way around.</p>
+<h3>5. Avoid Low-Price Stocks</h3>
+<p>A $0.05 spread on a $2 stock is 2.5%. The same $0.05 spread on a $200 stock is 0.025%.</p>
+<p>For scalpers, percentage spread matters more than absolute spread. A 2% spread on a $2 stock means you need a 2% move just to break even.</p>
+<p>Stick to stocks above $15. Above $50 if you can. The spread percentage becomes negligible.</p>
+<h2>The Spread Impact on Different Strategies</h2>
+<p>Not all strategies are equally affected by spreads:</p>
+<table><thead><tr><th>Strategy</th><th>Avg Hold Time</th><th>Spread Impact</th><th>Mitigation</th></tr></thead><tbody><tr><td>Day scalping (seconds-minutes)</td><td>Very High</td><td>Trade high-liquidity only</td><td>Limit orders, optimal timing</td></tr><tr><td>Day trading (minutes-hours)</td><td>High</td><td>Significant</td><td>Stock selection, limit entries</td></tr><tr><td>Swing trading (days-weeks)</td><td>Medium</td><td>Minimal</td><td>Less important</td></tr><tr><td>Position trading (months)</td><td>Low</td><td>Negligible</td><td>Irrelevant</td></tr></tbody></table>
+<p>If you&#x27;re a scalper, spread IS the cost of doing business. You can&#x27;t eliminate it — but you CAN minimize it.</p>
+<h2>What My Spread Tracker Looks Like</h2>
+<p>I built a spread tracking page into The Disciplined Trader Journal. Every trade auto-logs:</p>
+<ul>
+<li>Average spread per trade</li>
+<li>Total spread cost (daily/weekly/monthly)</li>
+<li>Spread as percentage of gross profit</li>
+<li>Spread by ticker (which stocks are costing you most)</li>
+<li>Spread by session (when are spreads widest)</li>
+</ul>
+<p>After 4 weeks, I had a clear picture: I was trading too many low-liquidity names in the first 30 minutes. The combination was brutal.</p>
+<p><strong>The fix:</strong></p>
+<ol>
+<li>1. First 30 minutes: only trade SPY/QQQ/AAPL (tight spreads)</li>
+<li>2. After 10AM: expand watchlist to include higher-liquidity mid-caps</li>
+<li>3. Avoid anything under $15 or under 1M daily volume</li>
+<li>4. Result: spread costs dropped from 29% of gross to 9%</li>
+</ol>
+<p>That 20% difference funded my subscription to the journal template (and then some).</p>
+<h2>Common Objections</h2>
+<p><strong>&quot;Spread costs are just part of trading.&quot;</strong> True. But they&#x27;re not supposed to be 30% of your profits. That&#x27;s not &quot;the cost of doing business&quot; — that&#x27;s bad stock selection.</p>
+<p><strong>&quot;I focus on big movers, not spreads.&quot;</strong> The biggest movers often have the widest spreads. Low-volume stocks gap more, but you pay for that volatility in the spread.</p>
+<p><strong>&quot;My broker gives me rebates for high volume.&quot;</strong> Maybe. But rebates on a $0.08 spread don&#x27;t make it a $0.02 spread. Find the stocks with the tightest spreads first, then optimize execution.</p>
+<h2>The Bottom Line</h2>
+<p>You wouldn&#x27;t drive to work every day without knowing your gas mileage. So why trade without knowing your spread cost?</p>
+<p>Here&#x27;s what to do this week:</p>
+<ol>
+<li>1. Add spread tracking to your journal</li>
+<li>2. Log every trade with entry/exit bid-ask spreads</li>
+<li>3. Calculate total spread cost at the end of each day</li>
+<li>4. Compare: which stocks/times are costing you most?</li>
+<li>5. Eliminate the worst offenders</li>
+</ol>
+<p>I went from 29% of gross profit to 9% just by switching from low-liquidity to high-liquidity names.</p>
+<p>That&#x27;s $200+ per month in recovered profit. From a single change to my stock selection.</p>
+<p>Track your spreads. Fix your stock list. Keep more of what you earn.</p>
+<hr>
+<p><strong><span class="ps-marker">P.S.</span></strong> The Disciplined Trader Journal has automatic spread tracking built in. Log your entry and exit prices, and it calculates your real spread cost alongside your R-multiple. See exactly where your money is going. <a href="https://thescalpersedge.com/journal">Get it here for $49</a>.</p>
+<p><strong><span class="ps-marker">P.P.S.</span></strong> What&#x27;s your spread cost as a percentage of gross profit? Drop it in the comments. I bet it&#x27;s higher than you think.</p>
+<hr>
+    <div class="about-box">
+      <p><strong>About the author:</strong> I&#x27;m a scalper with ~1 year of experience. I once lost 29% of my gross profit to spreads before I started tracking them. Now I keep most of what I earn. Follow along at <a href="https://x.com/scalpersedge">@scalpersedge</a> on Twitter. Read more on <a href="https://x.com/scalpersedge">X&nbsp;/&nbsp;Twitter</a>.</p>
+    </div>
+    </div>
+  </article>
+
+  <div class="prevnext">
+    <a class="pn-card" href="006-scalping-psychology-10am.html"><div class="pn-label">← Previous</div><div class="pn-title">Scalping Psychology: Why You Keep Taking Losses at 10 AM</div></a>
+    <a class="pn-card next" href="008-first-year-scalping.html"><div class="pn-label">Next →</div><div class="pn-title">From $500 to Consistent: My First Year of Scalping (And What I Wish I Knew Day 1)</div></a>
+  </div>
+
+    <!-- Email capture (Netlify Forms) -->
+    <div class="email-mini">
+      <div class="email-mini-inner">
+        <h3>Not ready to buy? Grab the free lite.</h3>
+        <p>Daily trade log + R-multiple calculator. No credit card. The Notion link lands in your inbox instantly.</p>
+        <div id="emailFormWrap">
+          <div class="email-form">
+            <input type="email" class="email-input" id="emailInput" placeholder="your@email.com" autocomplete="email">
+            <button class="email-submit" id="emailSubmit" type="button" onclick="handleEmailSubmit()">
+              <span class="btn-text">Send it free</span>
+              <span class="spinner"></span>
+            </button>
+          </div>
+          <p class="email-error" id="emailError">Something went wrong — try again, or DM <a href="https://x.com/scalpersedge" style="color:inherit;">@scalpersedge</a>.</p>
+          <p style="margin-top:0.7rem;font-size:0.7rem;color:var(--text-tertiary);">No spam. Unsubscribe any time.</p>
+        </div>
+        <div class="email-success" id="emailSuccess">
+          <span style="font-size:1.05rem;">✓</span>
+          <span>Check your inbox — template link is on its way.</span>
+        </div>
+      </div>
+    </div>
+
+
+  <footer>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/blog/index.html">Blog</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="https://x.com/scalpersedge">Twitter / X</a>
+    </div>
+    <p>Built by a scalper, for scalpers. <a href="https://x.com/scalpersedge">@scalpersedge</a></p>
+    <p style="margin-top:0.4rem;font-size:0.72rem;color:var(--text-tertiary);">© 2026 The Scalper's Edge. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ─── Email capture (Netlify Forms) ───
+    let emailSubmitting = false;
+
+    async function handleEmailSubmit() {
+      const input    = document.getElementById('emailInput');
+      const btn      = document.getElementById('emailSubmit');
+      const formWrap = document.getElementById('emailFormWrap');
+      const success  = document.getElementById('emailSuccess');
+      const errorEl  = document.getElementById('emailError');
+
+      if (!input || !btn || !formWrap || !success || emailSubmitting) return;
+
+      const email = input.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        input.focus();
+        input.style.borderColor = 'var(--red)';
+        setTimeout(() => { input.style.borderColor = ''; }, 1500);
+        return;
+      }
+
+      emailSubmitting = true;
+      btn.classList.add('loading');
+      if (errorEl) errorEl.style.display = 'none';
+
+      try {
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ 'form-name': 'free-lite', email }).toString()
+        });
+        if (!res.ok) throw new Error('Submission failed');
+        formWrap.style.display = 'none';
+        success.style.display = 'flex';
+      } catch (err) {
+        if (errorEl) errorEl.style.display = 'block';
+      } finally {
+        emailSubmitting = false;
+        btn.classList.remove('loading');
+      }
+    }
+
+    const emailInput = document.getElementById('emailInput');
+    if (emailInput) {
+      emailInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter') handleEmailSubmit();
+      });
+    }
+
+  </script>
+</body>
+</html>

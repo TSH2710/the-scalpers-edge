@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R-Multiples Explained: The Only Metric That Matters for Scalpers</title>
+  <meta name="description" content="Stop obsessing over win rate. Start tracking R-multiples — the metric that predicts whether you&#x27;ll be profitable.">
+  <meta property="og:title" content="R-Multiples Explained: The Only Metric That Matters for Scalpers">
+  <meta property="og:description" content="Stop obsessing over win rate. Start tracking R-multiples — the metric that predicts whether you&#x27;ll be profitable.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thescalpersedge.com/blog/003-r-multiples-explained">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="R-Multiples Explained: The Only Metric That Matters for Scalpers">
+  <meta name="twitter:description" content="Stop obsessing over win rate. Start tracking R-multiples — the metric that predicts whether you&#x27;ll be profitable.">
+  <link rel="canonical" href="https://thescalpersedge.com/blog/003-r-multiples-explained">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23111111'>📊</text></svg>">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "R-Multiples Explained: The Only Metric That Matters for Scalpers",
+  "description": "Stop obsessing over win rate. Start tracking R-multiples — the metric that predicts whether you'll be profitable.",
+  "url": "https://thescalpersedge.com/blog/003-r-multiples-explained",
+  "datePublished": "2026-09-06",
+  "author": {
+    "@type": "Person",
+    "name": "The Scalper's Edge"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Scalper's Edge",
+    "url": "https://thescalpersedge.com"
+  },
+  "mainEntityOfPage": "https://thescalpersedge.com/blog/003-r-multiples-explained"
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafafa; --surface: #ffffff; --surface-2: #f5f5f5; --surface-3: #eeeeee;
+      --text: #111111; --text-secondary: #555555; --text-tertiary: #999999;
+      --border: #e5e5e5; --border-strong: #d4d4d4;
+      --accent: #111111; --accent-hover: #333333;
+      --green: #16a34a; --green-bg: #f0fdf4; --green-border: #bbf7d0;
+      --red: #dc2626;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.6;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 2rem; height: 60px; display: flex; align-items: center;
+      justify-content: space-between; background: rgba(250,250,250,0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;
+      font-weight: 700; letter-spacing: -0.01em; color: var(--text); text-decoration: none;
+    }
+    .nav-right { display: flex; align-items: center; gap: 1.75rem; }
+    .nav-right a:not(.nav-cta) {
+      color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .nav-right a:not(.nav-cta):hover { color: var(--text); }
+    .nav-cta {
+      padding: 0.45rem 1.1rem; background: var(--accent); color: #ffffff;
+      border-radius: 8px; font-weight: 600; font-size: 0.82rem;
+      text-decoration: none; white-space: nowrap; transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--accent-hover); }
+    @media (max-width: 600px) { .nav-right a:not(.nav-cta) { display: none; } }
+
+    .article {
+      max-width: 680px; margin: 0 auto; padding: 7.5rem 1.5rem 4rem;
+    }
+    .post-number {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.09em;
+      text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 5vw, 2.7rem); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem;
+    }
+    .dek {
+      font-size: 1.05rem; color: var(--text-secondary); line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    .meta {
+      font-size: 0.78rem; color: var(--text-tertiary); margin-bottom: 1rem;
+      display: flex; gap: 0.6rem; align-items: center;
+    }
+    .meta .divider { width: 1px; height: 11px; background: var(--border-strong); }
+    .meta a { color: var(--text-secondary); text-decoration: none; font-weight: 600; }
+    .meta a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .article-body { font-size: 1rem; color: #2a2a2a; }
+    .article-body h2 {
+      font-size: 1.45rem; font-weight: 800; letter-spacing: -0.025em;
+      line-height: 1.25; margin: 2.75rem 0 0.9rem;
+    }
+    .article-body h3 {
+      font-size: 1.12rem; font-weight: 700; letter-spacing: -0.02em;
+      line-height: 1.3; margin: 2rem 0 0.7rem;
+    }
+    .article-body p { margin-bottom: 1.15rem; line-height: 1.75; }
+    .article-body strong { color: var(--text); }
+    .article-body a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border-strong); }
+    .article-body a:hover { text-decoration-color: var(--text); }
+    .article-body hr {
+      border: none; height: 1px; background: var(--border);
+      margin: 2.5rem auto; width: 100%;
+    }
+    .article-body pre {
+      background: #111111; color: #e8e8e8; border-radius: 12px;
+      padding: 1.1rem 1.25rem; overflow-x: auto; margin: 1.5rem 0;
+      font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+      font-size: 0.84rem; line-height: 1.6;
+    }
+    .article-body code {
+      font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+      font-size: 0.86em; background: var(--surface-2);
+      border: 1px solid var(--border); border-radius: 5px; padding: 0.1rem 0.35rem;
+    }
+    .article-body pre code { background: none; border: none; padding: 0; font-size: inherit; }
+    .article-body ul, .article-body ol { margin: 0 0 1.15rem 1.4rem; }
+    .article-body li { margin-bottom: 0.4rem; line-height: 1.65; }
+    .article-body table {
+      width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+      font-size: 0.88rem;
+    }
+    .article-body th {
+      text-align: left; font-size: 0.66rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-tertiary);
+      padding: 0.55rem 0.75rem; border-bottom: 2px solid var(--border-strong);
+    }
+    .article-body td {
+      padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .article-body tr:last-child td { border-bottom: none; }
+    .ps-marker { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); border-radius: 4px; padding: 0 0.3rem; font-weight: 700; font-size: 0.8em; }
+    .about-box {
+      border: 1px solid var(--border); background: var(--surface-2);
+      border-radius: 14px; padding: 1.25rem 1.4rem; margin: 2.5rem 0 0;
+    }
+    .about-box p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.65; }
+    .about-box strong { color: var(--text); }
+
+    .prevnext {
+      max-width: 680px; margin: 0 auto; padding: 0 1.5rem 4rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .pn-card {
+      border: 1px solid var(--border); border-radius: 14px; padding: 1.1rem 1.25rem;
+      text-decoration: none; background: var(--surface);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .pn-card:hover { border-color: var(--border-strong); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .pn-card.next { text-align: right; }
+    .pn-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 0.35rem; }
+    .pn-title { font-size: 0.88rem; font-weight: 600; color: var(--text); line-height: 1.4; }
+    .pn-spacer { visibility: hidden; }
+    @media (max-width: 600px) { .prevnext { grid-template-columns: 1fr; } .pn-card.next { text-align: left; } .pn-spacer { display: none; } }
+
+    .email-mini {
+      max-width: 680px; margin: 0 auto; padding: 0 1.5rem 5rem;
+    }
+    .email-mini-inner {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem 1.75rem; text-align: center;
+    }
+    .email-mini-inner h3 { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+    .email-mini-inner > p { font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.6; }
+    .email-form { display: flex; gap: 0.5rem; max-width: 380px; margin: 0 auto; }
+    .email-input {
+      flex: 1; padding: 0.7rem 0.9rem; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 10px; color: var(--text);
+      font-size: 0.86rem; outline: none; min-width: 0; font-family: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .email-input:focus { border-color: var(--text); box-shadow: 0 0 0 3px rgba(0,0,0,0.06); }
+    .email-submit {
+      padding: 0.7rem 1.2rem; background: var(--accent); color: #fff; border: none;
+      border-radius: 10px; font-size: 0.86rem; font-weight: 600; cursor: pointer;
+      white-space: nowrap; min-width: 110px; position: relative; font-family: inherit;
+      transition: background 0.15s;
+    }
+    .email-submit:hover { background: var(--accent-hover); }
+    .email-submit.loading { pointer-events: none; }
+    .email-submit .btn-text { transition: opacity 0.15s; }
+    .email-submit.loading .btn-text { opacity: 0; }
+    .email-submit .spinner {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.25);
+      border-top-color: #fff; border-radius: 50%; opacity: 0;
+      animation: spin 0.6s linear infinite; transition: opacity 0.15s;
+    }
+    .email-submit.loading .spinner { opacity: 1; }
+    @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+    .email-success {
+      display: none; align-items: center; justify-content: center; gap: 0.5rem;
+      color: var(--green); font-weight: 600; font-size: 0.9rem; padding: 0.5rem;
+    }
+    .email-error { display: none; color: var(--red); font-size: 0.78rem; margin-top: 0.6rem; }
+    @media (max-width: 600px) { .email-form { flex-direction: column; } .email-submit { width: 100%; } }
+
+    footer {
+      padding: 2.5rem 2rem; text-align: center; border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 0.82rem;
+    }
+    footer a { color: var(--text); text-decoration: none; font-weight: 500; }
+    footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .footer-links { display: flex; justify-content: center; gap: 1.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .post-number { animation: fadeUp 0.5s ease 0.05s both; }
+    h1 { animation: fadeUp 0.5s ease 0.1s both; }
+    .dek { animation: fadeUp 0.5s ease 0.16s both; }
+    .meta { animation: fadeUp 0.5s ease 0.22s both; }
+</style>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="nav-brand"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 1L1 10h5.5L5 17l8-9H7L8 1z" fill="currentColor"/></svg>
+      The Scalper's Edge
+    </a>
+    <div class="nav-right">
+      <a href="/blog/index.html">Blog</a>
+      <a href="/index.html#features">Features</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/index.html#pricing" class="nav-cta">Get Template — $49</a>
+    </div>
+  </nav>
+  <article class="article">
+    <p class="post-number">Edge Notes · #03</p>
+    <h1>R-Multiples Explained: The Only Metric That Matters for Scalpers</h1>
+    <p class="dek">Stop obsessing over win rate. Start tracking R-multiples — the metric that predicts whether you&#x27;ll be profitable.</p>
+    <div class="meta">
+      <span>2026-09-06</span>
+      <span class="divider"></span>
+      <span>~8 min read</span>
+      <span class="divider"></span>
+      <a href="https://x.com/scalpersedge">@scalpersedge</a>
+    </div>
+    <div class="article-body">
+<p><em>Stop obsessing over win rate. Start tracking R-multiples. This is the metric that predicts whether you&#x27;ll be profitable — and almost no scalpers track it.</em></p>
+<hr>
+<p>I&#x27;m going to make a claim that might sound crazy:</p>
+<p><strong>Your win rate doesn&#x27;t matter.</strong></p>
+<p>Not in the way you think it does, anyway. A 40% win rate can make you rich. A 70% win rate can make you broke.</p>
+<p>The metric that actually matters? <strong>R-multiples.</strong></p>
+<p>If you only learn one thing from this article, let it be this: start tracking R-multiples today.</p>
+<h2>What Is an R-Multiple?</h2>
+<p>R stands for &quot;risk.&quot; An R-multiple tells you how much you made (or lost) relative to how much you risked on the trade.</p>
+<p><strong>The formula:</strong></p>
+<pre><code>R = (Exit Price - Entry Price) / (Entry Price - Stop Loss)</code></pre>
+<p>Let me break this down with a real example.</p>
+<h2>Example: A Day of Scalping</h2>
+<p>Let&#x27;s say you&#x27;re scalping XYZ at $50/share.</p>
+<p><strong>Trade 1 — The Winner:</strong></p>
+<ul>
+<li>Entry: $50.00</li>
+<li>Stop Loss: $49.80 (20 cent risk per share)</li>
+<li>Target: $50.60 (60 cent gain = 3R target)</li>
+<li>You hit target and exit at $50.60</li>
+<li>Position size: 200 shares</li>
+<li>R-multiple: ($50.60 - $50.00) / ($50.00 - $49.80) = 3R ✅</li>
+</ul>
+<p><strong>Trade 2 — The Quick Exit:</strong></p>
+<ul>
+<li>Entry: $50.80</li>
+<li>Stop Loss: $50.60</li>
+<li>Target: $51.20</li>
+<li>You get scared and exit at $50.95 (15 cents)</li>
+<li>R-multiple: ($50.95 - $50.80) / ($50.80 - $50.60) = 0.75R ✅</li>
+</ul>
+<p><strong>Trade 3 — The Loss:</strong></p>
+<ul>
+<li>Entry: $51.10</li>
+<li>Stop Loss: $50.90</li>
+<li>You get stopped out at $50.90</li>
+<li>R-multiple: ($50.90 - $51.10) / ($51.10 - $50.90) = -1R ❌</li>
+</ul>
+<p><strong>Trade 4 — The Revenge Trade:</strong></p>
+<ul>
+<li>Entry: $51.00</li>
+<li>Stop Loss: $50.80</li>
+<li>You chase it down to $50.85 and stop out</li>
+<li>R-multiple: ($50.85 - $51.00) / ($51.00 - $50.80) = -0.75R ❌</li>
+</ul>
+<p><strong>Trade 5 — The Recovery:</strong></p>
+<ul>
+<li>Entry: $50.70</li>
+<li>Stop Loss: $50.50</li>
+<li>Target: $51.10</li>
+<li>You hit target</li>
+<li>R-multiple: ($51.10 - $50.70) / ($50.70 - $50.50) = 2R ✅</li>
+</ul>
+<h2>The Math</h2>
+<p>Let&#x27;s add up the day:</p>
+<table><thead><tr><th>Trade</th><th>R-Multiple</th><th>P&amp;L (200 shares)</th></tr></thead><tbody><tr><td>1</td><td>+3R</td><td>+$120</td></tr><tr><td>2</td><td>+0.75R</td><td>+$30</td></tr><tr><td>3</td><td>-1R</td><td>-$40</td></tr><tr><td>4</td><td>-0.75R</td><td>-$30</td></tr><tr><td>5</td><td>+2R</td><td>+$80</td></tr></tbody></table>
+<p><strong>Net R for the day: +4R</strong> <strong>Net P&amp;L: +$160</strong></p>
+<p><strong>Win rate: 3 out of 5 = 60%.</strong></p>
+<p>That looks decent. But here&#x27;s the thing — the win rate didn&#x27;t tell the whole story.</p>
+<p>What if Trade 2 had been -0.5R instead of +0.75R? Now you&#x27;re at +2.75R instead of +4R. Same win rate, completely different result.</p>
+<p>What if Trade 5 was only +0.5R? Now you&#x27;re at +2.5R. Still positive, but barely.</p>
+<p>What if you took 15 trades instead of 5 and had the same distribution? The R-multiples compound. Your average R stays the same. Your net result grows (or shrinks) proportionally.</p>
+<p><strong>Win rate is a distraction. R-multiple is the truth.</strong></p>
+<h2>The Magic Number: Average R = 1.0</h2>
+<p>Here&#x27;s the benchmark:</p>
+<p><strong>If your average R-multiple is above 1.0, your strategy is profitable.</strong></p>
+<p>This is the number that matters. Here&#x27;s why:</p>
+<p>Let&#x27;s say you trade 100 times with an average R of 1.1.</p>
+<ul>
+<li>Even if your win rate is only 40%</li>
+<li>Even if you have 5-trade losing streaks</li>
+<li>Even if your best trade is only 1.5R</li>
+</ul>
+<p>You&#x27;re profitable. Net result: +110R.</p>
+<p>Now flip it: average R of 0.8, even with a 60% win rate.</p>
+<ul>
+<li>60 wins at 0.8R = +48R</li>
+<li>40 losses at -1R = -40R</li>
+<li>Net: +8R</li>
+</ul>
+<p>But your 0.8R means your winners are SMALLER than your losses. A single bad streak can wipe you out. With 1.1R, your winners are bigger than your losses. You can survive bad streaks.</p>
+<h2>My First Month of Tracking R-Multiples</h2>
+<p>I started tracking R-multiples about 5 months into my trading. Here&#x27;s what I found:</p>
+<p><strong>Month 1:</strong></p>
+<ul>
+<li>Win rate: 42%</li>
+<li>Average R: 1.4R</li>
+<li>Net result: +16R (profitable despite low win rate)</li>
+</ul>
+<p><strong>Month 2:</strong></p>
+<ul>
+<li>Win rate: 51%</li>
+<li>Average R: 0.9R</li>
+<li>Net result: +3.6R (barely profitable, and felt like a grind)</li>
+</ul>
+<p><strong>Month 3:</strong></p>
+<ul>
+<li>Win rate: 38%</li>
+<li>Average R: 1.6R</li>
+<li>Net result: +32R (my best month, and I was wrong more often than right)</li>
+</ul>
+<p>The data was crystal clear: my average R was a much better predictor of profitability than my win rate. And it also told me what to fix.</p>
+<p>When my average R dropped below 1.0 in Month 2, I knew something was wrong with my exits. I was taking profits too early.</p>
+<h2>How to Start Tracking R-Multiples</h2>
+<p>It&#x27;s simpler than you think.</p>
+<p><strong>Step 1: Add three fields to your trade log</strong></p>
+<ul>
+<li>Entry Price</li>
+<li>Stop Loss</li>
+<li>Actual Exit</li>
+</ul>
+<p><strong>Step 2: Calculate R for each trade</strong></p>
+<pre><code>R = (Exit - Entry) / (Entry - Stop)</code></pre>
+<p><strong>Step 3: Track your average R over 20+ trades</strong> You need at least 20 trades for the data to be meaningful. 50+ is better.</p>
+<p><strong>Step 4: Optimize based on the data</strong></p>
+<ul>
+<li>Average R above 1.0? Your strategy works. Keep doing what you&#x27;re doing.</li>
+<li>Average R below 0.8? Your exits are too small or your losses are too big. Fix it.</li>
+<li>Average R between 0.8 and 1.0? You&#x27;re borderline. Optimize.</li>
+</ul>
+<h2>The Hard Part: Setting Targets Based on R</h2>
+<p>Here&#x27;s what most traders get wrong: they set targets in dollars instead of R.</p>
+<p><strong>Wrong way:</strong> &quot;I&#x27;ll make $200 on this trade.&quot;</p>
+<p><strong>Right way:</strong> &quot;My risk on this trade is 20 cents per share × 200 shares = $40 (1R). My target should be at least 1R ($40 profit = 60 cent move), preferably 2R ($80 profit = $1 move).&quot;</p>
+<p>When you think in R-multiples, position sizing becomes automatic:</p>
+<ul>
+<li>Risk 1% of your account per trade</li>
+<li>If your account is $5,000, risk $50 per trade (1R = $50)</li>
+<li>Target should be minimum 1R ($50 profit), ideally 2R ($100)</li>
+</ul>
+<h2>Common Objections</h2>
+<p><strong>&quot;But I don&#x27;t use stop losses!&quot;</strong> Then you don&#x27;t know your risk. You can&#x27;t calculate R without a defined stop. Start using stops. Your account will thank you.</p>
+<p><strong>&quot;My strategy is different. I trade without targets.&quot;</strong> Then you have no idea what your R-multiple is. You&#x27;re flying blind. Add a target. Even if you exit early, you&#x27;ll see what your strategy ACTUALLY delivers vs. what you THINK it delivers.</p>
+<p><strong>&quot;R-multiples are too complicated.&quot;</strong> The formula is 4 numbers divided by each other. If that&#x27;s too complicated, trading is too complicated.</p>
+<h2>The Bottom Line</h2>
+<p>Win rate is like checking your speed while driving. It tells you how fast you&#x27;re going, but not where you&#x27;re headed.</p>
+<p>R-multiple is your GPS. It tells you if you&#x27;re going the right direction.</p>
+<p>Start tracking it today. Not tomorrow. Not &quot;when you find the right tool.&quot; Today. Even if it&#x27;s a notebook.</p>
+<p>After 20 trades, calculate your average R. If it&#x27;s above 1.0, your strategy works. If it&#x27;s below, your exits need work.</p>
+<p>That&#x27;s the whole game.</p>
+<hr>
+<p><strong><span class="ps-marker">P.S.</span></strong> My trade journal template (The Disciplined Trader Journal) has R-multiples built in. Enter your entry, stop, and exit — it calculates everything automatically. <a href="https://thescalpersedge.com/journal">Check it out here</a>.</p>
+<hr>
+    <div class="about-box">
+      <p><strong>About the author:</strong> I&#x27;m a scalper with ~1 year of experience. I built The Disciplined Trader Journal because I couldn&#x27;t find a journaling tool that understood how scalpers actually trade. Follow along at <a href="https://x.com/scalpersedge">@scalpersedge</a> on Twitter. Read more on <a href="https://x.com/scalpersedge">X&nbsp;/&nbsp;Twitter</a>.</p>
+    </div>
+    </div>
+  </article>
+
+  <div class="prevnext">
+    <a class="pn-card" href="002-pre-trade-checklist.html"><div class="pn-label">← Previous</div><div class="pn-title">The Pre-Trade Checklist That Saved My Account (Free Download)</div></a>
+    <a class="pn-card next" href="004-revenge-trading.html"><div class="pn-label">Next →</div><div class="pn-title">How to Stop Revenge Trading After a Bad Loss</div></a>
+  </div>
+
+    <!-- Email capture (Netlify Forms) -->
+    <div class="email-mini">
+      <div class="email-mini-inner">
+        <h3>Not ready to buy? Grab the free lite.</h3>
+        <p>Daily trade log + R-multiple calculator. No credit card. The Notion link lands in your inbox instantly.</p>
+        <div id="emailFormWrap">
+          <div class="email-form">
+            <input type="email" class="email-input" id="emailInput" placeholder="your@email.com" autocomplete="email">
+            <button class="email-submit" id="emailSubmit" type="button" onclick="handleEmailSubmit()">
+              <span class="btn-text">Send it free</span>
+              <span class="spinner"></span>
+            </button>
+          </div>
+          <p class="email-error" id="emailError">Something went wrong — try again, or DM <a href="https://x.com/scalpersedge" style="color:inherit;">@scalpersedge</a>.</p>
+          <p style="margin-top:0.7rem;font-size:0.7rem;color:var(--text-tertiary);">No spam. Unsubscribe any time.</p>
+        </div>
+        <div class="email-success" id="emailSuccess">
+          <span style="font-size:1.05rem;">✓</span>
+          <span>Check your inbox — template link is on its way.</span>
+        </div>
+      </div>
+    </div>
+
+
+  <footer>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/blog/index.html">Blog</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="https://x.com/scalpersedge">Twitter / X</a>
+    </div>
+    <p>Built by a scalper, for scalpers. <a href="https://x.com/scalpersedge">@scalpersedge</a></p>
+    <p style="margin-top:0.4rem;font-size:0.72rem;color:var(--text-tertiary);">© 2026 The Scalper's Edge. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ─── Email capture (Netlify Forms) ───
+    let emailSubmitting = false;
+
+    async function handleEmailSubmit() {
+      const input    = document.getElementById('emailInput');
+      const btn      = document.getElementById('emailSubmit');
+      const formWrap = document.getElementById('emailFormWrap');
+      const success  = document.getElementById('emailSuccess');
+      const errorEl  = document.getElementById('emailError');
+
+      if (!input || !btn || !formWrap || !success || emailSubmitting) return;
+
+      const email = input.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        input.focus();
+        input.style.borderColor = 'var(--red)';
+        setTimeout(() => { input.style.borderColor = ''; }, 1500);
+        return;
+      }
+
+      emailSubmitting = true;
+      btn.classList.add('loading');
+      if (errorEl) errorEl.style.display = 'none';
+
+      try {
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ 'form-name': 'free-lite', email }).toString()
+        });
+        if (!res.ok) throw new Error('Submission failed');
+        formWrap.style.display = 'none';
+        success.style.display = 'flex';
+      } catch (err) {
+        if (errorEl) errorEl.style.display = 'block';
+      } finally {
+        emailSubmitting = false;
+        btn.classList.remove('loading');
+      }
+    }
+
+    const emailInput = document.getElementById('emailInput');
+    if (emailInput) {
+      emailInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter') handleEmailSubmit();
+      });
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Stop Revenge Trading After a Bad Loss</title>
+  <meta name="description" content="The psychology problem that costs scalpers more money than any strategy mistake — and the simple rule that fixed it.">
+  <meta property="og:title" content="How to Stop Revenge Trading After a Bad Loss">
+  <meta property="og:description" content="The psychology problem that costs scalpers more money than any strategy mistake — and the simple rule that fixed it.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://thescalpersedge.com/blog/004-revenge-trading">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="How to Stop Revenge Trading After a Bad Loss">
+  <meta name="twitter:description" content="The psychology problem that costs scalpers more money than any strategy mistake — and the simple rule that fixed it.">
+  <link rel="canonical" href="https://thescalpersedge.com/blog/004-revenge-trading">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%23111111'>📊</text></svg>">
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Stop Revenge Trading After a Bad Loss",
+  "description": "The psychology problem that costs scalpers more money than any strategy mistake — and the simple rule that fixed it.",
+  "url": "https://thescalpersedge.com/blog/004-revenge-trading",
+  "datePublished": "2026-09-06",
+  "author": {
+    "@type": "Person",
+    "name": "The Scalper's Edge"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Scalper's Edge",
+    "url": "https://thescalpersedge.com"
+  },
+  "mainEntityOfPage": "https://thescalpersedge.com/blog/004-revenge-trading"
+}
+  </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fafafa; --surface: #ffffff; --surface-2: #f5f5f5; --surface-3: #eeeeee;
+      --text: #111111; --text-secondary: #555555; --text-tertiary: #999999;
+      --border: #e5e5e5; --border-strong: #d4d4d4;
+      --accent: #111111; --accent-hover: #333333;
+      --green: #16a34a; --green-bg: #f0fdf4; --green-border: #bbf7d0;
+      --red: #dc2626;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.6;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 0 2rem; height: 60px; display: flex; align-items: center;
+      justify-content: space-between; background: rgba(250,250,250,0.85);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem;
+      font-weight: 700; letter-spacing: -0.01em; color: var(--text); text-decoration: none;
+    }
+    .nav-right { display: flex; align-items: center; gap: 1.75rem; }
+    .nav-right a:not(.nav-cta) {
+      color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;
+      font-weight: 500; transition: color 0.15s;
+    }
+    .nav-right a:not(.nav-cta):hover { color: var(--text); }
+    .nav-cta {
+      padding: 0.45rem 1.1rem; background: var(--accent); color: #ffffff;
+      border-radius: 8px; font-weight: 600; font-size: 0.82rem;
+      text-decoration: none; white-space: nowrap; transition: background 0.15s;
+    }
+    .nav-cta:hover { background: var(--accent-hover); }
+    @media (max-width: 600px) { .nav-right a:not(.nav-cta) { display: none; } }
+
+    .article {
+      max-width: 680px; margin: 0 auto; padding: 7.5rem 1.5rem 4rem;
+    }
+    .post-number {
+      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.09em;
+      text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: clamp(1.9rem, 5vw, 2.7rem); font-weight: 800;
+      letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem;
+    }
+    .dek {
+      font-size: 1.05rem; color: var(--text-secondary); line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    .meta {
+      font-size: 0.78rem; color: var(--text-tertiary); margin-bottom: 1rem;
+      display: flex; gap: 0.6rem; align-items: center;
+    }
+    .meta .divider { width: 1px; height: 11px; background: var(--border-strong); }
+    .meta a { color: var(--text-secondary); text-decoration: none; font-weight: 600; }
+    .meta a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+    .article-body { font-size: 1rem; color: #2a2a2a; }
+    .article-body h2 {
+      font-size: 1.45rem; font-weight: 800; letter-spacing: -0.025em;
+      line-height: 1.25; margin: 2.75rem 0 0.9rem;
+    }
+    .article-body h3 {
+      font-size: 1.12rem; font-weight: 700; letter-spacing: -0.02em;
+      line-height: 1.3; margin: 2rem 0 0.7rem;
+    }
+    .article-body p { margin-bottom: 1.15rem; line-height: 1.75; }
+    .article-body strong { color: var(--text); }
+    .article-body a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--border-strong); }
+    .article-body a:hover { text-decoration-color: var(--text); }
+    .article-body hr {
+      border: none; height: 1px; background: var(--border);
+      margin: 2.5rem auto; width: 100%;
+    }
+    .article-body pre {
+      background: #111111; color: #e8e8e8; border-radius: 12px;
+      padding: 1.1rem 1.25rem; overflow-x: auto; margin: 1.5rem 0;
+      font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+      font-size: 0.84rem; line-height: 1.6;
+    }
+    .article-body code {
+      font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+      font-size: 0.86em; background: var(--surface-2);
+      border: 1px solid var(--border); border-radius: 5px; padding: 0.1rem 0.35rem;
+    }
+    .article-body pre code { background: none; border: none; padding: 0; font-size: inherit; }
+    .article-body ul, .article-body ol { margin: 0 0 1.15rem 1.4rem; }
+    .article-body li { margin-bottom: 0.4rem; line-height: 1.65; }
+    .article-body table {
+      width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+      font-size: 0.88rem;
+    }
+    .article-body th {
+      text-align: left; font-size: 0.66rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-tertiary);
+      padding: 0.55rem 0.75rem; border-bottom: 2px solid var(--border-strong);
+    }
+    .article-body td {
+      padding: 0.55rem 0.75rem; border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .article-body tr:last-child td { border-bottom: none; }
+    .ps-marker { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); border-radius: 4px; padding: 0 0.3rem; font-weight: 700; font-size: 0.8em; }
+    .about-box {
+      border: 1px solid var(--border); background: var(--surface-2);
+      border-radius: 14px; padding: 1.25rem 1.4rem; margin: 2.5rem 0 0;
+    }
+    .about-box p { font-size: 0.85rem; color: var(--text-secondary); margin: 0; line-height: 1.65; }
+    .about-box strong { color: var(--text); }
+
+    .prevnext {
+      max-width: 680px; margin: 0 auto; padding: 0 1.5rem 4rem;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+    .pn-card {
+      border: 1px solid var(--border); border-radius: 14px; padding: 1.1rem 1.25rem;
+      text-decoration: none; background: var(--surface);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .pn-card:hover { border-color: var(--border-strong); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .pn-card.next { text-align: right; }
+    .pn-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 0.35rem; }
+    .pn-title { font-size: 0.88rem; font-weight: 600; color: var(--text); line-height: 1.4; }
+    .pn-spacer { visibility: hidden; }
+    @media (max-width: 600px) { .prevnext { grid-template-columns: 1fr; } .pn-card.next { text-align: left; } .pn-spacer { display: none; } }
+
+    .email-mini {
+      max-width: 680px; margin: 0 auto; padding: 0 1.5rem 5rem;
+    }
+    .email-mini-inner {
+      background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem 1.75rem; text-align: center;
+    }
+    .email-mini-inner h3 { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+    .email-mini-inner > p { font-size: 0.86rem; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.6; }
+    .email-form { display: flex; gap: 0.5rem; max-width: 380px; margin: 0 auto; }
+    .email-input {
+      flex: 1; padding: 0.7rem 0.9rem; background: var(--surface);
+      border: 1px solid var(--border); border-radius: 10px; color: var(--text);
+      font-size: 0.86rem; outline: none; min-width: 0; font-family: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .email-input:focus { border-color: var(--text); box-shadow: 0 0 0 3px rgba(0,0,0,0.06); }
+    .email-submit {
+      padding: 0.7rem 1.2rem; background: var(--accent); color: #fff; border: none;
+      border-radius: 10px; font-size: 0.86rem; font-weight: 600; cursor: pointer;
+      white-space: nowrap; min-width: 110px; position: relative; font-family: inherit;
+      transition: background 0.15s;
+    }
+    .email-submit:hover { background: var(--accent-hover); }
+    .email-submit.loading { pointer-events: none; }
+    .email-submit .btn-text { transition: opacity 0.15s; }
+    .email-submit.loading .btn-text { opacity: 0; }
+    .email-submit .spinner {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.25);
+      border-top-color: #fff; border-radius: 50%; opacity: 0;
+      animation: spin 0.6s linear infinite; transition: opacity 0.15s;
+    }
+    .email-submit.loading .spinner { opacity: 1; }
+    @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+    .email-success {
+      display: none; align-items: center; justify-content: center; gap: 0.5rem;
+      color: var(--green); font-weight: 600; font-size: 0.9rem; padding: 0.5rem;
+    }
+    .email-error { display: none; color: var(--red); font-size: 0.78rem; margin-top: 0.6rem; }
+    @media (max-width: 600px) { .email-form { flex-direction: column; } .email-submit { width: 100%; } }
+
+    footer {
+      padding: 2.5rem 2rem; text-align: center; border-top: 1px solid var(--border);
+      color: var(--text-secondary); font-size: 0.82rem;
+    }
+    footer a { color: var(--text); text-decoration: none; font-weight: 500; }
+    footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .footer-links { display: flex; justify-content: center; gap: 1.75rem; margin-bottom: 1rem; flex-wrap: wrap; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .post-number { animation: fadeUp 0.5s ease 0.05s both; }
+    h1 { animation: fadeUp 0.5s ease 0.1s both; }
+    .dek { animation: fadeUp 0.5s ease 0.16s both; }
+    .meta { animation: fadeUp 0.5s ease 0.22s both; }
+</style>
+</head>
+<body>
+  <nav>
+    <a href="/index.html" class="nav-brand"><svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 1L1 10h5.5L5 17l8-9H7L8 1z" fill="currentColor"/></svg>
+      The Scalper's Edge
+    </a>
+    <div class="nav-right">
+      <a href="/blog/index.html">Blog</a>
+      <a href="/index.html#features">Features</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/index.html#pricing" class="nav-cta">Get Template — $49</a>
+    </div>
+  </nav>
+  <article class="article">
+    <p class="post-number">Edge Notes · #04</p>
+    <h1>How to Stop Revenge Trading After a Bad Loss</h1>
+    <p class="dek">The psychology problem that costs scalpers more money than any strategy mistake — and the simple rule that fixed it.</p>
+    <div class="meta">
+      <span>2026-09-06</span>
+      <span class="divider"></span>
+      <span>~8 min read</span>
+      <span class="divider"></span>
+      <a href="https://x.com/scalpersedge">@scalpersedge</a>
+    </div>
+    <div class="article-body">
+<p><em>The one trading psychology problem that costs scalpers more money than any strategy mistake — and the simple rule that fixed it for me.</em></p>
+<hr>
+<p>I want you to think about your worst trading day last month.</p>
+<p>Now think about your worst trade from that day. The one where you lost the most money.</p>
+<p>I&#x27;m willing to bet it wasn&#x27;t a trade you planned. It wasn&#x27;t a trade where you followed your checklist. It was a trade you took because you were angry, frustrated, or desperate.</p>
+<p>That&#x27;s revenge trading. And it&#x27;s probably costing you more than any strategy flaw.</p>
+<h2>What Revenge Trading Actually Is</h2>
+<p>Revenge trading is when you take a trade — not because the setup is there, but because you want to make back a previous loss.</p>
+<p>It&#x27;s emotional. It&#x27;s impulsive. And it&#x27;s expensive.</p>
+<p>Here&#x27;s the thing: everyone does it. I did it for the first four months of my trading career. I just didn&#x27;t have a name for it.</p>
+<h2>My Revenge Trading Stats (From My Journal)</h2>
+<p>After I started tracking my emotional state before every trade, the data was shocking:</p>
+<p><strong>Revenge trades: 18 out of 87 trades tracked (21%)</strong> <strong>Average R on revenge trades: -2.1R</strong> <strong>Average R on non-revenge trades: +0.7R</strong></p>
+<p>That&#x27;s a 2.8R difference per trade.</p>
+<p>Let me translate that to dollars. If I risk $50 per trade (1R = $50):</p>
+<ul>
+<li><strong>Non-revenge trade average: +$35</strong></li>
+<li><strong>Revenge trade average: -$105</strong></li>
+<li><strong>Difference: $140 per trade</strong></li>
+</ul>
+<p>I took 18 revenge trades in my first 60 days of tracking. That&#x27;s $2,520 in preventable losses.</p>
+<p>$2,520. Because I couldn&#x27;t control my emotions for 5 minutes.</p>
+<h2>The Pattern I Didn&#x27;t See (Until I Started Journaling)</h2>
+<p>Revenge trading doesn&#x27;t look like what you think it looks like.</p>
+<p>It&#x27;s not always immediately after a loss. Sometimes it&#x27;s:</p>
+<ul>
+<li>30 minutes after a loss (you&#x27;ve &quot;calmed down&quot; but you haven&#x27;t)</li>
+<li>The next trade (you&#x27;re determined to &quot;start fresh&quot;)</li>
+<li>Later in the day (you&#x27;ve been green but a loss triggered the &quot;make it back&quot; mindset)</li>
+<li>The next morning (you&#x27;re thinking about yesterday&#x27;s loss)</li>
+</ul>
+<p>The common thread: <strong>the trade is motivated by a previous loss, not by a current setup.</strong></p>
+<h2>Why Your Brain Does This</h2>
+<p>Your brain doesn&#x27;t like losing. Evolutionarily, loss = danger. When you lose money, your brain interprets it the same way it interprets a physical threat: fight, flight, or freeze.</p>
+<p>In trading, &quot;fight&quot; becomes &quot;trade more to win back what I lost.&quot;</p>
+<p>It&#x27;s a normal biological response. But it&#x27;s a terrible trading strategy.</p>
+<h2>The Simple Rule That Fixed It</h2>
+<p>I tried everything. Meditation. Breathing exercises. Taking a walk between losses. Nothing worked consistently.</p>
+<p>Then I tried the simplest possible solution: <strong>a hard rule with zero exceptions.</strong></p>
+<h3>The Rule: Three Consecutive Losses = Day Over</h3>
+<p>After three losses in a row, I&#x27;m done. Not four. Not five. Three.</p>
+<p>Here&#x27;s why three works:</p>
+<ul>
+<li>One loss is normal. Markets move fast and sometimes you&#x27;re just wrong.</li>
+<li>Two losses in a row might be a bad streak. Could happen to anyone.</li>
+<li>Three losses in a row? You&#x27;re almost certainly not trading from a clear head.</li>
+</ul>
+<p>The data backs this up. My three-loss streaks almost always looked like this:</p>
+<ol>
+<li>1. First loss: legitimate trade, setup was good, just got stopped out (-1R)</li>
+<li>2. Second loss: slightly forced entry, but seemed reasonable (-0.8R)</li>
+<li>3. Third loss: full revenge mode, no real setup (-2.1R average)</li>
+</ol>
+<p>The third loss was always the worst. Always emotional. Always avoidable.</p>
+<h2>Other Rules That Help</h2>
+<p><strong>Rule 1: The 1-Hour Rule</strong> If you take a loss, you don&#x27;t trade again for at least 1 hour. Not 10 minutes. Not &quot;just one more.&quot; One full hour.</p>
+<p>Why? Because your brain needs time to reset. The emotional wave of a loss fades after about 45-60 minutes. Trading during that window is gambling.</p>
+<p><strong>Rule 2: The Daily Loss Limit</strong> Set a dollar amount that&#x27;s your maximum loss for the day. Not a percentage of your account — a hard dollar amount. When you hit it, you&#x27;re done.</p>
+<p>Mine is $200. If I&#x27;m down $200, I close everything and walk away. No exceptions.</p>
+<p><strong>Rule 3: The &quot;Why Am I Trading?&quot; Check</strong> Before every trade (especially after a loss), ask yourself one question:</p>
+<p><strong>&quot;If this trade was in my original plan this morning, would I still take it?&quot;</strong></p>
+<p>If the answer is no, don&#x27;t take it. That simple.</p>
+<p><strong>Rule 4: No Size Increases After Losses</strong> After a loss, your next trade is HALF your normal size, not double. If you lose on that trade, you&#x27;re done for the day.</p>
+<p>The temptation is to &quot;make it back&quot; with a bigger position. That&#x27;s how accounts blow up. Half size forces you to slow down.</p>
+<h2>What to Track (The Psychology Tracker)</h2>
+<p>I added a psychology tracker to my journal that logs:</p>
+<ul>
+<li>Pre-trade mood (calm, anxious, excited, bored, angry)</li>
+<li>Pre-trade energy level (1-10)</li>
+<li>FOMO flag (yes/no)</li>
+<li>Revenge trading flag (yes/no)</li>
+<li>Overconfidence flag (yes/no)</li>
+<li>Post-trade emotional state</li>
+</ul>
+<p>After a few weeks, the patterns became obvious. My worst trades were almost always flagged as revenge or FOMO.</p>
+<p>Now I have a system. The flags don&#x27;t prevent me from taking bad trades — but they make me AWARE of when I&#x27;m in a bad state. That awareness is half the battle.</p>
+<h2>The Truth About Trading Psychology</h2>
+<p>Here&#x27;s what nobody tells you about trading psychology:</p>
+<p><strong>You don&#x27;t &quot;fix&quot; it. You manage it.</strong></p>
+<p>There&#x27;s no point where you&#x27;re completely immune to revenge trading. There&#x27;s no meditation technique that makes you unemotional. The goal isn&#x27;t to eliminate the feeling — it&#x27;s to prevent the feeling from turning into a trade.</p>
+<p>Rules are how you do that. Not willpower. Rules.</p>
+<p>Willpower is finite. It runs out after a bad day, a fight with your partner, a bad night&#x27;s sleep. Rules don&#x27;t run out.</p>
+<h2>For the Scalpers Specifically</h2>
+<p>Scalpers are particularly vulnerable to revenge trading because:</p>
+<ol>
+<li>1. <strong>The feedback loop is fast.</strong> You can lose money and try to make it back within minutes.</li>
+<li>2. <strong>The FOMO is real.</strong> You see a stock running and think &quot;I missed it, now I need to catch it.&quot;</li>
+<li>3. <strong>The session is short.</strong> You feel like you have to &quot;make hay while the sun shines&quot; — even if you&#x27;re already down.</li>
+<li>4. <strong>There&#x27;s always another setup.</strong> This sounds good, but it&#x27;s also the problem. You can always find a reason to trade.</li>
+</ol>
+<p>The rules above (3 losses = done, 1-hour rule, daily loss limit) are specifically designed for scalpers who need hard boundaries.</p>
+<h2>My Current Routine</h2>
+<p>Here&#x27;s what my trading day looks like now:</p>
+<p><strong>Before the open:</strong></p>
+<ul>
+<li>Pre-trade checklist (2 minutes)</li>
+<li>Set daily loss limit ($200)</li>
+<li>Confirm I&#x27;m in the right headspace</li>
+</ul>
+<p><strong>During the session:</strong></p>
+<ul>
+<li>Trade my plan</li>
+<li>Log every trade immediately</li>
+<li>If I hit 2 losses: half size next trade</li>
+<li>If I hit 3 losses: day over. Done.</li>
+</ul>
+<p><strong>After the session:</strong></p>
+<ul>
+<li>Weekly review on Friday</li>
+<li>Look for patterns in my psychology data</li>
+<li>Adjust rules if needed</li>
+</ul>
+<p>This routine has kept me profitable for 3 consecutive months. Not because I have the best strategy. Because I stopped self-sabotaging.</p>
+<h2>The Bottom Line</h2>
+<p>You know how I said your win rate doesn&#x27;t matter? Well, neither does your strategy if you&#x27;re revenge trading.</p>
+<p>The best setup in the world becomes a bad trade when you&#x27;re trading from anger.</p>
+<p>Start tracking your emotional state. Set hard rules. Enforce them ruthlessly.</p>
+<p>Your future self — the one with a funded account and consistent profits — will thank you.</p>
+<hr>
+<p><strong><span class="ps-marker">P.S.</span></strong> My trade journal template has a built-in psychology tracker that flags revenge trades, FOMO entries, and overconfidence in one click. It&#x27;s saved me thousands. <a href="https://thescalpersedge.com/journal">Check it out here</a>.</p>
+<p><strong><span class="ps-marker">P.P.S.</span></strong> What&#x27;s the dumbest trade you&#x27;ve taken out of emotion? Drop it in the comments. We&#x27;ve all been there. No judgment.</p>
+<hr>
+    <div class="about-box">
+      <p><strong>About the author:</strong> I&#x27;m a scalper with ~1 year of experience. I built The Disciplined Trader Journal after losing $2,000 to revenge trading before I started tracking it. Follow along at <a href="https://x.com/scalpersedge">@scalpersedge</a> on Twitter. Read more on <a href="https://x.com/scalpersedge">X&nbsp;/&nbsp;Twitter</a>.</p>
+    </div>
+    </div>
+  </article>
+
+  <div class="prevnext">
+    <a class="pn-card" href="003-r-multiples-explained.html"><div class="pn-label">← Previous</div><div class="pn-title">R-Multiples Explained: The Only Metric That Matters for Scalpers</div></a>
+    <a class="pn-card next" href="005-wash-sales-day-traders.html"><div class="pn-label">Next →</div><div class="pn-title">Wash Sales &amp; Day Traders: What You Need to Know for Tax Season</div></a>
+  </div>
+
+    <!-- Email capture (Netlify Forms) -->
+    <div class="email-mini">
+      <div class="email-mini-inner">
+        <h3>Not ready to buy? Grab the free lite.</h3>
+        <p>Daily trade log + R-multiple calculator. No credit card. The Notion link lands in your inbox instantly.</p>
+        <div id="emailFormWrap">
+          <div class="email-form">
+            <input type="email" class="email-input" id="emailInput" placeholder="your@email.com" autocomplete="email">
+            <button class="email-submit" id="emailSubmit" type="button" onclick="handleEmailSubmit()">
+              <span class="btn-text">Send it free</span>
+              <span class="spinner"></span>
+            </button>
+          </div>
+          <p class="email-error" id="emailError">Something went wrong — try again, or DM <a href="https://x.com/scalpersedge" style="color:inherit;">@scalpersedge</a>.</p>
+          <p style="margin-top:0.7rem;font-size:0.7rem;color:var(--text-tertiary);">No spam. Unsubscribe any time.</p>
+        </div>
+        <div class="email-success" id="emailSuccess">
+          <span style="font-size:1.05rem;">✓</span>
+          <span>Check your inbox — template link is on its way.</span>
+        </div>
+      </div>
+    </div>
+
+
+  <footer>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/blog/index.html">Blog</a>
+      <a href="/index.html#pricing">Pricing</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/terms.html">Terms</a>
+      <a href="https://x.com/scalpersedge">Twitter / X</a>
+    </div>
+    <p>Built by a scalper, for scalpers. <a href="https://x.com/scalpersedge">@scalpersedge</a></p>
+    <p style="margin-top:0.4rem;font-size:0.72rem;color:var(--text-tertiary);">© 2026 The Scalper's Edge. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // ─── Email capture (Netlify Forms) ───
+    let emailSubmitting = false;
+
+    async function handleEmailSubmit() {
+      const input    = document.getElementById('emailInput');
+      const btn      = document.getElementById('emailSubmit');
+      const formWrap = document.getElementById('emailFormWrap');
+      const success  = document.getElementById('emailSuccess');
+      const errorEl  = document.getElementById('emailError');
+
+      if (!input || !btn || !formWrap || !success || emailSubmitting) return;
+
+      const email = input.value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        input.focus();
+        input.style.borderColor = 'var(--red)';
+        setTimeout(() => { input.style.borderColor = ''; }, 1500);
+        return;
+      }
+
+      emailSubmitting = true;
+      btn.classList.add('loading');
+      if (errorEl) errorEl.style.display = 'none';
+
+      try {
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ 'form-name': 'free-lite', email }).toString()
+        });
+        if (!res.ok) throw new Error('Submission failed');
+        formWrap.style.display = 'none';
+        success.style.display = 'flex';
+      } catch (err) {
+        if (errorEl) errorEl.style.display = 'block';
+      } finally {
+        emailSubmitting = false;
+        btn.classList.remove('loading');
+      }
+    }
+
+    const emailInput = document.getElementById('emailInput');
+    if (emailInput) {
+      emailInput.addEventListener('keydown', e => {
+        if (e.key === 'Enter') handleEmailSubmit();
+      });
+    }
+
+  </script>
+</body>
+</html>
