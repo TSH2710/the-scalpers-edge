@@ -64,7 +64,6 @@ scalpers-edge/
 
 - [ ] Build the actual Notion template (follow `notion-template-guide.md` step by step, use `template-preview.html` as reference)
 - [ ] Create Gumroad account and publish the listing
-- [ ] Deploy the landing page to Vercel / Netlify
 - [ ] Deliver the lite template to Netlify form submissions (email notification / Zapier / auto-responder)
 - [ ] Generate video content via Higgsfield for TikTok/short-form
 - [ ] Set up Twitter/X @scalpersedge account

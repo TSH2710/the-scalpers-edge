@@ -53,7 +53,7 @@ def check_file(path):
 
 
 def main():
-    targets = ['index.html', 'landing.html', 'privacy.html', 'terms.html',
+    targets = ['index.html', 'privacy.html', 'terms.html',
                '404.html', 'blog/index.html'] + \
               [f'blog/{f}' for f in sorted(os.listdir('blog')) if f.endswith('.html') and f != 'index.html']
     failures = 0
