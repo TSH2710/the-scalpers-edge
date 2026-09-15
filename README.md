@@ -56,15 +56,17 @@ scalpers-edge/
 
 ### Phase 2: Content (Complete)
 
-- [x] 8 blog posts written and stored in `blog/`
+- [x] 8 blog posts written and LIVE as styled pages (`blog/index.html` + 8 articles) with SEO metadata; sitemap lists all real URLs
 - [x] Social content strategies for Twitter, Reddit, TikTok
 - [x] Email lead magnet concept (free lite version)
 
 ### What Still Needs to Happen
 
-- [ ] Build the actual Notion template (follow `notion-template-guide.md` step by step, use `template-preview.html` as reference)
-- [ ] Create Gumroad account and publish the listing
-- [ ] Deliver the lite template to Netlify form submissions (email notification / Zapier / auto-responder)
+- [x] Build the actual Notion template — built in the workspace and audited line-by-line against `notion-template-guide.md` (all 6 databases, formulas, options, and coaching content verified; personal data left intact)
+- [x] Create Gumroad account and publish the listing — live at tinkshifter.gumroad.com/l/disciplined-trader-journal, linked from site CTAs
+- [ ] Make a clean SELLABLE copy of the Notion template: duplicate it, strip personal trade data (or load `sample-data.md`), then publish a share link and attach it to the Gumroad listing as the delivered product
+- [ ] Deliver the lite template to Netlify form subscribers (auto-responder / Gumroad free product) — form captures emails, but nothing is auto-sent yet
+- [ ] Point thescalpersedge.com DNS at Netlify (Domain management → Add domain, then set records at registrar) — every canonical URL/sitemap entry references this domain
 - [ ] Generate video content via Higgsfield for TikTok/short-form
 - [ ] Set up Twitter/X @scalpersedge account
 - [ ] Start posting to Reddit (r/Daytrading, r/RealDayTrading)
@@ -109,4 +111,4 @@ scalpers-edge/
 
 ---
 
-*Built September 2026. Next session: continue with Notion template build, then Gumroad launch.*
+*Built September 2026. Next: clean sellable Notion copy → Gumroad delivery → domain DNS → distribution (Twitter/Reddit/TikTok).*
