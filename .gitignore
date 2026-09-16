@@ -1,0 +1,12 @@
+# Local working artifacts (API dumps, live embeds, sanitizer reports, screenshots)
+gumroad/landing/screenshots/
+gumroad/landing/frames/
+gumroad/landing/*.png
+gumroad/landing/*.json
+gumroad/landing/*.txt
+gumroad/landing/live-*.html
+gumroad/landing/*-preview.html
+
+# Gumroad CLI auth state, if it ever lands here
+gumroad/.auth/
+.freebuff/

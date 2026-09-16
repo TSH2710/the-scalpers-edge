@@ -1,0 +1,9 @@
+# Netlify redirects
+# Docs: https://docs.netlify.com/routing/redirects/
+
+# Marketing URLs used in X/social posts — clean domain, lands on Gumroad.
+/journal          https://tinkshifter.gumroad.com/l/disciplined-trader-journal  302
+/lite             https://tinkshifter.gumroad.com/l/inqxzl                      302
+
+# Legacy placeholder links from earlier copy
+/free             /lite 302

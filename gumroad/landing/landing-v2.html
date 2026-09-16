@@ -1,0 +1,566 @@
+<!-- The Disciplined Trader Journal — custom Gumroad landing page (v2)
+     Self-contained: no external CSS/JS. Buy buttons: <a data-gumroad-action="buy">.
+     Price injects via data-gumroad-field="price" (falls back to $49 text). -->
+
+<style>
+  :root {
+    --bg: #0b0f14;
+    --panel: #10161d;
+    --panel-2: #0d131a;
+    --border: #1e2833;
+    --border-strong: #2a3644;
+    --text: #e6edf3;
+    --muted: #93a1b0;
+    --faint: #5c6a78;
+    --green: #26d07c;
+    --green-dim: rgba(38, 208, 124, 0.12);
+    --red: #f0524f;
+    --red-dim: rgba(240, 82, 79, 0.10);
+    --amber: #f0b429;
+    --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .mono { font-family: var(--mono); }
+
+  a { color: var(--green); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---------- buttons ---------- */
+  .btn {
+    display: inline-block;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    text-decoration: none !important;
+    text-align: center;
+  }
+  .btn-primary {
+    background: var(--green);
+    color: #052013;
+    box-shadow: 0 4px 18px rgba(38, 208, 124, .25);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 26px rgba(38, 208, 124, .40); }
+  .btn-ghost {
+    border: 1px solid var(--border-strong);
+    color: var(--text);
+    background: transparent;
+  }
+  .btn-ghost:hover { border-color: var(--green); transform: translateY(-2px); }
+  .btn-lg { padding: 16px 32px; font-size: 17px; }
+  .btn-sm { padding: 10px 20px; font-size: 14px; }
+
+  /* ---------- header ---------- */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(11, 15, 20, .85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    max-width: 1080px; margin: 0 auto; padding: 14px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; color: var(--text); }
+  .brand .tick { color: var(--green); font-family: var(--mono); font-size: 14px; }
+  .header-price { font-family: var(--mono); color: var(--muted); font-size: 13px; margin-right: 12px; }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background:
+      radial-gradient(900px 400px at 85% -10%, rgba(38, 208, 124, .07), transparent 60%),
+      linear-gradient(var(--bg), var(--panel-2));
+  }
+  .hero-candles {
+    position: absolute; right: -40px; top: 30px; opacity: .10; pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    max-width: 1080px; margin: 0 auto; padding: 72px 24px 64px;
+    display: grid; grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: center;
+  }
+  .kicker {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: var(--mono); font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--green); background: var(--green-dim);
+    border: 1px solid rgba(38, 208, 124, .3);
+    padding: 6px 12px; border-radius: 999px; margin-bottom: 22px;
+  }
+  .kicker .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+  h1 {
+    font-size: 52px; line-height: 1.08; letter-spacing: -.02em; font-weight: 800; margin-bottom: 20px;
+  }
+  h1 .accent { color: var(--green); }
+  .sub { font-size: 19px; color: var(--muted); margin-bottom: 30px; max-width: 480px; }
+  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+  .trust-line { margin-top: 18px; font-size: 14px; color: var(--faint); }
+  .trust-line span { margin-right: 14px; white-space: nowrap; }
+
+  /* terminal window frame */
+  .term {
+    background: #0a0e13;
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .55);
+  }
+  .term-bar {
+    display: flex; align-items: center; gap: 8px;
+    background: #121924; border-bottom: 1px solid var(--border);
+    padding: 10px 14px;
+  }
+  .term-bar .dot { width: 11px; height: 11px; border-radius: 50%; }
+  .term-bar .r { background: #f0524f; } .term-bar .y { background: #f0b429; } .term-bar .g { background: #26d07c; }
+  .term-bar .title { margin-left: 10px; font-family: var(--mono); font-size: 12.5px; color: var(--faint); }
+  .term-bar .live { margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--green); }
+  .term img { display: block; width: 100%; height: auto; }
+
+  /* ---------- ticker strip ---------- */
+  .strip { border-bottom: 1px solid var(--border); background: var(--panel-2); }
+  .strip-inner {
+    max-width: 1080px; margin: 0 auto; padding: 18px 24px;
+    display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: center;
+  }
+  .chip { font-family: var(--mono); font-size: 13.5px; color: var(--muted); white-space: nowrap; }
+  .chip b { color: var(--green); font-weight: 700; }
+
+  /* ---------- sections ---------- */
+  section { padding: 72px 0; }
+  .sec-label {
+    font-family: var(--mono); font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--green); margin-bottom: 12px;
+  }
+  h2 { font-size: 34px; letter-spacing: -.015em; font-weight: 800; line-height: 1.15; margin-bottom: 14px; }
+  .sec-sub { color: var(--muted); max-width: 620px; margin-bottom: 40px; font-size: 17px; }
+
+  /* diff section */
+  .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .diff {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  }
+  .diff-head {
+    padding: 12px 18px; font-family: var(--mono); font-size: 13px;
+    border-bottom: 1px solid var(--border); display: flex; gap: 8px; align-items: center;
+  }
+  .diff-head.bad { color: var(--red); background: var(--red-dim); }
+  .diff-head.good { color: var(--green); background: var(--green-dim); }
+  .diff-body { padding: 14px 18px; }
+  .diff-line {
+    display: flex; gap: 12px; padding: 7px 10px; border-radius: 6px;
+    font-size: 15px; color: var(--text);
+  }
+  .diff-line .sign { font-family: var(--mono); font-weight: 700; width: 14px; flex: none; }
+  .diff-line.minus { background: var(--red-dim); }
+  .diff-line.minus .sign { color: var(--red); }
+  .diff-line.plus { background: var(--green-dim); }
+  .diff-line.plus .sign { color: var(--green); }
+
+  /* bento features */
+  .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+    padding: 26px; transition: border-color .2s ease, transform .2s ease;
+  }
+  .card:hover { border-color: var(--border-strong); transform: translateY(-3px); }
+  .card h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+  .card p { color: var(--muted); font-size: 14.5px; }
+  .card .shot { margin: -6px 0 18px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .card .shot img { display: block; width: 100%; height: auto; }
+  .span-4 { grid-column: span 4; } .span-3 { grid-column: span 3; } .span-2 { grid-column: span 2; }
+
+  /* steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .step {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 26px;
+  }
+  .step .n {
+    font-family: var(--mono); color: var(--green); font-size: 13px; letter-spacing: .1em;
+    display: block; margin-bottom: 12px;
+  }
+  .step h3 { font-size: 17px; margin-bottom: 8px; }
+  .step p { color: var(--muted); font-size: 14.5px; }
+
+  /* honest proof */
+  .proof {
+    background: var(--panel-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  }
+  .proof-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+  .proof blockquote {
+    border-left: 3px solid var(--green); padding: 4px 0 4px 20px; color: var(--text);
+    font-size: 17.5px; line-height: 1.65; margin-bottom: 18px;
+  }
+  .proof .who { color: var(--faint); font-size: 14px; margin-bottom: 28px; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 12px; }
+  .badge {
+    border: 1px solid var(--border-strong); border-radius: 10px; padding: 14px 18px;
+    font-size: 13.5px; color: var(--muted); background: var(--panel);
+  }
+  .badge b { display: block; color: var(--text); font-size: 15px; margin-bottom: 2px; }
+
+  /* faq */
+  .faq { max-width: 760px; }
+  details {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    padding: 0; margin-bottom: 12px; overflow: hidden;
+  }
+  summary {
+    cursor: pointer; list-style: none; padding: 18px 22px;
+    font-weight: 600; font-size: 15.5px; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: '+'; font-family: var(--mono); color: var(--green); font-size: 18px; flex: none; }
+  details[open] summary::after { content: '−'; }
+  details .a { padding: 0 22px 18px; color: var(--muted); font-size: 15px; }
+
+  /* final cta */
+  .final { text-align: center; background: radial-gradient(700px 300px at 50% 0%, rgba(38, 208, 124, .08), transparent 65%); }
+  .final .price-tag { font-family: var(--mono); font-size: 14px; color: var(--muted); margin-bottom: 26px; }
+  .final .price-tag b { color: var(--green); }
+  .final-note { margin-top: 16px; font-size: 13.5px; color: var(--faint); }
+
+  /* lite funnel */
+  .lite {
+    margin: 0 auto; max-width: 760px; text-align: center;
+    border: 1px dashed var(--border-strong); border-radius: 14px; padding: 34px 28px;
+    background: var(--panel-2);
+  }
+  .lite h3 { font-size: 20px; margin-bottom: 8px; }
+  .lite p { color: var(--muted); font-size: 15px; margin-bottom: 20px; }
+
+  footer { border-top: 1px solid var(--border); padding: 36px 0 44px; color: var(--faint); font-size: 13.5px; text-align: center; }
+  footer .links { margin-top: 8px; }
+  footer .links a { color: var(--muted); margin: 0 10px; }
+
+  /* entrance animation (subtle, respects reduced motion) */
+  .rise { animation: rise .6s ease-out both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .rise { animation: none; }
+    .btn, .card { transition: none; }
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    h1 { font-size: 38px; }
+    .hero-inner { grid-template-columns: 1fr; padding: 48px 24px; gap: 36px; }
+    .diff-grid, .proof-grid { grid-template-columns: 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    .bento { grid-template-columns: 1fr 1fr; }
+    .span-4, .span-3, .span-2 { grid-column: span 2; }
+  }
+  @media (max-width: 560px) {
+    h1 { font-size: 31px; }
+    h2 { font-size: 27px; }
+    section { padding: 52px 0; }
+    .bento { grid-template-columns: 1fr; }
+    .span-4, .span-3, .span-2 { grid-column: span 1; }
+    .header-price { display: none; }
+    .btn-lg { padding: 14px 22px; font-size: 15.5px; }
+  }
+</style>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <div class="brand">📊 The Scalper's Edge <span class="tick">/edge</span></div>
+    <div>
+      <span class="header-price mono">template · <span data-gumroad-field="price">$49</span></span>
+      <a data-gumroad-action="buy" class="btn btn-primary btn-sm">Get the template</a>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <svg class="hero-candles" width="360" height="260" viewBox="0 0 360 260" fill="none" aria-hidden="true">
+    <g stroke="#26d07c" stroke-width="2">
+      <line x1="20" y1="60" x2="20" y2="120"/><rect x="12" y="72" width="16" height="34" fill="#26d07c"/>
+      <line x1="60" y1="40" x2="60" y2="96"/><rect x="52" y="50" width="16" height="30" fill="#26d07c"/>
+      <line x1="100" y1="70" x2="100" y2="130"/><rect x="92" y="96" width="16" height="24" fill="#f0524f"/>
+      <line x1="140" y1="30" x2="140" y2="86"/><rect x="132" y="42" width="16" height="30" fill="#26d07c"/>
+      <line x1="180" y1="54" x2="180" y2="118"/><rect x="172" y="64" width="16" height="38" fill="#26d07c"/>
+      <line x1="220" y1="80" x2="220" y2="140"/><rect x="212" y="104" width="16" height="26" fill="#f0524f"/>
+      <line x1="260" y1="46" x2="260" y2="104"/><rect x="252" y="58" width="16" height="32" fill="#26d07c"/>
+      <line x1="300" y1="24" x2="300" y2="80"/><rect x="292" y="34" width="16" height="30" fill="#26d07c"/>
+    </g>
+  </svg>
+
+  <div class="hero-inner">
+    <div class="rise">
+      <span class="kicker"><span class="dot"></span> Built for scalpers · Notion template</span>
+      <h1>Trade With <span class="accent">Discipline</span>, Not Feelings.</h1>
+      <p class="sub">
+        The trade journal built for 5–20 trades a day. Track P&amp;L and R-multiples automatically,
+        run a 12-point pre-trade checklist, and log the psychology behind every entry — in one
+        duplicate-ready Notion workspace.
+      </p>
+      <div class="cta-row">
+        <a data-gumroad-action="buy" class="btn btn-primary btn-lg">Get instant access — <span data-gumroad-field="price">$49</span></a>
+        <a href="#see-it" class="btn btn-ghost btn-lg">See the pages ↓</a>
+      </div>
+      <p class="trust-line">
+        <span>✓ Duplicate to Notion in 2 minutes</span>
+        <span>✓ Zero setup, formulas pre-built</span>
+        <span>✓ Lifetime updates</span>
+      </p>
+    </div>
+
+    <div class="rise" style="animation-delay:.12s">
+      <div class="term">
+        <div class="term-bar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="title">daily-trade-log — The Disciplined Trader Journal</span>
+          <span class="live">● ACTUAL TEMPLATE</span>
+        </div>
+        <img src="https://public-files.gumroad.com/xpojojyb4oa6sdo44p9d54kb2nml"
+             alt="The Disciplined Trader Journal main page in Notion" width="1280" height="720">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ticker strip -->
+<div class="strip">
+  <div class="strip-inner">
+    <span class="chip"><b>7</b> pages, zero setup</span>
+    <span class="chip"><b>12</b>-point pre-trade checklist</span>
+    <span class="chip">auto <b>P&amp;L</b> + <b>R-multiples</b></span>
+    <span class="chip"><b>session</b> performance heatmap</span>
+    <span class="chip"><b>wash-sale</b> tracker</span>
+    <span class="chip"><b>14-day</b> refund</span>
+  </div>
+</div>
+
+<!-- Problem / solution as a trade blotter diff -->
+<section>
+  <div class="wrap">
+    <div class="sec-label">// the honest ledger</div>
+    <h2>Most journals are built for swing traders. You're not one.</h2>
+    <p class="sec-sub">Generic spreadsheets don't understand spread costs, session windows, or twelve trades before lunch. Here's the difference it makes:</p>
+
+    <div class="diff-grid">
+      <div class="diff">
+        <div class="diff-head bad">✗ trading without a system</div>
+        <div class="diff-body">
+          <div class="diff-line minus"><span class="sign">−</span><span>Entering on FOMO, exiting on fear — and never seeing the pattern</span></div>
+          <div class="diff-line minus"><span class="sign">−</span><span>Spread costs silently eating the edge you thought you had</span></div>
+          <div class="diff-line minus"><span class="sign">−</span><span>No idea which session or setup actually makes you money</span></div>
+          <div class="diff-line minus"><span class="sign">−</span><span>Repeating last week's mistakes with no record of them</span></div>
+        </div>
+      </div>
+      <div class="diff">
+        <div class="diff-head good">✓ trading with the journal</div>
+        <div class="diff-body">
+          <div class="diff-line plus"><span class="sign">+</span><span>12-point checklist forces discipline before every entry</span></div>
+          <div class="diff-line plus"><span class="sign">+</span><span>P&amp;L, R-multiples, and spread costs auto-calculated per trade</span></div>
+          <div class="diff-line plus"><span class="sign">+</span><span>Session heatmap shows exactly when your edge lives</span></div>
+          <div class="diff-line plus"><span class="sign">+</span><span>Psychology log exposes FOMO and revenge-trading patterns</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What's inside: bento with real screenshots -->
+<section id="see-it" style="padding-top: 24px;">
+  <div class="wrap">
+    <div class="sec-label">// what's inside</div>
+    <h2>Seven pages. Every formula pre-built.</h2>
+    <p class="sec-sub">Real screenshots from the template — this is exactly what you'll duplicate into your Notion.</p>
+
+    <div class="bento">
+      <div class="card span-4">
+        <div class="shot"><img loading="lazy" src="https://public-files.gumroad.com/a2fxzzb77upfl5gzydkggb8wzjfs" alt="Daily trade log with entry, exit, P&L and setup columns" width="1280" height="800"></div>
+        <h3>📋 Daily Trade Log</h3>
+        <p>Entry, exit, position size, setup type, chart screenshot area, post-trade notes. P&amp;L and R-multiples compute themselves — you just log the trade.</p>
+      </div>
+
+      <div class="card span-2">
+        <h3>📐 R-Multiple Calculator</h3>
+        <p>Built-in Notion formulas show risk/reward at a glance. Average R is the only metric that predicts long-term profitability — this template tracks it automatically.</p>
+      </div>
+
+      <div class="card span-2">
+        <h3>✅ Pre-Trade Checklist</h3>
+        <p>12 scalping-specific checks: spread, volume, news, sizing, stop placement, psychology state. Run it before every session.</p>
+      </div>
+      <div class="card span-4">
+        <div class="shot"><img loading="lazy" src="https://public-files.gumroad.com/wppoukebvrxaihxfmzpzw4ipfkoi" alt="Pre-trade checklist page in Notion" width="1280" height="800"></div>
+        <h3>🛡️ Discipline Before Every Entry</h3>
+        <p>Market Context, Trade Setup, and Self-Check sections — the checklist catches the impulsive trade before it happens, not after.</p>
+      </div>
+
+      <div class="card span-3">
+        <div class="shot"><img loading="lazy" src="https://public-files.gumroad.com/fiywtnlenbadeju1rg4yom4s071v" alt="Psychology tracker page in Notion" width="1280" height="800"></div>
+        <h3>🧠 Psychology Tracker</h3>
+        <p>FOMO flags, revenge-trading indicators, confidence and sleep logging. Find the emotional patterns behind your worst days.</p>
+      </div>
+      <div class="card span-3">
+        <div class="shot"><img loading="lazy" src="https://public-files.gumroad.com/0zznruiekvfsvpe6gbbaibx2e9tt" alt="Weekly review dashboard in Notion" width="1280" height="800"></div>
+        <h3>📈 Weekly Review Dashboard</h3>
+        <p>Win rate, average R, best and worst setups, streaks, commissions, and total spread costs — rolled up automatically.</p>
+      </div>
+
+      <div class="card span-3">
+        <div class="shot"><img loading="lazy" src="https://public-files.gumroad.com/63yrfrdosew40ovjipg8yrqbxvzd" alt="Session performance heatmap in Notion" width="1280" height="800"></div>
+        <h3>⚡ Session Performance</h3>
+        <p>First 30 minutes, 10AM–11AM, lunch chop, power hour — see which sessions pay you and cut the ones that don't.</p>
+      </div>
+      <div class="card span-3">
+        <h3>🗓️ Wash Sale Tracker</h3>
+        <p>Calendar-based tracking for tax-loss-harvesting concerns, so a quick re-entry never accidentally triggers a wash sale.</p>
+        <p style="margin-top:14px;"><span class="mono" style="color:var(--faint);font-size:12.5px;">+ free lifetime updates</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section style="background: var(--panel-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="wrap">
+    <div class="sec-label">// how it works</div>
+    <h2>Logging your first trade in under 5 minutes.</h2>
+    <p class="sec-sub"></p>
+    <div class="steps">
+      <div class="step">
+        <span class="n">STEP 01</span>
+        <h3>Get the template link</h3>
+        <p>Instant delivery by email right after checkout. No waiting, no onboarding calls.</p>
+      </div>
+      <div class="step">
+        <span class="n">STEP 02</span>
+        <h3>Duplicate to your workspace</h3>
+        <p>One click copies all 7 pages with every formula intact into your own Notion. Nothing to configure.</p>
+      </div>
+      <div class="step">
+        <span class="n">STEP 03</span>
+        <h3>Log today's session</h3>
+        <p>Enter your first trade and watch the dashboards populate. Your edge starts becoming visible today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Honest proof -->
+<section class="proof">
+  <div class="wrap">
+    <div class="sec-label">// why this exists</div>
+    <div class="proof-grid">
+      <div>
+        <blockquote>
+          I'm a scalper. Every journal I tried was built for swing traders — so I built the one I
+          wanted: spread costs tracked separately, session stats that matter at 5–20 trades a day,
+          and psychology fields that catch my FOMO before it costs me.
+        </blockquote>
+        <p class="who">— Tristan, creator of The Disciplined Trader Journal</p>
+        <div class="badge-row">
+          <div class="badge"><b>Built by a scalper</b>Not a generic spreadsheet reskin</div>
+          <div class="badge"><b>Launched September 2026</b>Every buyer gets lifetime updates free</div>
+          <div class="badge"><b>14-day refund</b>Email me, full refund, no questions</div>
+        </div>
+      </div>
+      <div class="term">
+        <div class="term-bar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="title">who it's for</span>
+        </div>
+        <div class="diff-body" style="padding: 20px;">
+          <div class="diff-line plus"><span class="sign">✓</span><span>Scalpers taking 5–20 trades a day</span></div>
+          <div class="diff-line plus"><span class="sign">✓</span><span>Day traders who want real data</span></div>
+          <div class="diff-line plus"><span class="sign">✓</span><span>Anyone tracking in R-multiples</span></div>
+          <div class="diff-line plus"><span class="sign">✓</span><span>Traders tired of "winging it"</span></div>
+          <div class="diff-line minus"><span class="sign">✗</span><span>Swing traders (the R-calc still works, but it's not built for you)</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <div class="sec-label">// faq</div>
+    <h2>Questions, answered straight.</h2>
+    <p class="sec-sub"></p>
+    <div class="faq">
+      <details>
+        <summary>Do I need Notion experience?</summary>
+        <div class="a">Nope. Click the link, hit Duplicate, start logging. Every formula is pre-built — you never touch a formula unless you want to.</div>
+      </details>
+      <details>
+        <summary>Can I customize it?</summary>
+        <div class="a">100%. Once duplicated it's yours — add pages, change fields, tweak anything.</div>
+      </details>
+      <details>
+        <summary>Is this only for day traders?</summary>
+        <div class="a">It's optimized for scalpers and day traders, but the R-multiple calculator and weekly review work for any trading style.</div>
+      </details>
+      <details>
+        <summary>What if it's not for me?</summary>
+        <div class="a">Email me within 14 days and I'll refund you in full — no questions asked.</div>
+      </details>
+      <details>
+        <summary>Do you offer a free version?</summary>
+        <div class="a">Yes — the Lite version includes the daily trade log and R-multiple calculator, free. Grab it at the bottom of this page.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>Stop trading blind.</h2>
+    <p class="sec-sub" style="margin: 0 auto 10px;">One bad FOMO trade costs more than this template. Start logging with discipline today.</p>
+    <p class="price-tag mono">one-time · <b><span data-gumroad-field="price">$49</span></b> · lifetime updates included</p>
+    <a data-gumroad-action="buy" class="btn btn-primary btn-lg">Get The Disciplined Trader Journal — <span data-gumroad-field="price">$49</span></a>
+    <p class="final-note">14-day refund · instant Notion access · duplicate in 2 minutes</p>
+  </div>
+</section>
+
+<!-- Lite funnel -->
+<section style="padding-top: 0;">
+  <div class="wrap">
+    <div class="lite">
+      <h3>Not ready for the full system?</h3>
+      <p>Start with the <b>free Lite version</b> — daily trade log + R-multiple calculator, $0, no card required. Upgrade when you want psychology tracking and the weekly dashboards.</p>
+      <a href="https://tinkshifter.gumroad.com/l/inqxzl" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Get the free Lite version →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 The Scalper's Edge. Built by traders, for traders.</p>
+    <p class="links">
+      <a href="https://thescalpersedge.com" target="_blank" rel="noopener">thescalpersedge.com</a>
+      <a href="https://tinkshifter.gumroad.com/l/inqxzl" target="_blank" rel="noopener">Free Lite template</a>
+      <a href="https://tinkshifter.gumroad.com/l/disciplined-trader-journal" target="_blank" rel="noopener">The Disciplined Trader Journal</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Smooth-scroll for in-page anchors inside the sandboxed iframe.
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var el = document.querySelector(a.getAttribute('href'));
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+  });
+</script>
