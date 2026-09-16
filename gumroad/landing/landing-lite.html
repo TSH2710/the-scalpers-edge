@@ -1,7 +1,7 @@
-<!-- The Disciplined Trader Journal — Gumroad custom landing page (v3)
-     Design system: faithful port of thescalpersedge.com (light editorial).
-     Self-contained: fonts from Google Fonts, everything else inline.
-     Buy buttons: <a data-gumroad-action="buy">. Price: data-gumroad-field="price". -->
+<!-- The Disciplined Trader Journal — Lite · Gumroad custom landing page
+     Design system: faithful port of thescalpersedge.com (light editorial), same as landing-v3.
+     Free product: no price injection needed; primary CTA uses data-gumroad-action="buy"
+     ($0 checkout on this product). Full-version link is a plain cross-product anchor. -->
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
@@ -22,8 +22,6 @@
     --green-bg: #f0fdf4;
     --green-border: #bbf7d0;
     --red: #dc2626;
-    --red-bg: #fef2f2;
-    --red-border: #fecaca;
     --radius: 10px;
     --radius-lg: 14px;
     --radius-xl: 20px;
@@ -42,7 +40,6 @@
     position: relative;
   }
 
-  /* ── Film grain overlay (same as main site) ── */
   body::before {
     content: '';
     position: fixed;
@@ -195,7 +192,7 @@
   .social-proof-strip .divider { width: 1px; height: 12px; background: var(--border); }
   .social-proof-strip strong { color: var(--text-secondary); font-weight: 600; }
 
-  /* ═══════════ SHOWCASE — real screenshot in window chrome ═══════════ */
+  /* ═══════════ SHOWCASE ═══════════ */
   .showcase {
     padding: 4rem 2rem;
     border-top: 1px solid var(--border);
@@ -290,7 +287,7 @@
   .highlight-green { color: var(--green); font-weight: 600; }
   @media (max-width: 800px) { .problem-grid { grid-template-columns: 1fr; gap: 2rem; } }
 
-  /* ═══════════ FEATURES — screenshot cards ═══════════ */
+  /* ═══════════ FEATURES ═══════════ */
   .features {
     padding: 3rem 2rem 7rem;
     max-width: 1040px;
@@ -344,46 +341,43 @@
   }
   @media (max-width: 800px) { .features-grid { grid-template-columns: 1fr; } }
 
-  /* ═══════════ TESTIMONIALS ═══════════ */
-  .testimonials {
-    padding: 3rem 2rem 7rem;
-    max-width: 1040px;
-    margin: 0 auto;
-  }
-  .testimonials-header { margin-bottom: 2.5rem; }
-  .testimonials-header h2 {
-    font-size: clamp(1.8rem, 4vw, 2.4rem);
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.15;
-  }
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-  .testimonial {
+  /* Cheat-sheet card body (styled mock instead of screenshot) */
+  .cheat-body {
+    padding: 1.5rem 1.25rem;
     background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .cheat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.55rem 0.75rem;
+    background: var(--surface-2);
     border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
-    transition: box-shadow 0.2s, border-color 0.2s;
-  }
-  .testimonial:hover {
-    border-color: var(--border-strong);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-  }
-  .testimonial-quote {
-    font-size: 0.85rem;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
     color: var(--text-secondary);
-    line-height: 1.65;
-    margin-bottom: 1rem;
   }
-  .testimonial-author { font-size: 0.72rem; color: var(--text-tertiary); }
-  .testimonial-author strong { color: var(--text-secondary); font-weight: 600; }
-  @media (max-width: 800px) { .testimonials-grid { grid-template-columns: 1fr; } }
+  .cheat-row .rval { font-weight: 600; color: var(--text); }
+  .cheat-row .rval.pos { color: var(--green); }
+  .cheat-row .rval.neg { color: var(--red); }
+  .cheat-formula {
+    margin-bottom: 0.75rem;
+    padding: 0.9rem 1rem;
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    text-align: center;
+    letter-spacing: 0.01em;
+  }
 
-  /* ═══════════ PRICING ═══════════ */
+  /* ═══════════ UPGRADE (pricing card) ═══════════ */
   .pricing {
     padding: 3rem 2rem 7rem;
     max-width: 520px;
@@ -469,28 +463,6 @@
     line-height: 1.55;
   }
 
-  /* ═══════════ FREE LITE ═══════════ */
-  .lite-capture {
-    padding: 5rem 2rem;
-    background: var(--surface-2);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-  }
-  .lite-inner { max-width: 480px; margin: 0 auto; text-align: center; }
-  .lite-inner h2 {
-    font-size: 1.7rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    margin-bottom: 0.6rem;
-    color: var(--text);
-  }
-  .lite-inner p {
-    color: var(--text-secondary);
-    font-size: 0.92rem;
-    margin-bottom: 2rem;
-    line-height: 1.65;
-  }
-
   /* ═══════════ FAQ ═══════════ */
   .faq {
     padding: 7rem 2rem;
@@ -572,10 +544,8 @@
     .hero { padding: 3.5rem 1.25rem; }
     .problem-wrap { padding: 5rem 1.25rem; }
     .features { padding: 2rem 1.25rem 5rem; }
-    .testimonials { padding: 2rem 1.25rem 5rem; }
     .pricing { padding: 3rem 1.25rem 5rem; }
     .faq { padding: 5rem 1.25rem; }
-    .lite-capture { padding: 4rem 1.25rem; }
     .cta-group { flex-direction: column; width: 100%; }
     .cta-group .btn { width: 100%; }
     .price-amount { font-size: 3rem; }
@@ -592,8 +562,8 @@
     The Scalper's Edge
   </div>
   <div class="lnav-right">
-    <a class="muted-link" href="https://thescalpersedge.com" target="_blank" rel="noopener">thescalpersedge.com</a>
-    <a data-gumroad-action="buy" class="nav-cta">Get Template — <span data-gumroad-field="price">$49</span></a>
+    <a class="muted-link" href="https://tinkshifter.gumroad.com/l/dawxaa" target="_blank" rel="noopener">Full version — $49</a>
+    <a data-gumroad-action="buy" class="nav-cta">Get it free</a>
   </div>
 </nav>
 
@@ -601,34 +571,34 @@
 <section class="hero">
   <div class="ambient-glow" aria-hidden="true"></div>
   <div class="hero-inner">
-    <p class="hero-label">Notion Template for Scalpers</p>
+    <p class="hero-label">Free Notion Template for Scalpers</p>
     <h1>
       Stop guessing.<br>
       Start journaling.<br>
-      <span class="dimmed">Know your edge.</span>
+      <span class="dimmed">Free to start.</span>
     </h1>
-    <p class="tagline">The journal built for scalpers — R-multiples, spread tracking, psychology flags, and session heatmaps. Not another generic tracker built for someone holding AAPL for 3 months.</p>
+    <p class="tagline">The Lite version of The Disciplined Trader Journal — daily trade log with auto-calculated P&amp;L and R-multiples, the pre-trade checklist, and an R-multiple cheat sheet. Duplicate into your Notion in 2 minutes.</p>
     <div class="cta-group">
-      <a data-gumroad-action="buy" class="btn btn-primary">Get the Template — <span data-gumroad-field="price">$49</span></a>
-      <a href="#features" class="btn btn-secondary">See What's Inside</a>
+      <a data-gumroad-action="buy" class="btn btn-primary">Get the Free Template</a>
+      <a href="#whats-inside" class="btn btn-secondary">See What's Inside</a>
     </div>
     <div class="social-proof-strip">
-      <span>One-time payment</span>
+      <span>No credit card</span>
       <span class="divider"></span>
-      <span>Free lifetime updates</span>
+      <span>2-minute setup</span>
       <span class="divider"></span>
-      <span>14-day guarantee</span>
+      <span>The same log the full system builds on</span>
     </div>
   </div>
 </section>
 
-<!-- ─── Showcase: real template screenshot in window chrome ─── -->
+<!-- ─── Showcase: real screenshot in window chrome ─── -->
 <div class="showcase">
   <div class="showcase-inner">
     <div class="showcase-copy">
-      <div class="section-label">The product</div>
-      <h2>Looks like Notion.<br>Thinks like a trading desk.</h2>
-      <p>Seven pre-built pages with all formulas wired up. Duplicate once, log trades forever. Your P&amp;L, psychology, and edge — visible in one place from day one. This is the actual template you'll duplicate.</p>
+      <div class="section-label">The template</div>
+      <h2>This is the actual Lite.<br>Not a mockup.</h2>
+      <p>The screenshot below is the real daily trade log you'll duplicate. Enter a trade, and P&amp;L and R-multiples calculate themselves. No formulas to build, no spreadsheet to maintain.</p>
     </div>
     <div class="window-mock">
       <div class="window-chrome">
@@ -639,7 +609,7 @@
         </div>
         <div class="window-url">notion.so / Daily Trade Log</div>
       </div>
-      <img src="https://public-files.gumroad.com/xpojojyb4oa6sdo44p9d54kb2nml" alt="Daily trade log page from The Disciplined Trader Journal" width="1918" height="1078">
+      <img src="https://public-files.gumroad.com/xpojojyb4oa6sdo44p9d54kb2nml" alt="Daily trade log page from The Disciplined Trader Journal — Lite" width="1918" height="1078">
     </div>
   </div>
 </div>
@@ -649,30 +619,41 @@
   <div class="problem-wrap">
     <div class="problem-grid">
       <div class="problem-left">
-        <div class="section-label">The problem</div>
+        <div class="section-label">Why free</div>
         <h2>
-          You know journaling works.<br>
-          <span class="dimmed">So why don't you do it?</span>
+          The best day to start<br>
+          <span class="dimmed">was your first trade.</span>
         </h2>
       </div>
       <div class="problem-right">
-        <p>Not because you're lazy. Because every tool you've tried was <span class="highlight-red">built for swing traders</span> — clunky spreadsheets, overpriced platforms at $100/month, or generic Notion templates with "fundamental analysis" fields you'll never touch.</p>
-        <p>You need something that tracks <span class="highlight-green">spread costs</span>, <span class="highlight-green">session performance</span>, <span class="highlight-green">R-multiples</span>, and <span class="highlight-green">your psychology</span> — in one clean dashboard you'll actually open every day.</p>
-        <p>The data's there. You just can't see it yet.</p>
+        <p>Every trade you take without logging is <span class="highlight-red">data you'll never get back</span> — the session you bled in, the revenge trade you didn't name, the setup that never actually pays. You can't retrofit patterns you never recorded.</p>
+        <p>The Lite isn't a watered-down demo. It's the <span class="highlight-green">same daily log the full system builds on</span> — auto-calculated P&amp;L, R-multiples, and the pre-trade checklist. Free, because starting is the hard part.</p>
+        <p>If the habit sticks and you want psychology tracking, session heatmaps, and weekly dashboards — the full version is waiting.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── Features: real screenshots ─── -->
-<section id="features">
+<!-- ─── Features ─── -->
+<section id="whats-inside">
   <div class="features">
     <div class="features-header">
       <div class="section-label">What's inside</div>
-      <h2>7 pages. Zero setup.</h2>
-      <p>Duplicate to your Notion workspace and start logging trades in under 2 minutes. Real pages from the template below.</p>
+      <h2>Three tools. Zero setup.</h2>
+      <p>Duplicate to your Notion workspace and log your first trade in under 2 minutes.</p>
     </div>
     <div class="features-grid">
+      <div class="shot-card">
+        <div class="window-chrome">
+          <div class="window-dots"><span class="wdot wdot-r"></span><span class="wdot wdot-y"></span><span class="wdot wdot-g"></span></div>
+          <div class="window-url">notion.so / Daily Trade Log</div>
+        </div>
+        <img loading="lazy" src="https://public-files.gumroad.com/xpojojyb4oa6sdo44p9d54kb2nml" alt="Daily trade log page with auto-calculated P&L and R-multiples" width="1918" height="1078">
+        <div class="cap">
+          <h3>Daily Trade Log</h3>
+          <p>Entry, exit, stop, setup, emotion — and P&amp;L plus R-multiples calculate automatically for every trade. The habit that makes all the others possible.</p>
+        </div>
+      </div>
       <div class="shot-card">
         <div class="window-chrome">
           <div class="window-dots"><span class="wdot wdot-r"></span><span class="wdot wdot-y"></span><span class="wdot wdot-g"></span></div>
@@ -680,100 +661,64 @@
         </div>
         <img loading="lazy" src="https://public-files.gumroad.com/wppoukebvrxaihxfmzpzw4ipfkoi" alt="Pre-trade checklist page" width="1918" height="1078">
         <div class="cap">
-          <h3>12-Point Pre-Trade Checklist</h3>
-          <p>Spread check, volume confirmation, news events, sizing, stop placement, psychology state. Market Context, Trade Setup, and Self-Check sections.</p>
+          <h3>Pre-Trade Checklist</h3>
+          <p>Run it before every entry: spread check, news events, sizing, stop placement, headspace. Catches the dumb trade before it happens.</p>
         </div>
       </div>
       <div class="shot-card">
         <div class="window-chrome">
           <div class="window-dots"><span class="wdot wdot-r"></span><span class="wdot wdot-y"></span><span class="wdot wdot-g"></span></div>
-          <div class="window-url">notion.so / Psychology</div>
+          <div class="window-url">notion.so / R-Multiple Cheat Sheet</div>
         </div>
-        <img loading="lazy" src="https://public-files.gumroad.com/fiywtnlenbadeju1rg4yom4s071v" alt="Psychology tracker page" width="1918" height="1078">
+        <div class="cheat-body">
+          <div class="cheat-formula">R = (Exit − Entry) / (Entry − Stop)</div>
+          <div class="cheat-row"><span>Risk $50 · exit +$100</span><span class="rval pos">+2R</span></div>
+          <div class="cheat-row"><span>Risk $50 · exit +$25</span><span class="rval pos">+0.5R</span></div>
+          <div class="cheat-row"><span>Risk $50 · stopped out</span><span class="rval neg">−1R</span></div>
+          <div class="cheat-row"><span>Average R above 1.0</span><span class="rval pos">profitable</span></div>
+        </div>
         <div class="cap">
-          <h3>Psychology Tracker</h3>
-          <p>FOMO, revenge, tilt — log your emotional state after every trade and find the patterns behind your worst losses.</p>
+          <h3>R-Multiple Cheat Sheet</h3>
+          <p>The only metric that matters, on one page. Why win rate lies, how to think in R, and the average-R threshold that predicts profitability.</p>
         </div>
       </div>
       <div class="shot-card">
         <div class="window-chrome">
           <div class="window-dots"><span class="wdot wdot-r"></span><span class="wdot wdot-y"></span><span class="wdot wdot-g"></span></div>
-          <div class="window-url">notion.so / Weekly Review</div>
+          <div class="window-url">notion.so / Full System Preview</div>
         </div>
-        <img loading="lazy" src="https://public-files.gumroad.com/0zznruiekvfsvpe6gbbaibx2e9tt" alt="Weekly review dashboard page" width="1918" height="1078">
+        <img loading="lazy" src="https://public-files.gumroad.com/0zznruiekvfsvpe6gbbaibx2e9tt" alt="Weekly review dashboard page from the full version" width="1918" height="1078">
         <div class="cap">
-          <h3>Weekly Review Dashboard</h3>
-          <p>Win rate, average R, best/worst setups, streaks, commissions, and spread costs — auto-aggregated from your logs.</p>
-        </div>
-      </div>
-      <div class="shot-card">
-        <div class="window-chrome">
-          <div class="window-dots"><span class="wdot wdot-r"></span><span class="wdot wdot-y"></span><span class="wdot wdot-g"></span></div>
-          <div class="window-url">notion.so / Sessions</div>
-        </div>
-        <img loading="lazy" src="https://public-files.gumroad.com/63yrfrdosew40ovjipg8yrqbxvzd" alt="Session performance heatmap page" width="1918" height="1078">
-        <div class="cap">
-          <h3>Session Performance</h3>
-          <p>Win rate by time of day — first 30 minutes, 10–11am, lunch, power hour. Cut the sessions that don't pay you.</p>
+          <h3>A taste of the full system</h3>
+          <p>The weekly review dashboard is where the full version goes from logging to leverage — win rate, average R, streaks, and spread costs, auto-aggregated. Included when you upgrade.</p>
         </div>
       </div>
     </div>
-    <p class="features-note">Plus the R-Multiple Calculator, the Wash Sale Tracker, and free lifetime updates — all included.</p>
+    <p class="features-note">Duplicate once. Log forever. Upgrade only if you want the rest.</p>
   </div>
 </section>
 
-<!-- ─── Testimonials (honest: creator + promises; no fabricated user quotes) ─── -->
-<section class="testimonials">
-  <div class="testimonials-header">
-    <div class="section-label">Why this exists</div>
-    <h2>Built by a scalper, not a committee.</h2>
-  </div>
-  <div class="testimonials-grid">
-    <div class="testimonial">
-      <p class="testimonial-quote">"Try it for 14 days. If it doesn't fit how you trade, reply to your receipt email and I'll refund you the same day — no forms, no interrogation."</p>
-      <div class="testimonial-author"><strong>The guarantee</strong> · 14 days, no questions</div>
-    </div>
-    <div class="testimonial">
-      <p class="testimonial-quote">"I'm a scalper. Every journal I tried was built for swing traders — so I built the one I wanted: spread costs tracked separately, session stats that matter at 5–20 trades a day."</p>
-      <div class="testimonial-author"><strong>Tristan</strong> · Creator, The Scalper's Edge</div>
-    </div>
-    <div class="testimonial">
-      <p class="testimonial-quote">"Every buyer gets every future update free. The template grows as the markets and my journaling do — no subscription, no upsells."</p>
-      <div class="testimonial-author"><strong>Our promise</strong> · Free lifetime updates</div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── Pricing ─── -->
-<section class="pricing" id="pricing">
-  <div class="section-label">Simple pricing</div>
-  <h2>One template. Your edge.</h2>
-  <p class="sub">No subscription. No monthly fees. Pay once, use forever.</p>
+<!-- ─── Upgrade ─── -->
+<section class="pricing" id="upgrade">
+  <div class="section-label">When you're ready</div>
+  <h2>Upgrade to the full system.</h2>
+  <p class="sub">The Lite builds the habit. The full version turns the data into decisions.</p>
   <div class="pricing-card">
-    <div class="pricing-badge">Most Popular</div>
+    <div class="pricing-badge">Full Version</div>
     <p class="pricing-product-name">The Disciplined Trader Journal</p>
-    <div class="price-amount"><span data-gumroad-field="price">$49</span></div>
+    <div class="price-amount">$49</div><!-- cross-product reference; verify current price on the product page -->
     <p class="price-note">one-time · lifetime access · free updates</p>
-    <a data-gumroad-action="buy" class="btn btn-primary">Get Instant Access</a>
+    <a href="https://tinkshifter.gumroad.com/l/dawxaa" target="_blank" rel="noopener" class="btn btn-primary">See the Full Version</a>
     <ul class="pricing-features">
-      <li><span class="check">✓</span> 7 journal pages (daily log, R-calc, psychology, weekly dashboard, wash sales, scalp metrics)</li>
-      <li><span class="check">✓</span> Pre-built Notion formulas — zero setup required</li>
-      <li><span class="check">✓</span> Duplicate-and-edit link — yours in 2 clicks</li>
-      <li><span class="check">✓</span> 12-point pre-trade checklist for scalpers</li>
+      <li><span class="check">✓</span> Everything in the Lite, plus:</li>
+      <li><span class="check">✓</span> Psychology tracker — FOMO, revenge, tilt flags per trade</li>
+      <li><span class="check">✓</span> Weekly review dashboard — win rate, avg R, streaks, costs</li>
+      <li><span class="check">✓</span> Session performance heatmap — find your worst hour</li>
+      <li><span class="check">✓</span> Spread cost tracking — the invisible leak, made visible</li>
+      <li><span class="check">✓</span> Wash sale tracker — tax season without surprises</li>
       <li><span class="check">✓</span> Free updates for life</li>
-      <li><span class="check">✓</span> Free lite version available (below)</li>
     </ul>
-    <p class="guarantee">14-day money-back guarantee. If it's not for you, reply to your receipt email for an instant refund. No questions asked.</p>
-  </div>
-</section>
-
-<!-- ─── Free Lite ─── -->
-<section class="lite-capture">
-  <div class="lite-inner">
-    <div class="section-label">Free version</div>
-    <h2>Not ready to buy? Grab the free lite.</h2>
-    <p>The Disciplined Trader Journal — Lite. Daily trade log + R-multiple calculator. No credit card, no catch.</p>
-    <a href="https://tinkshifter.gumroad.com/l/inqxzl" target="_blank" rel="noopener" class="btn btn-secondary">Get the free Lite version →</a>
+    <p class="guarantee">14-day money-back guarantee — reply to your receipt email for an instant refund, no questions asked.</p>
   </div>
 </section>
 
@@ -785,54 +730,39 @@
   </div>
   <details class="faq-item">
     <summary>
+      Is it actually free?
+      <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </summary>
+    <div class="faq-answer"><p>Yes. $0, no trial, no expiring link. Gumroad will ask for an email so it can deliver the template — that's it. If you ever want to support the project, Gumroad shows an optional tip box at checkout; skip it guilt-free.</p></div>
+  </details>
+  <details class="faq-item">
+    <summary>
       Do I need Notion experience?
       <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
     </summary>
-    <div class="faq-answer"><p>Nope. The template is ready to go. Click the link, hit "Duplicate" in the top right, and start logging trades. All formulas are pre-built — you don't need to touch anything technical.</p></div>
+    <div class="faq-answer"><p>Nope. Click the link, hit "Duplicate" in the top right, and start logging. All formulas are pre-built — you don't need to touch anything technical.</p></div>
   </details>
   <details class="faq-item">
     <summary>
-      Is this only for day traders?
+      What's the catch?
       <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
     </summary>
-    <div class="faq-answer"><p>It's optimized for scalpers (5–20 trades/day) and day traders, but swing traders can still use the daily trade log and R-multiple calculator — those pages work for any style.</p></div>
+    <div class="faq-answer"><p>There isn't one, and here's the honest business logic: the Lite is the on-ramp. Some people use only the Lite forever — that's fine. Others upgrade for the psychology tracker, session heatmap, and dashboards. Either way, you're journaling, which is the point.</p></div>
   </details>
   <details class="faq-item">
     <summary>
-      Can I customize it?
+      What does the full version add?
       <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
     </summary>
-    <div class="faq-answer"><p>100%. Once you duplicate it to your Notion workspace, it's yours. Add pages, change formulas, rename properties — whatever fits how you trade. It's a starting point, not a locked system.</p></div>
-  </details>
-  <details class="faq-item">
-    <summary>
-      What if it's not for me?
-      <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-    </summary>
-    <div class="faq-answer"><p>Email me within 14 days and I'll refund you — no questions asked. Reply to your purchase receipt and I'll sort it out same day. My credibility is worth more than $49.</p></div>
-  </details>
-  <details class="faq-item">
-    <summary>
-      What's the difference between lite and premium?
-      <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-    </summary>
-    <div class="faq-answer"><p>The free lite version includes the daily trade log and basic R-multiple calculator — enough to start tracking. The $49 premium adds the psychology tracker, weekly review dashboard, wash sale tracker, session performance heatmap, and the 12-point pre-trade checklist.</p></div>
-  </details>
-  <details class="faq-item">
-    <summary>
-      Will it slow down my Notion?
-      <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-    </summary>
-    <div class="faq-answer"><p>No. The template uses standard Notion databases with lightweight formulas. Even with hundreds of trades logged, load times stay fast. Notion handles thousands of rows — 20 trades a day for a year is nothing.</p></div>
+    <div class="faq-answer"><p>The daily trade log, checklist, and R cheat sheet stay with you. The full $49 version adds the psychology tracker, weekly review dashboard, session performance heatmap, spread cost tracking, and the wash sale tracker — the analysis layer on top of the logging habit.</p></div>
   </details>
 </section>
 
 <!-- ─── Footer ─── -->
 <footer class="lfooter">
   <div class="footer-links">
-    <a href="#features">Features</a>
-    <a href="#pricing">Pricing</a>
-    <a href="https://tinkshifter.gumroad.com/l/inqxzl" target="_blank" rel="noopener">Free Lite Version</a>
+    <a href="#whats-inside">What's Inside</a>
+    <a href="https://tinkshifter.gumroad.com/l/dawxaa" target="_blank" rel="noopener">Full Version</a>
     <a href="https://thescalpersedge.com" target="_blank" rel="noopener">thescalpersedge.com</a>
     <a href="https://x.com/scalpersedge" target="_blank" rel="noopener">Twitter / X</a>
   </div>
