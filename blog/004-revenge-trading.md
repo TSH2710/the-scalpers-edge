@@ -1,6 +1,6 @@
 # How to Stop Revenge Trading After a Bad Loss
 
-*The one trading psychology problem that costs scalpers more money than any strategy mistake — and the simple rule that fixed it for me.*
+*The one trading psychology problem that costs scalpers more money than any strategy mistake — and the simple rule that fixes it.*
 
 ---
 
@@ -18,27 +18,27 @@ Revenge trading is when you take a trade — not because the setup is there, but
 
 It's emotional. It's impulsive. And it's expensive.
 
-Here's the thing: everyone does it. I did it for the first four months of my trading career. I just didn't have a name for it.
+Here's the thing: everyone does it. I did it for the first months of my trading. I just didn't have a name for it.
 
-## My Revenge Trading Stats (From My Journal)
+## What the Numbers Look Like When You Track It
 
-After I started tracking my emotional state before every trade, the data was shocking:
+When you log your emotional state before every trade for a couple of months, the revenge-trade data tends to look something like this:
 
-**Revenge trades: 18 out of 87 trades tracked (21%)**
-**Average R on revenge trades: -2.1R**
-**Average R on non-revenge trades: +0.7R**
+**Roughly 1 in 5 trades gets flagged as a revenge trade**
+**Average R on revenge trades: around -2R**
+**Average R on planned trades: around +0.7R**
 
-That's a 2.8R difference per trade.
+That's a 2.7R swing per trade — the difference between your best habit and your worst one.
 
-Let me translate that to dollars. If I risk $50 per trade (1R = $50):
+Translate it to dollars at $50 risk per trade (1R = $50):
 
-- **Non-revenge trade average: +$35**
-- **Revenge trade average: -$105**
-- **Difference: $140 per trade**
+- **Planned trade average: +$35**
+- **Revenge trade average: -$100**
+- **Difference: $135 per trade**
 
-I took 18 revenge trades in my first 60 days of tracking. That's $2,520 in preventable losses.
+Run that across a few revenge trades a week and you're leaking a four-figure amount per quarter. Because you couldn't sit still for 5 minutes.
 
-$2,520. Because I couldn't control my emotions for 5 minutes.
+Your numbers will be your own — that's exactly why you want them in a journal instead of a guess.
 
 ## The Pattern I Didn't See (Until I Started Journaling)
 
@@ -75,13 +75,7 @@ Here's why three works:
 - Two losses in a row might be a bad streak. Could happen to anyone.
 - Three losses in a row? You're almost certainly not trading from a clear head.
 
-The data backs this up. My three-loss streaks almost always looked like this:
-
-1. First loss: legitimate trade, setup was good, just got stopped out (-1R)
-2. Second loss: slightly forced entry, but seemed reasonable (-0.8R)
-3. Third loss: full revenge mode, no real setup (-2.1R average)
-
-The third loss was always the worst. Always emotional. Always avoidable.
+The third loss was always the worst. Always emotional. Always avoidable. Check your own three-loss streaks in your log — if you have them, you'll see the same escalation.
 
 ## Other Rules That Help
 
@@ -93,7 +87,7 @@ Why? Because your brain needs time to reset. The emotional wave of a loss fades 
 **Rule 2: The Daily Loss Limit**
 Set a dollar amount that's your maximum loss for the day. Not a percentage of your account — a hard dollar amount. When you hit it, you're done.
 
-Mine is $200. If I'm down $200, I close everything and walk away. No exceptions.
+Mine is a hard dollar number I set before the open — an amount that stings but doesn't threaten the account. When I hit it, I close everything and walk away. No exceptions.
 
 **Rule 3: The "Why Am I Trading?" Check**
 Before every trade (especially after a loss), ask yourself one question:
@@ -151,7 +145,7 @@ Here's what my trading day looks like now:
 
 **Before the open:**
 - Pre-trade checklist (2 minutes)
-- Set daily loss limit ($200)
+- Set my daily loss limit
 - Confirm I'm in the right headspace
 
 **During the session:**
@@ -165,7 +159,7 @@ Here's what my trading day looks like now:
 - Look for patterns in my psychology data
 - Adjust rules if needed
 
-This routine has kept me profitable for 3 consecutive months. Not because I have the best strategy. Because I stopped self-sabotaging.
+This routine hasn't made me a genius. It stopped the self-sabotage — which, for a first year, is the whole game.
 
 ## The Bottom Line
 
@@ -179,10 +173,10 @@ Your future self — the one with a funded account and consistent profits — wi
 
 ---
 
-**P.S.** My trade journal template has a built-in psychology tracker that flags revenge trades, FOMO entries, and overconfidence in one click. It's saved me thousands. [Check it out here](https://thescalpersedge.com/journal).
+**P.S.** My trade journal template has a built-in psychology tracker that flags revenge trades, FOMO entries, and overconfidence in one click. The flags don't stop you from taking a bad trade — they make it impossible to pretend you didn't. [Check it out here](https://thescalpersedge.com/journal).
 
 **P.P.S.** What's the dumbest trade you've taken out of emotion? Drop it in the comments. We've all been there. No judgment.
 
 ---
 
-*About the author: I'm a scalper with ~1 year of experience. I built The Disciplined Trader Journal after losing $2,000 to revenge trading before I started tracking it. Follow along at [@scalpersedge](https://x.com/scalpersedge) on Twitter.*
+*About the author: I'm a scalper with about a year of live experience. I built The Disciplined Trader Journal after revenge trading taught me what it costs. Follow along at [@scalpersedge](https://x.com/scalpersedge) on Twitter.*

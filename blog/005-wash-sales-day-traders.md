@@ -6,11 +6,7 @@
 
 I learned about wash sales the hard way.
 
-April 14th. The night before taxes were due. I was going through my trade history and noticed a pattern I'd never seen before:
-
-**I had $1,247 in wash sale disallowances.**
-
-That means $1,247 in losses I thought I could deduct — but couldn't, because I'd rebought the same (or substantially identical) stock within 30 days.
+April 14th. The night before taxes were due. Going through my trade history, I noticed a pattern I'd never seen before — the same stock, sold at a loss and rebought within days, over and over. Losses I'd mentally banked as deductions that weren't deductible at all, because each rebuy inside 30 days disallowed the prior loss.
 
 I owed more in taxes that year because I'd been making trades without understanding one of the most important rules for active traders.
 
@@ -179,13 +175,13 @@ Here's the simple version:
 3. Use the wash sale tracker in your journal
 4. Come tax season, you'll know your real numbers
 
-I saved myself $1,247 in surprises by tracking this stuff throughout the year instead of discovering it on April 14th.
+I didn't save a precise dollar figure by tracking this — nobody honest can quote you one. What tracking did was make the number *knowable*: come April, I know exactly which losses are deferred and which are usable, instead of discovering it on April 14th.
 
-Don't be me. Start tracking now.
+Don't guess. Start tracking now.
 
 ---
 
-**P.S.** The Disciplined Trader Journal has a dedicated wash sale tracker that auto-flags potential wash trades and maintains your true cost basis. It's saved me hours of spreadsheet work and at least one bad tax surprise. [Get it here for $49](https://thescalpersedge.com/journal).
+**P.S.** The Disciplined Trader Journal has a dedicated wash sale tracker that auto-flags potential wash trades and maintains your true cost basis. Hours of spreadsheet work you don't have to do. [Get it here for $49](https://thescalpersedge.com/journal).
 
 **P.P.S.** I'm not a tax professional. This article is for educational purposes. Consult a CPA or tax advisor for your specific situation — especially if you're a full-time trader with significant volume.
 

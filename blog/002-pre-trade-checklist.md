@@ -1,6 +1,6 @@
 # The Pre-Trade Checklist That Saved My Account (Free Download)
 
-*The 12-point checklist that eliminated my bad entries and doubled my win rate in 3 weeks. Free Notion template inside.*
+*The 12-point checklist that catches the dumb trade before it happens. Free Notion template inside.*
 
 ---
 
@@ -8,14 +8,17 @@ I used to walk into every trading day with nothing but caffeine and hope.
 
 No plan. No checklist. Just "I'll see what the market gives me."
 
-That approach cost me $1,847 in one month. The worst part? Most of those losses were preventable.
+I used to walk into every trading day with nothing but caffeine and hope.
+
+No plan. No checklist. Just "I'll see what the market gives me."
+
+That approach made my losses bigger and my worst days worse — and the worst part was how preventable most of it was.
 
 Then I started using a pre-trade checklist. And everything changed.
 
 ## The Day That Changed Everything
 
-It was a Tuesday morning. I'd taken three losses before 10AM — all avoidable. The first one I didn't check the spread. The second I ignored a news event. The third I entered without a stop loss.
-
+Early on, I had a morning where I took three losses before 10AM — all avoidable. The first one I didn't check the spread. The second I ignored a news event. The third I entered without a stop loss.
 I sat back and thought: *I'm doing the same stupid stuff every day. How do I stop?*
 
 The answer was embarrassingly simple: a checklist.
@@ -59,7 +62,7 @@ Here's the exact checklist I use now. Every trade. No exceptions.
 **6. Is the risk/reward at least 1:1.5?**
 - Minimum target: 1.5× my risk.
 - If the setup only gives me 1:1 or worse, it's not worth it.
-- This one filter eliminated 40% of my marginal trades.
+- This one filter quietly kills most of my would-be marginal trades before they happen — the "well, it's probably fine" entries never even reach the order window.
 
 **7. Do I have a defined stop loss?**
 - Every trade. No exceptions.
@@ -97,24 +100,17 @@ Here's the exact checklist I use now. Every trade. No exceptions.
 
 ## The Results
 
-I started using this checklist on a Monday. Here's the week-by-week breakdown:
+I won't pretend the checklist doubled my win rate in three weeks — anyone quoting exact before/after stats at you should be asked for the receipts.
 
-**Week 1 (checklist, no enforcement):**
-- Win rate: 52% → 58%
-- Average R: 0.85R → 1.1R
-- I still broke the rules a few times, but even following it 70% of the time helped.
+Here's what it actually does, and why the effect is real:
 
-**Week 2 (checklist + half-size rule for 2-loss streaks):**
-- Win rate: 58% → 64%
-- Average R: 1.1R → 1.35R
-- Revenge trades dropped from 3/week to 0.
+**It converts discipline from a feeling into a process.** The trades that hurt you aren't knowledge gaps — you KNEW not to skip the spread check. The checklist makes skipping visible. When you have to tick 12 boxes, you can't lie to yourself about having run through it.
 
-**Week 3 (full enforcement, zero exceptions):**
-- Win rate: 64% → 71%
-- Average R: 1.35R → 1.6R
-- Best week of my trading career. +28R net.
+**It catches the specific trades that ruin weeks.** The no-stop entry. The revenge trade after two losses. The "it looks kinda like a setup" trade. Each box kills one of those.
 
-That's not a coincidence. The checklist doesn't make you a better trader magically — it prevents you from making the stupid, obvious mistakes that are costing you money every single day.
+**The compliance rate is itself data.** Log whether you followed the checklist on every trade, and correlate: your rule-breaking trades will be your worst. Once you've seen that pattern in your own numbers, the checklist runs itself.
+
+That's not a magic stat. It's a boring, compounding edge — the same reason pilots and surgeons use them.
 
 ## The Psychology of Checklists
 
@@ -132,15 +128,15 @@ I built a pre-trade checklist page inside The Disciplined Trader Journal that au
 
 Before each trade, you tick through the 12 points. The journal logs your compliance rate, so you can track how often you skip steps (and correlate that with your losses).
 
-**[Download the free lite version here](https://thescalpersedge.com/free)** — it includes the pre-trade checklist + daily trade log + R-multiple calculator.
+**[Download the free lite version here](https://thescalpersedge.com/lite)** — it includes the pre-trade checklist + daily trade log + R-multiple calculator.
 
 Or grab the [full $49 version](https://thescalpersedge.com/journal) for the complete 7-page system with psychology tracking, weekly dashboards, and spread cost analysis.
 
 ## The Bottom Line
 
-Before my checklist: $1,847 in losses in one month. 21% of my trades were revenge trades. I had no idea what I was doing wrong.
+Before my checklist: messy months, revenge trades, and no idea what I was doing wrong.
 
-After my checklist: +28R in one week. 0 revenge trades. A clear head every morning.
+After my checklist: fewer trades, better trades, and a clear head every morning.
 
 The difference wasn't a new strategy. A new indicator. A magic bot.
 
@@ -156,4 +152,4 @@ Stop hoping you'll remember. Start checking.
 
 ---
 
-*About the author: I'm a scalper with ~1 year of experience. I built The Disciplined Trader Journal after losing $2,000+ to preventable mistakes. It's the journal I wish I had from day one. Follow along at [@scalpersedge](https://x.com/scalpersedge) on Twitter.*
+*About the author: I'm a scalper with about a year of live experience. I built The Disciplined Trader Journal after learning its lessons the expensive way. It's the journal I wish I had from day one. Follow along at [@scalpersedge](https://x.com/scalpersedge) on Twitter.*

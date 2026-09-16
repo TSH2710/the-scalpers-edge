@@ -4,9 +4,7 @@
 
 ---
 
-I made $1,200 in gross profit in my first full month of scalping.
-
-Sounds good, right? Until I broke down the numbers:
+Here's what the damage looks like when a month goes well on paper:
 
 - Gross profit: $1,200
 - Commissions: $89
@@ -14,9 +12,9 @@ Sounds good, right? Until I broke down the numbers:
 
 **Net profit: $764**
 
-That's right. 29% of my gross profit disappeared in the spread. I was paying nearly a third of my profits to liquidity providers and I didn't even realize it.
+That's right. In this example, 29% of the gross profit disappeared in the spread. Paid to liquidity providers, never itemized anywhere.
 
-Today I'm going to show you exactly what spread costs are, why they're invisible, and how tracking them transformed my profitability.
+Today I'm going to show you exactly what spread costs are, why they're invisible, and how tracking them protects your profitability.
 
 ## What Is the Spread?
 
@@ -43,7 +41,7 @@ On 200 shares, that's $20. Invisible. Unreported. And absolutely devastating ove
 
 ## The Numbers: What Spread Costs Actually Look Like
 
-I tracked my spread costs for 4 weeks. Here's what I found:
+Here's an illustrative month of tracked spread costs — this is the kind of table you'll build for yourself after a few weeks:
 
 | Week | Gross Profit | Spread Costs | % of Gross | Net Profit |
 |------|-------------|--------------|------------|------------|
@@ -52,9 +50,9 @@ I tracked my spread costs for 4 weeks. Here's what I found:
 | 3 | $1,450 | $412 | 28% | $1,038 |
 | 4 | $720 | $156 | 22% | $564 |
 
-Week 2 was different. I'd switched from low-liquidity names (average spread: $0.08) to high-liquidity names (average spread: $0.02).
+Week 2 is the tell. Same strategy, same trade count — but the watchlist switched from low-liquidity names (average spread: $0.08) to high-liquidity names (average spread: $0.02).
 
-Same trading strategy. Same number of trades. Different stock selection = 20% difference in profitability.
+Different stock selection. A 20-point difference in the percentage of profits kept. That's the whole argument for tracking this.
 
 ## How to Calculate Your Spread Cost Per Trade
 
@@ -78,23 +76,14 @@ The spread cost on this trade is $10 (half on entry, half on exit).
 
 ## How to Track It in Your Journal
 
-I added a spread tracker to my journal. Every trade logs:
+This is the spread tracker I built into my journal. Every trade logs:
 
 1. **Entry spread** (ask - bid at time of entry)
 2. **Exit spread** (ask - bid at time of exit)
 3. **Total spread cost** (entry + exit × shares)
 4. **Spread as % of gross P&L**
 
-Here's the weekly breakdown from my journal:
-
-| Week | Avg Spread/Trade | Total Spread Cost | Spread % of Gross | Trades |
-|------|-----------------|------------------|-------------------|--------|
-| 1 | $28.50 | $427 | 29% | 15 |
-| 2 | $8.90 | $134 | 9% | 15 |
-| 3 | $31.20 | $468 | 30% | 15 |
-| 4 | $15.60 | $234 | 22% | 15 |
-
-The pattern is obvious: my spread cost is entirely determined by which stocks I trade, not how I trade them.
+Run it for a month and your own table answers the only question that matters: which stocks and which times are costing you the most?
 
 ## How to Reduce Spread Costs
 
@@ -112,7 +101,7 @@ This is the single biggest lever.
 - Stocks with >5M daily volume
 - Large-cap S&P 500 names
 
-Switching from low-liquidity to high-liquidity names cut my spread costs by 70%.
+Switching from low-liquidity to high-liquidity names is routinely the difference between paying ~30% of gross profit in spreads and paying under 10%. It's the single biggest lever on this list.
 
 ### 2. Use Limit Orders (When It Makes Sense)
 
@@ -169,7 +158,7 @@ Not all strategies are equally affected by spreads:
 
 If you're a scalper, spread IS the cost of doing business. You can't eliminate it — but you CAN minimize it.
 
-## What My Spread Tracker Looks Like
+## The Spread Tracker in My Journal
 
 I built a spread tracking page into The Disciplined Trader Journal. Every trade auto-logs:
 
@@ -179,15 +168,14 @@ I built a spread tracking page into The Disciplined Trader Journal. Every trade 
 - Spread by ticker (which stocks are costing you most)
 - Spread by session (when are spreads widest)
 
-After 4 weeks, I had a clear picture: I was trading too many low-liquidity names in the first 30 minutes. The combination was brutal.
+After a few weeks you'll have a clear picture — most people find they're trading too many low-liquidity names in the first 30 minutes, when spreads are widest. That combination is brutal.
 
 **The fix:**
-1. First 30 minutes: only trade SPY/QQQ/AAPL (tight spreads)
-2. After 10AM: expand watchlist to include higher-liquidity mid-caps
+1. First 30 minutes: only trade the tightest-spread names (SPY/QQQ/mega-caps)
+2. After 10AM: expand the watchlist to higher-liquidity mid-caps
 3. Avoid anything under $15 or under 1M daily volume
-4. Result: spread costs dropped from 29% of gross to 9%
 
-That 20% difference funded my subscription to the journal template (and then some).
+Do that and the spread line item stops being a silent tax.
 
 ## Common Objections
 
@@ -211,9 +199,7 @@ Here's what to do this week:
 4. Compare: which stocks/times are costing you most?
 5. Eliminate the worst offenders
 
-I went from 29% of gross profit to 9% just by switching from low-liquidity to high-liquidity names.
-
-That's $200+ per month in recovered profit. From a single change to my stock selection.
+Most traders who do this find double-digit percentage points of gross profit they were silently handing to the spread. From a single change to stock selection.
 
 Track your spreads. Fix your stock list. Keep more of what you earn.
 
@@ -225,4 +211,4 @@ Track your spreads. Fix your stock list. Keep more of what you earn.
 
 ---
 
-*About the author: I'm a scalper with ~1 year of experience. I once lost 29% of my gross profit to spreads before I started tracking them. Now I keep most of what I earn. Follow along at [@scalpersedge](https://x.com/scalpersedge) on Twitter.*
+*About the author: I'm a scalper with about a year of live experience. I built The Disciplined Trader Journal because spread costs were invisible in every tool I tried. Follow along at [@scalpersedge](https://x.com/scalpersedge) on Twitter.*

@@ -8,11 +8,11 @@ I lose more money between 10AM and 11AM than any other hour of the trading day.
 
 Not because the market is unpredictable. Not because my strategy breaks down. But because something happens to my brain around 10AM that makes me take trades I know I shouldn't take.
 
-Today I'm going to tell you what it is, why it happens, and how I fixed it.
+Today I'm going to tell you what it is, why it happens, and what to do about it.
 
 ## The 10AM Problem
 
-Let me show you my session performance data. This is from 8 weeks of tracking:
+Here's the shape of the problem. This table is an illustrative example of what a scalper's session data typically looks like — run it against your own log and you'll likely see your version of it:
 
 | Time Window | Win Rate | Avg R | # Trades |
 |-------------|----------|-------|----------|
@@ -22,13 +22,13 @@ Let me show you my session performance data. This is from 8 weeks of tracking:
 | 1:00-2:00 | 55% | +0.7R | 2.9 |
 | 3:00-4:00 | 48% | +0.4R | 3.1 |
 
-See that 10AM-11AM window? 41% win rate. Negative R. And it's my highest-volume hour.
+See that 10AM-11AM window? 41% win rate. Negative R. And it's the highest-volume hour.
 
-I'm not alone. I've talked to dozens of scalpers who see the same pattern. The first 30 minutes are sharp. Mid-morning is garbage. Then it picks back up.
+That combination — worst numbers, most trades — is the signature of decision fatigue. It's remarkably common among scalpers. The first 30 minutes are sharp. Mid-morning is garbage. Then it picks back up.
 
 ## Why 10AM Is the Danger Zone
 
-After tracking my psychology data alongside my trade results, I figured out exactly what's happening.
+After tracking psychology data alongside trade results, the pattern becomes obvious.
 
 ### Phase 1: The Opening Rush (9:30-10AM)
 You're fresh. Caffeinated. Focused. You've been preparing since 8AM. You see the first setups clearly. You follow your rules.
@@ -79,19 +79,19 @@ Failed.
 ### Attempt 3: Reduced Position Size + Forced Pause
 This is what actually worked.
 
-**The rule:** Between 10AM and 11AM, I trade at 50% of my normal position size. And I require myself to wait 5 minutes after every loss before entering the next trade.
+**The rule:** Between 10AM and 11AM, trade at 50% of your normal position size. And require a 5-minute wait after every loss before entering the next trade.
 
 Here's why this works:
-- Smaller size = less mental weight per decision. Even if I make a bad call, the loss is manageable.
-- 5-minute forced pause = breaks the emotional chain. I can't chain losses together because I physically have to wait.
-- I still trade (I don't want to miss setups), but I'm less emotionally attached to the outcome.
+- Smaller size = less mental weight per decision. Even if you make a bad call, the loss is manageable.
+- 5-minute forced pause = breaks the emotional chain. You can't chain losses together because you physically have to wait.
+- You still trade (you don't want to miss setups), but you're less emotionally attached to the outcome.
 
-**The results:**
-- 10AM-11AM win rate: 41% → 56%
-- Average R: -0.2R → +0.5R
-- Revenge trades in that window: dropped from 2.3/week to 0.4/week
+**The expected effect:**
+- The 10AM win-rate hole shrinks instead of compounding
+- Revenge trades in that window mostly disappear — they can't chain
+- The hour stops being account-threatening
 
-Not perfect. But way better.
+Not perfect. But way better. And when you track it, you'll see your own before/after.
 
 ## Other Time-Based Psychology Issues
 
@@ -124,11 +124,11 @@ I added a session tracker to my journal that logs:
 - FOMO flag
 - Revenge flag
 
-After 20 trades, I could see the pattern crystal clear. The 10AM window had the lowest mood scores AND the lowest win rates. Coincidence? I don't think so.
+After 20 tracked trades, the pattern becomes crystal clear. The worst windows have the lowest mood scores AND the lowest win rates. Coincidence? I don't think so.
 
 ## The Real Fix: Know Thyself
 
-Here's what I've learned about trading psychology after tracking it for 8 months:
+Here's what I've learned about trading psychology in my first year:
 
 **You have patterns. Everyone does.**
 
@@ -166,7 +166,7 @@ But I CAN build rules that make bad decisions less expensive.
 
 Half position size means a bad trade at 10AM costs me half as much. The 5-minute pause means I can't chain three revenge trades in a row.
 
-That's the difference between a $2,000 loss month and a $2,000 profit month.
+That's the difference between an account-threatening month and a survivable one.
 
 Not a better strategy. Better systems.
 
@@ -178,4 +178,4 @@ Track your session data. Find your weak windows. Build rules around them.
 
 ---
 
-*About the author: I'm a scalper with ~1 year of experience. My worst hour is 10AM. My best is 1-2PM. Tracking session data changed how I trade. Follow along at [@scalpersedge](https://x.com/scalpersedge) on Twitter.*
+*About the author: I'm a scalper with about a year of live experience. My worst window is 10AM. Tracking session data changed how I trade. Follow along at [@scalpersedge](https://x.com/scalpersedge) on Twitter.*

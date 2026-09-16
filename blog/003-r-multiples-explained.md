@@ -24,7 +24,7 @@ R stands for "risk." An R-multiple tells you how much you made (or lost) relativ
 R = (Exit Price - Entry Price) / (Entry Price - Stop Loss)
 ```
 
-Let me break this down with a real example.
+Let me break this down with an example.
 
 ## Example: A Day of Scalping
 
@@ -113,28 +113,23 @@ Now flip it: average R of 0.8, even with a 60% win rate.
 
 But your 0.8R means your winners are SMALLER than your losses. A single bad streak can wipe you out. With 1.1R, your winners are bigger than your losses. You can survive bad streaks.
 
-## My First Month of Tracking R-Multiples
+## What the Math Looks Like
 
-I started tracking R-multiples about 5 months into my trading. Here's what I found:
+Here's a worked example — the same one you'll run on your own log once you're tracking:
 
-**Month 1:**
+**Trader A, one month of trades:**
 - Win rate: 42%
 - Average R: 1.4R
-- Net result: +16R (profitable despite low win rate)
+- Net result: comfortably positive, despite being wrong most of the time
 
-**Month 2:**
+**Trader B, same month:**
 - Win rate: 51%
 - Average R: 0.9R
-- Net result: +3.6R (barely profitable, and felt like a grind)
+- Net result: barely positive, and it feels like a grind
 
-**Month 3:**
-- Win rate: 38%
-- Average R: 1.6R
-- Net result: +32R (my best month, and I was wrong more often than right)
+Trader A is wrong more often than right and still wins, because the winners are three times the size of the losers. Trader B wins more often than not and has almost nothing to show for it.
 
-The data was crystal clear: my average R was a much better predictor of profitability than my win rate. And it also told me what to fix.
-
-When my average R dropped below 1.0 in Month 2, I knew something was wrong with my exits. I was taking profits too early.
+The lesson: average R was the better predictor of profitability than win rate in both cases. And when Trader B's average R sits below 1.0, the diagnosis is right there — exits too small or losses too big. Win rate never tells you that.
 
 ## How to Start Tracking R-Multiples
 

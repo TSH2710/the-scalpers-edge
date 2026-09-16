@@ -95,15 +95,17 @@ Find posts about:
 **Title:** "The emotion that costs scalpers the most money (and how I track it)"
 
 **Body:**
-> After journaling 200+ trades with emotional state tracking, here's my finding:
+> After journaling with emotional state tracking, here's the kind of finding that comes out:
 >
-> **Revenge trading = -2.1R average per trade** (worst emotion by far)
-> **FOMO entries = -1.3R average**
-> **Overconfidence after wins = +0.4R** (actually fine, but leads to bigger losses later)
+> **Revenge trading = roughly -2R average per trade** (worst emotion by far)
+> **FOMO entries = roughly -1.3R average**
+> **Overconfidence after wins = slightly positive** (but leads to bigger losses later)
 >
-> The scariest part: I was revenge trading 2-3 times per week and had no idea. The losses blended in with everything else.
+> These are example numbers, not my track record — but run your own log and you'll likely find the same ranking. Revenge trades are consistently the worst trade anyone takes.
 >
-> Now I have a simple rule: if I take a loss, I write down my emotional state. If it's revenge/FOMO, I'm done for the day. No exceptions.
+> The scariest part: most people revenge trade 2-3 times per week and have no idea. The losses blend in with everything else.
+>
+> Simple rule that fixes it: if I take a loss, I write down my emotional state. If it's revenge/FOMO, I'm done for the day. No exceptions.
 >
 > Has anyone else tried tracking emotions alongside trades? Curious if others see similar patterns.
 
@@ -119,13 +121,11 @@ Find posts about:
 >
 > Formula: (Ask - Bid) × Position Size × 2 (entry + exit)
 >
-> My worst week: $347 in spread costs on $1,200 gross profit.
-> That's 29% of my gross profit eaten by spreads.
+> Here's an illustrative week: $347 in spread costs on $1,200 gross profit. That's 29% of gross eaten by spreads.
 >
-> My best week: $89 in spread costs on $980 gross profit.
-> That's 9%. How? Traded more liquid names and stopped forcing setups in wide stocks.
+> Then a week trading only liquid names: $89 in spread costs on $980 gross. That's 9%.
 >
-> If you're not tracking this separately, you have no idea how much it's costing you.
+> Same trader, same strategy — the difference is stock selection. Run your own numbers; if you're not tracking this separately, you have no idea how much it's costing you.
 >
 > My journal template has a built-in spread tracker.
 
@@ -139,19 +139,19 @@ Find posts about:
 **Body:**
 > I see so many traders obsessing over win rate. "I need to be right 60%+ of the time."
 >
-> Newsflash: you don't.
+> Newsflash: you don't. Here's the math, not a personal track record:
 >
-> My journal data from the last 60 trades:
-> - Win rate: 43%
-> - Average R-multiple: 1.35R
-> - Net result: +38R (profitable)
+> Take 60 trades at a 43% win rate with a 1.35R average winner:
+> - 26 wins × 1.35R = +35.1R
+> - 34 losses × -1R = -34R
+> - Net: +1.1R per trade on average — profitable while wrong most of the time
 >
-> The math:
-> - 26 wins × 1.35R average = +35.1R
-> - 34 losses × -1R average = -34R
-> - Net: +1.1R per trade average
+> Versus a 60% win rate with a 0.5R average winner:
+> - 36 wins × 0.5R = +18R
+> - 24 losses × -1R = -24R
+> - Net: -6R — losing money while being right more often than not
 >
-> You know how I found this? Journaling. Track your R-multiples and stop chasing win rate.
+> Track your R-multiples and stop chasing win rate. Your journal will show you which one you are.
 >
 > My template has an auto R-multiple calculator if anyone wants it.
 

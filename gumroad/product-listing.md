@@ -200,7 +200,7 @@ When someone purchases (or signs up for free), they get:
 - [ ] Update landing page: "Coming soon — launching [date]"
 
 ### Day -3:
-- [ ] Post on Twitter: "3 days until launch. First 50 get the lite version free."
+- [ ] Post on Twitter: "3 days until launch. Free lite version available now."
 - [ ] Post on Reddit: "I tracked my trading by session for a month. Found something surprising."
 - [ ] Teaser TikTok: "The one tool that changed my trading more than any strategy"
 

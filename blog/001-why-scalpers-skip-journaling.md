@@ -4,7 +4,7 @@
 
 ---
 
-Let me save you the suspense: I didn't journal for the first four months of scalping. And it cost me about $2,000 in preventable losses.
+Let me save you the suspense: I didn't journal for the first months of my scalping. And the mistakes I repeated in that stretch cost me more than any course ever would have.
 
 I'm not special. Most scalpers don't journal. We know we should. We've read the books, watched the YouTube videos, bookmarked the posts. But when the market opens at 9:30, journaling is the first thing that gets cut.
 
@@ -30,39 +30,33 @@ The pattern was clear: there was no journaling tool built for the way I actually
 
 ## What Journaling Actually Gives You
 
-Let me be specific. Not the vague "it helps you improve" stuff. Here's what I got from 60 days of journaling every single trade:
+Let me be specific. Not the vague "it helps you improve" stuff. Here's the kind of pattern journaling surfaces — the classic ones, the ones almost every scalper finds once they actually track. Yours will be your own, and that's the point.
 
-### 1. I Found Out I Lose 70% After 2PM
+### 1. Your worst hour might be after lunch
 
-Seriously. My first 30 minutes (9:30-10AM): 68% win rate, averaging 0.8R per trade. After 2PM: 31% win rate, averaging -0.3R per trade.
+A typical finding: the first 30 minutes (9:30-10AM) run hot — say a 68% win rate — while after 2PM the same trader bleeds at 31%. The culprit? Tired + bored + "I need to make back today's loss" psychology.
 
-The culprit? Tired + bored + "I need to make back today's loss" psychology.
+**Solution:** Whatever your worst window turns out to be, build a rule around it. Hard stop. Not negotiable.
 
-**Solution:** Hard stop at 1:30PM. Not negotiable.
+You will never find your version of this without data. You *think* you're a consistent trader. Your P&L tells a different story.
 
-I would've never found this without data. I *thought* I was a consistent trader. My P&L told a different story.
+### 2. Revenge trades are your most expensive trades
 
-### 2. I Was Revenge Trading 2-3 Times Per Week
-
-My psychology tracker flagged it immediately. After every loss, I was logging my emotional state. Turns out, "I need to make it back" was my most common post-loss emotion.
-
-And those revenge trades? Averaged -2.1R each. My worst trades by far.
+Log your emotional state after every loss for two weeks and look at the trades that followed a red one. Most traders find their revenge trades average worse than -2R — by far their worst entries.
 
 **Solution:** Three consecutive losses = mandatory day off. Not four. Not five. Three.
 
-### 3. Spread Costs Were Eating 29% of My Gross Profit
+### 3. Spread costs hide inside every trade
 
 I never tracked this separately. I saw the commissions, but the spreads were hidden inside every trade.
 
-Week 1 of tracking: $347 in spread costs on $1,200 gross profit. That's 29%.
+Do the math on your own week: if $1,200 of gross profit came with $347 of spread cost, that's 29% — gone before you were right or wrong about anything. Switch to more liquid names and the same math can drop under 10%.
 
-Week 2 (after switching to more liquid names): $89 in spread costs on $980 gross profit. That's 9%.
+Same strategy. Different stock selection. A double-digit difference in profitability.
 
-Same strategy. Different stock selection. 20% difference in profitability.
+### 4. A couple of setups make all your money
 
-### 4. Two Setups Account for 80% of My Profits
-
-I was trading 6 different setups. Turns out, 2 of them were profitable and 4 were break-even or losing.
+Most scalpers trade too many setups. When the data comes in, it's common to find that two of them produce the profits and the rest are break-even or losing.
 
 **Solution:** Cut the losing setups. Trade only what works.
 
@@ -70,7 +64,7 @@ If I had this data four months earlier, I would've cut my learning curve in half
 
 ## Why Scalpers Don't Journal (The Real Reasons)
 
-Let me be honest about why I didn't journal for four months. It wasn't laziness.
+Let me be honest about why I didn't journal when I started. It wasn't laziness.
 
 **Reason 1: The tools weren't built for me**
 Every journaling tool felt like it was designed for a trader who makes 2 trades per week and holds for 3 days. I needed something fast — 2 minutes max to fill out per trade.
@@ -126,13 +120,14 @@ Example:
 - If you exit at $102: R = 1R ✅
 - If stopped out ($98): R = -1R ❌
 
-Here's the kicker: I tracked 60 trades last month.
+Here's the kicker — and do this math on your own log:
 
-- Win rate: 43% (seemed bad)
-- Average R: 1.35R (actually great)
-- Net result: +38R for the month (profitable)
+Take 50 trades at a 43% win rate, winners averaging +2R, losers capped at -1R:
 
-You don't need to be right 70% of the time. You need your winners to be bigger than your losers. And the only way to know that is to track it.
+- Win rate: 43% (seems bad)
+- Net result: ~+14R for the 50 trades (profitable)
+
+You were wrong more often than right — and made money anyway. You don't need to be right 70% of the time. You need your winners to be bigger than your losers. And the only way to know that is to track it.
 
 ## How to Start (Without Overwhelming Yourself)
 
@@ -157,7 +152,7 @@ Scalping is different. Your journal should be too.
 
 ---
 
-**P.S.** If you want the journal I built — 7 pages, pre-built formulas, scalping-specific — check out [The Disciplined Trader Journal](https://thescalpersedge.com/journal). First 50 buyers got the lite version free. Regular price is $49.
+**P.S.** If you want the journal I built — 7 pages, pre-built formulas, scalping-specific — check out [The Disciplined Trader Journal](https://thescalpersedge.com/journal). $49 one-time, and there's a free lite version if you want to try before buying.
 
 **P.P.S.** Drop a comment with your biggest journaling struggle. I read every single one.
 

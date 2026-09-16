@@ -20,7 +20,7 @@ POSTS = [
      "2026-09-06", 1),
     ("002-pre-trade-checklist.md", "002-pre-trade-checklist",
      "The Pre-Trade Checklist That Saved My Account (Free Download)",
-     "The 12-point checklist that eliminated my bad entries and doubled my win rate in 3 weeks. Free Notion template inside.",
+     "The 12-point checklist that catches the dumb trade before it happens. Free Notion template inside.",
      "2026-09-06", 2),
     ("003-r-multiples-explained.md", "003-r-multiples-explained",
      "R-Multiples Explained: The Only Metric That Matters for Scalpers",
@@ -43,8 +43,8 @@ POSTS = [
      "You're tracking P&L and win rate, but missing the single biggest drain on your account.",
      "2026-09-06", 7),
     ("008-first-year-scalping.md", "008-first-year-scalping",
-     "From $500 to Consistent: My First Year of Scalping (And What I Wish I Knew Day 1)",
-     "I turned $500 into a consistent scalper in 12 months. Not because I'm smart — because I failed enough times to learn.",
+     "My First Year of Scalping: The Lessons, Minus the Fake Numbers",
+     "One year of scalping, told honestly — no invented equity curves. The mistakes, the rules that fixed them, and what I wish I knew on day 1.",
      "2026-09-06", 8),
 ]
 
