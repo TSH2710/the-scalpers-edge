@@ -15,7 +15,7 @@ but no beta cohort — don't invent numbers).
 - [ ] Banner → `social-content/assets/banner-1500x500.png`
 - [ ] Name → **The Scalper's Edge**
 - [ ] Bio → (below, ≤160 chars)
-- [ ] Location field → `thescalpersedge.com` (acts as the link line)
+- [ ] Location field → `tinkshifter.gumroad.com` (acts as the link line until the custom domain is live)
 - [ ] Post the pinned tweet (below), then pin it
 - [ ] Fix site links (see §5) so bio links don't 404
 - [ ] Follow 20–30 scalping/trading accounts; reply (don't DM) with useful comments
@@ -48,7 +48,7 @@ Built the journal I wish I'd had on day 1:
 • session heatmaps
 
 Duplicate to Notion in 2 min ↓
-https://thescalpersedge.com/journal
+https://tinkshifter.gumroad.com/l/disciplined-trader-journal
 ```
 
 Attach as image: a screenshot of the **daily trade log page** (use
@@ -57,6 +57,11 @@ Attach as image: a screenshot of the **daily trade log page** (use
 ---
 
 ## 3. First week of posts (honest versions)
+
+**Launch-week offer (real, verifiable):** the first 25 buyers get 20% off
+with code **LAUNCH20** at checkout — the cap is set in Gumroad, so the
+claim can never overpromise. Mention it in the Day 1 and Day 3 posts and
+then let it expire quietly when the 25 are gone.
 
 These follow the cadence from `twitter-launch.md` but strip invented beta
 stats. Post 2–3/day; engagement beats volume early on.
@@ -82,7 +87,7 @@ Spent the last month building a Notion trade journal specifically for scalpers.
 
 Free lite version (daily log + R-calc) if you want to try before buying:
 
-https://thescalpersedge.com/lite
+https://tinkshifter.gumroad.com/l/inqxzl
 ```
 
 **Day 2 — spread costs**
@@ -154,7 +159,7 @@ The lite version is free: daily trade log + R-multiple calculator. No card, no c
 
 Duplicate it, run it for a week, and you'll see what a week of real data feels like.
 
-https://thescalpersedge.com/lite
+https://tinkshifter.gumroad.com/l/inqxzl
 ```
 
 ---
@@ -171,9 +176,10 @@ Reply strategy: 5–10 thoughtful replies/day on mid-size trading accounts.
 
 ---
 
-## 5. Link routing (done)
+## 5. Link routing (redirects built, domain pending)
 
-The repo now has a Netlify `_redirects` file with:
+The repo has a Netlify `_redirects` file ready for when the domain is
+registered and pointed at Netlify:
 
 - `thescalpersedge.com/journal` → Gumroad ($49 Journal)
 - `thescalpersedge.com/lite` → Gumroad (free Lite)
