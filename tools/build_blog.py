@@ -520,7 +520,15 @@ def nav_html(active='') -> str:
   </nav>'''
 
 
-def head(title, desc, canonical, extra=''):
+def head(title, desc, canonical, og_image=None, og_alt='', extra=''):
+    img = f"{DOMAIN}/og/{og_image}"
+    img_tags = ''
+    if og_image:
+        img_tags = (f'\n  <meta property="og:image" content="{img}">'
+                    f'\n  <meta property="og:image:width" content="1200">'
+                    f'\n  <meta property="og:image:height" content="630">'
+                    f'\n  <meta property="og:image:alt" content="{esc(og_alt)}">'
+                    f'\n  <meta name="twitter:image" content="{img}">')
     return f'''<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -531,8 +539,8 @@ def head(title, desc, canonical, extra=''):
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:description" content="{esc(desc)}">
   <meta property="og:type" content="article">
-  <meta property="og:url" content="{canonical}">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:url" content="{canonical}">{img_tags}
+  <meta name="twitter:card" content="{'summary_large_image' if og_image else 'summary'}">
   <meta name="twitter:title" content="{esc(title)}">
   <meta name="twitter:description" content="{esc(desc)}">
   <link rel="canonical" href="{canonical}">
@@ -572,7 +580,7 @@ def render_post(idx: int) -> str:
       <p><strong>About the author:</strong> {inline(about.replace('About the author:', '').strip())} Read more on <a href="{TWITTER}">X&nbsp;/&nbsp;Twitter</a>.</p>
     </div>'''
 
-    return f'''{head(title, dek, url, extra=jsonld_post(slug, title, dek, date) + '\n')}
+    return f'''{head(title, dek, url, og_image=f'{num:02d}.png', og_alt=title, extra=jsonld_post(slug, title, dek, date) + '\n')}
 <body>
 {nav_html()}
   <article class="article">
@@ -619,7 +627,7 @@ def render_index() -> str:
       <div class="read">Read the post →</div>
     </a>''')
 
-    return f'''{head(title, desc, url)}
+    return f'''{head(title, desc, url, og_image='blog.png', og_alt="Edge Notes — The Scalper's Edge Blog")}
 <body>
 {nav_html('blog')}
   <header class="blog-head">

@@ -5,7 +5,11 @@ gumroad/landing/*.png
 gumroad/landing/*.json
 gumroad/landing/*.txt
 gumroad/landing/live-*.html
+gumroad/landing/lite-live*.html
 gumroad/landing/*-preview.html
+
+# Python bytecode
+tools/__pycache__/
 
 # Gumroad CLI auth state, if it ever lands here
 gumroad/.auth/
