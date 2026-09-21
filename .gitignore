@@ -10,7 +10,47 @@ gumroad/landing/*-preview.html
 
 # Python bytecode
 tools/__pycache__/
+automation/scheduled-posts/__pycache__/
 
-# Gumroad CLI auth state, if it ever lands here
+# Gumroad CLI auth state
 gumroad/.auth/
 .freebuff/
+
+# Scratch clones for reviewing old projects
+_review/
+
+# Sensitive files (API keys, tokens)
+config/credentials.md
+config/.env
+config/.env.local
+
+# Temporary files
+tmp/
+*.tmp
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (if any)
+node_modules/
+
+# Build artifacts
+dist/
+build/
+
+# Large files
+*.mp4
+*.avi
+*.mov
+assets/videos/
+
+# Backups (keep in git but note they're backups)
+backups/

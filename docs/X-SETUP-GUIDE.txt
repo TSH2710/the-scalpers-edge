@@ -1,0 +1,87 @@
+# X Profile Setup Guide for @scalpersedge
+
+## Quick Setup (2 minutes)
+
+### Step 1: Go to Profile Settings
+Open: https://x.com/settings/profile
+
+### Step 2: Fill in these exact values
+
+**Name:**
+```
+The Scalper's Edge
+```
+
+**Bio (copy this exactly - 159 chars):**
+```
+Trade smarter. Journal harder.
+
+Notion trade journal built for scalpers - R-multiples, spread costs, session heatmaps, psychology flags.
+
+Free lite + full template
+```
+
+**Location:**
+```
+tinkshifter.gumroad.com
+```
+
+**Website:**
+```
+https://tinkshifter.gumroad.com/l/disciplined-trader-journal
+```
+
+### Step 3: Upload Avatar
+- Click the camera icon on your profile picture
+- Select "Upload photo"
+- Choose: `social-content/assets/avatar-400.png`
+
+### Step 4: Upload Banner
+- Click the camera icon on the banner area
+- Select "Upload photo"
+- Choose: `social-content/assets/banner-1500x500.png`
+
+### Step 5: Save Profile
+- Click "Save" button
+
+### Step 6: Post Launch Tweet
+Go to: https://x.com/compose/post
+
+**Copy this tweet:**
+```
+I scalped for a year before I journaled a single trade.
+
+Winged it, repeated the same mistakes, blamed "the market."
+
+Built the journal I wish I'd had on day 1:
+
+• 12-pt pre-trade checklist
+• auto P&L + R-multiples
+• spread cost tracking
+• psychology flags (FOMO / revenge)
+• session heatmaps
+
+Duplicate to Notion in 2 min
+https://tinkshifter.gumroad.com/l/disciplined-trader-journal
+```
+
+**Attach screenshot:** `gumroad/landing/screenshots/trade-log.png`
+
+### Step 7: Pin the Tweet
+- After posting, go to your profile: https://x.com/Scalpersedge
+- Click the three dots (•••) on your tweet
+- Select "Pin to profile"
+- Confirm
+
+## Done! 
+
+Your profile is now set up with:
+- Name: The Scalper's Edge
+- Avatar & banner uploaded
+- Bio with link to Gumroad
+- Launch tweet posted and pinned
+
+## Next Steps
+1. Review your profile at https://x.com/Scalpersedge
+2. Follow 20-30 trading accounts
+3. Start the daily reply routine

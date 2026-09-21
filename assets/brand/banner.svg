@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3000" height="1000" viewBox="0 0 3000 1000">
+  <!-- @scalpersedge banner — renders to 1500x500. Lockup stays within center 1000x500 safe area. -->
+  <rect width="3000" height="1000" fill="#fafafa"/>
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+  <rect width="3000" height="1000" filter="url(#grain)" opacity="0.03"/>
+
+  <!-- faint candlestick motif at far left/right, outside the safe area -->
+  <g stroke="#111111" stroke-width="10" opacity="0.08">
+    <line x1="180" y1="180" x2="180" y2="620"/><rect x="130" y="240" width="100" height="200" fill="#111111" stroke="none"/>
+    <line x1="380" y1="120" x2="380" y2="540"/><rect x="330" y="190" width="100" height="190" fill="#111111" stroke="none"/>
+    <line x1="580" y1="260" x2="580" y2="700"/><rect x="530" y="330" width="100" height="180" fill="#111111" stroke="none"/>
+    <line x1="2420" y1="300" x2="2420" y2="740"/><rect x="2370" y="380" width="100" height="200" fill="#111111" stroke="none"/>
+    <line x1="2620" y1="200" x2="2620" y2="620"/><rect x="2570" y="260" width="100" height="190" fill="#111111" stroke="none"/>
+    <line x1="2820" y1="130" x2="2820" y2="560"/><rect x="2770" y="190" width="100" height="200" fill="#111111" stroke="none"/>
+  </g>
+
+  <!-- lockup: bolt + wordmark, centered -->
+  <g transform="translate(1500,470)">
+    <g transform="translate(-590,0) scale(9) translate(-7,-9)">
+      <path d="M8 1L1 10h5.5L5 17l8-9H7L8 1z" fill="#111111"/>
+    </g>
+    <text x="-460" y="34" font-family="Arial, Helvetica, sans-serif" font-size="150" font-weight="800" letter-spacing="-6" fill="#111111">The Scalper&#8217;s Edge</text>
+  </g>
+
+  <!-- tagline below, muted -->
+  <text x="1500" y="640" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="500" fill="#555555">Trade smarter. Journal harder. &#8226; thescalpersedge.com</text>
+</svg>

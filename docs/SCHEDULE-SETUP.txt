@@ -1,0 +1,73 @@
+# Automated Posting Setup Guide
+
+## Files Created:
+- `tools/run-post.py` - Script to post tweets
+- `tools/post-8am.bat` - Batch file for 8 AM post
+- `tools/post-12pm.bat` - Batch file for 12 PM post
+
+## Setup Windows Task Scheduler (5 minutes)
+
+### Step 1: Create 8 AM Task
+1. Press **Windows Key + S**, type "Task Scheduler", open it
+2. Click **"Create Basic Task"** on the right
+3. **Name:** `Scalpers Edge 8 AM Post`
+4. **Trigger:** Daily
+5. **Start time:** 8:00:00 AM
+6. **Action:** Start a program
+7. **Program:** `C:\Users\tinks\AppData\Local\Programs\Python\Python311\python.exe`
+8. **Arguments:** `C:\Users\tinks\scalpers-edge\tools\run-post.py 8am`
+9. **Start in:** `C:\Users\tinks\scalpers-edge\tools`
+10. Click **Finish**
+
+### Step 2: Create 12 PM Task
+1. Click **"Create Basic Task"** again
+2. **Name:** `Scalpers Edge 12 PM Post`
+3. **Trigger:** Daily
+4. **Start time:** 12:00:00 PM
+5. **Action:** Start a program
+6. **Program:** `C:\Users\tinks\AppData\Local\Programs\Python\Python311\python.exe`
+7. **Arguments:** `C:\Users\tinks\scalpers-edge\tools\run-post.py 12pm`
+8. **Start in:** `C:\Users\tinks\scalpers-edge\tools`
+9. Click **Finish**
+
+## Test It Now
+Run this command to test the 8 AM post:
+```bash
+cd tools && "/c/Users/tinks/AppData/Local/Programs/Python/Python311/python.exe" run-post.py 8am
+```
+
+## What Happens:
+- **8:00 AM** - Spread costs tweet posts automatically
+- **12:00 PM** - R-multiples tweet posts automatically
+- **Both times** - You get a Pushover notification on your phone
+- **When you get home** - Post the 3rd tweet manually (Day 1 - what shipped)
+
+## Manual Post for Tonight
+When you get home, post this manually:
+
+```
+Spent the last month building a Notion trade journal specifically for scalpers.
+
+7 pages, all formulas pre-wired. Duplicate and start logging today.
+
+Free lite version (daily log + R-calc) if you want to try before buying:
+
+https://tinkshifter.gumroad.com/l/inqxzl
+```
+
+## Monitor Your Posts
+- Check X for engagement on the automated posts
+- Reply to any comments/mentions
+- The automated posts will have the same quality as manual posts
+
+## Troubleshooting
+If a post fails:
+1. Check the Pushover notification for error details
+2. Run the command manually in terminal to see the error
+3. Make sure you're logged into OpenCLI: `opencli twitter whoami`
+
+## Stop the Automation
+To stop the scheduled tasks:
+1. Open Task Scheduler
+2. Click "Task Scheduler Library" on the left
+3. Right-click on each task → Delete
